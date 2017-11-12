@@ -50,7 +50,7 @@ $(function() {
             loadMessage: "Please, wait...",
             loadShading: true,
             fields: [
-                { name: "type", title: "Type d'évolution", type: "text", width: 150 },
+                { name: "type", title: "Types d'évolutions", type: "text", width: 150 },
                 { type: "control" }
             ]
         });
