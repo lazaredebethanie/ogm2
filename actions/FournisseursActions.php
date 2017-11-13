@@ -58,7 +58,7 @@ class FournisseursActions {
 	}
 	
 	public function update($data) {
-		$sql = "UPDATE fournisseurs SET nom_usuel = :nom_usuel, cofor = :cofor groupe_id = :groupe_id WHERE id = :id";
+		$sql = "UPDATE fournisseurs SET nom_usuel = :nom_usuel, cofor = :cofor, groupe_id = :groupe_id WHERE id = :id";
 		$q = $this->db->prepare($sql);
 		$q->bindParam(":nom_usuel", $data["nom_usuel"]);
 		$q->bindParam(":cofor", $data["cofor"]);
