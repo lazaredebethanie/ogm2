@@ -9,37 +9,43 @@ $(function() {
             sorting: true,
             paging: true,
             autoload: true,
-            deleteConfirm: "Voulez-vous vraiment supprimer cette entité ?",
+            deleteConfirm: "Want you to really delete this Business Unit ?",
             controller: {
                 loadData: function(filter) {
                     return $.ajax({
                         type: "GET",
-                        url: "../acces/entitesPrescriptricesIndex.php",
+                        url: "../screens/businessUnitsIndex.php",
                         data: filter
                     });
                 },
                 insertItem: function(item) {
                     return $.ajax({
                         type: "POST",
-                        url: "../acces/entitesPrescriptricesIndex.php",
+                        url: "../screens/businessUnitsIndex.php",
                         data: item
                     });
                 },
                 updateItem: function(item) {
                     return $.ajax({
                         type: "PUT",
-                        url: "../acces/entitesPrescriptricesIndex.php",
+                        url: "../screens/businessUnitsIndex.php",
                         data: item
                     });
                 },
                 deleteItem: function(item) {
                     return $.ajax({
                         type: "DELETE",
-                        url: "../acces/entitesPrescriptricesIndex.php",
+                        url: "../screens/businessUnitsIndex.php",
                         data: item
                     });
                 }
             },
+            
+            rowClick: function (args) {
+                //window.location = "/Reservations/Edit/" + args.item.id + args.item.acronym;
+                window.open ("../basic.html"+args.item.id,"popup name","menubar=no, scrollbars=no, top=100, left=100, width=1000, height=600");
+            },
+            
             pageSize: 10,
             pageButtonCount: 5,
             pageIndex: 1,
@@ -50,8 +56,8 @@ $(function() {
             loadMessage: "Please, wait...",
             loadShading: true,
             fields: [
-                { name: "acronyme", title: "Acronyme", type: "text", width: 150 },
-                { name: "nom", title: "Nom", type: "text", width: 200 },
+                { name: "acronym", title: "Acronym", type: "text",width: 150},
+                { name: "nameBU", title: "Business Unit", type: "text", width: 200 },
                 { type: "control" }
             ]
         });

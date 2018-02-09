@@ -1871,7 +1871,7 @@ In the following example a custom validator `time` is registered:
 ## Localization
 > version added: 1.4
 
-Current locale can be set for all grids on the page with the [`jsGrid.locale(localeName)`](#jsgridlocalelocalenamelocaleconfig) method.
+```Current locale can be set for all grids on the page with the [`jsGrid.locale(localeName)`](#jsgridlocalelocalenamelocaleconfig) method.
 
 New custom locale can be added to `jsGrid.locales` hash like the following:
 

@@ -1,9 +1,9 @@
 <?php
 
 return array(
-		"db" => "mysql:host=localhost;dbname=ogm2",
+		"db" => "mysql:host=localhost;dbname=ogm",
 		"username" => "root",
-		"password" => "sp4mom"
+		"password" => ""
 );
 
 ?>

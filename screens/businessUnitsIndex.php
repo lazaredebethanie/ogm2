@@ -1,41 +1,41 @@
 <?php
 
-include "../actions/EntitesPrescriptricesActions.php";
+include "../actions/BusinessUnitsActions.php";
 
 $config = include("../db/config.php");
 $db = new PDO($config["db"], $config["username"], $config["password"]);
-$entitesPrescriptrices = new EntitesPrescriptricesActions($db);
+$businessUnits = new BusinessUnitsActions($db);
 //$_SERVER["REQUEST_METHOD"]="GET";
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
-		$result = $entitesPrescriptrices->getAll(array(
-		"acronyme" => $_GET["acronyme"],
-		"nom" => $_GET["nom"],
+		$result = $businessUnits->getAll(array(
+		"acronym" => $_GET["acronym"],
+		"nameBU" => $_GET["nameBU"],
 		));
 		break;
 		
 	case "POST":
-		$result = $entitesPrescriptrices->insert(array(
-		"acronyme" => $_POST["acronyme"],
-		"nom" => $_POST["nom"],
+		$result = $businessUnits->insert(array(
+		"acronym" => $_POST["acronym"],
+		"nameBU" => $_POST["nameBU"],
 		));
 		break;
 		
 	case "PUT":
 		parse_str(file_get_contents("php://input"), $_PUT);
 		
-		$result = $entitesPrescriptrices->update(array(
+		$result = $businessUnits->update(array(
 				"id" => intval($_PUT["id"]),
-				"acronyme" => $_PUT["acronyme"],
-				"nom" => $_PUT["nom"],
+				"acronym" => $_PUT["acronym"],
+				"nameBU" => $_PUT["nameBU"],
 		));
 		break;
 		
 	case "DELETE":
 		parse_str(file_get_contents("php://input"), $_DELETE);
 		
-		$result = $entitesPrescriptrices->remove(intval($_DELETE["id"]));
+		$result = $businessUnits->remove(intval($_DELETE["id"]));
 		break;
 }
 

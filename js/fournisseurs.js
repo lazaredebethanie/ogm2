@@ -5,7 +5,7 @@ $(function() {
         url: "../select/groupesFournisseursSelect.php"
     }).done(function(groupesFournisseurs) {
 
-    	groupesFournisseurs.unshift({ id: "0", groupe: "" });
+    	groupesFournisseurs.unshift({ id: "", groupe: "" });
     	
         $("#jsGrid").jsGrid({
             height: "auto",
@@ -21,28 +21,28 @@ $(function() {
                 loadData: function(filter) {
                     return $.ajax({
                         type: "GET",
-                        url: "../acces/fournisseursIndex.php",
+                        url: "../screens/fournisseursIndex.php",
                         data: filter
                     });
                 },
                 insertItem: function(item) {
                     return $.ajax({
                         type: "POST",
-                        url: "../acces/fournisseursIndex.php",
+                        url: "../screens/fournisseursIndex.php",
                         data: item
                     });
                 },
                 updateItem: function(item) {
                     return $.ajax({
                         type: "PUT",
-                        url: "../acces/fournisseursIndex.php",
+                        url: "../screens/fournisseursIndex.php",
                         data: item
                     });
                 },
                 deleteItem: function(item) {
                     return $.ajax({
                         type: "DELETE",
-                        url: "../acces/fournisseursIndex.php",
+                        url: "../screens/fournisseursIndex.php",
                         data: item
                     });
                 }

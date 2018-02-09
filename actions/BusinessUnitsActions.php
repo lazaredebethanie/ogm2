@@ -1,8 +1,8 @@
 <?php
 
-include "../objets/EntitesPrescriptrices.php";
+include "../objets/BusinessUnits.php";
 
-class EntitesPrescriptricesActions {
+class BusinessUnitsActions {
 	
 	protected $db;
 	
@@ -11,10 +11,10 @@ class EntitesPrescriptricesActions {
 	}
 	
 	private function read($row) {
-		$result = new EntitesPrescriptrices();
+		$result = new BusinessUnits();
 		$result->id = $row["id"];
-		$result->acronyme = $row["acronyme"];
-		$result->nom = $row["nom"];
+		$result->acronym = $row["acronym"];
+		$result->nameBU = $row["nameBU"];
 		return $result;
 	}
 	
@@ -28,13 +28,13 @@ class EntitesPrescriptricesActions {
 	}
 	
 	public function getAll($filter) {
-		$acronyme = "%" . $filter["acronyme"] . "%";
-		$nom = "%" . $filter["nom"] . "%";
+		$acronym = "%" . $filter["acronym"] . "%";
+		$nameBU = "%" . $filter["nameBU"] . "%";
 		
-		$sql = "SELECT * FROM entites_prescriptrices WHERE acronyme LIKE :acronyme AND nom LIKE :nom ";
+		$sql = "SELECT * FROM entites_prescriptrices WHERE acronym LIKE :acronym AND nameBU LIKE :nameBU ";
 		$q = $this->db->prepare($sql);
-		$q->bindParam(":acronyme", $acronyme);
-		$q->bindParam(":nom", $nom);
+		$q->bindParam(":acronym", $acronym);
+		$q->bindParam(":nameBU", $nameBU);
 		$q->execute();
 		$rows = $q->fetchAll();
 		
@@ -46,19 +46,19 @@ class EntitesPrescriptricesActions {
 	}
 	
 	public function insert($data) {
-		$sql = "INSERT INTO entites_prescriptrices (acronyme, nom) VALUES (:acronyme, :nom)";
+		$sql = "INSERT INTO entites_prescriptrices (acronym, nameBU) VALUES (:acronym, :nameBU)";
 		$q = $this->db->prepare($sql);
-		$q->bindParam(":acronyme", $data["acronyme"]);
-		$q->bindParam(":nom", $data["nom"]);
+		$q->bindParam(":acronym", $data["acronym"]);
+		$q->bindParam(":nameBU", $data["nameBU"]);
 		$q->execute();
 		return $this->getById($this->db->lastInsertId());
 	}
 	
 	public function update($data) {
-		$sql = "UPDATE entites_prescriptrices SET acronyme = :acronyme, nom = :nom WHERE id = :id";
+		$sql = "UPDATE entites_prescriptrices SET acronym = :acronym, nameBU = :nameBU WHERE id = :id";
 		$q = $this->db->prepare($sql);
-		$q->bindParam(":acronyme", $data["acronyme"]);
-		$q->bindParam(":nom", $data["nom"]);
+		$q->bindParam(":acronym", $data["acronym"]);
+		$q->bindParam(":nameBU", $data["nameBU"]);
 		$q->bindParam(":id", $data["id"], PDO::PARAM_INT);
 		$q->execute();
 	}
