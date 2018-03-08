@@ -19,7 +19,7 @@ class BusinessUnitsRepo {
     }
 
     public function getAll() {
-        $sql = "SELECT * FROM entites_prescriptrices";
+        $sql = "SELECT * FROM entites_prescriptrices ORDER BY acronym ASC";
         $q = $this->db->prepare($sql);
         $q->execute();
         $rows = $q->fetchAll();

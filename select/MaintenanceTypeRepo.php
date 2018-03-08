@@ -18,7 +18,7 @@ class MaintenanceTypeRepo {
     }
 
     public function getAll() {
-        $sql = "SELECT * FROM types_maintenance";
+        $sql = "SELECT * FROM types_maintenance ORDER BY type ASC";
         $q = $this->db->prepare($sql);
         $q->execute();
         $rows = $q->fetchAll();

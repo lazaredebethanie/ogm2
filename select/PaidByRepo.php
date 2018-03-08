@@ -19,7 +19,7 @@ class PaidByRepo {
     }
 
     public function getAll() {
-        $sql = "SELECT * FROM paid_by";
+        $sql = "SELECT * FROM paid_by ORDER BY paid_by_entity ASC";
         $q = $this->db->prepare($sql);
         $q->execute();
         $rows = $q->fetchAll();

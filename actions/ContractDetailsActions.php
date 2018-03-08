@@ -2,7 +2,7 @@
 
 include "../objets/Contracts.php";
 
-class ContractsActions {
+class ContractDetailsActions {
     
     protected $db;
     
@@ -18,11 +18,11 @@ class ContractsActions {
         $result->supplier_id= $row["supplier_id"];
         $result->purchase_type_id= $row["purchase_type_id"];
         $result->maintenance_type_id= $row["maintenance_type_id"];
-        //$result->purchase_date= $row["purchase_date"];
+        $result->purchase_date= $row["purchase_date"];
         $result->renewal_date= $row["renewal_date"];
         $result->business_unit_id= $row["business_unit_id"];
         $result->paid_by_id= $row["paid_by_id"];
-        //$result->comments= $row["comments"];
+        $result->comments= $row["comments"];
         return $result;
     }
     

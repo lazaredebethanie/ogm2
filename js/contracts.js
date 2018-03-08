@@ -39,7 +39,7 @@ $(function() {
                             height: "auto",
                             width: "100%",
                             filtering: true,
-                            inserting: true,
+                            //inserting: true,
                             editing: true,
                             sorting: true,
                             paging: true,
@@ -78,7 +78,7 @@ $(function() {
 
                             rowClick: function (args) {
                                 //window.location = "/Reservations/Edit/" + args.item.id + args.item.acronym;
-                                window.open ("../basic.html&id="+args.item.id,"popup name","menubar=no, scrollbars=no, top=100, left=100, width=1000, height=600");
+                                window.open ("contractDetails.php?id="+args.item.id,"popup name","menubar=no, scrollbars=no, top=100, left=100, width=1000, height=600");
                             },
 
                             pageSize: 10,
@@ -99,27 +99,115 @@ $(function() {
                                 { name: "purchase_type_id", title: "Purchase Type", type: "select", width: 50, items: purchaseType, valueField: "id", textField: "type" },
                                 //{ name: "maintenance_type_id", title: "Maintenance Type", type: "text", width: 50 },
                                 { name: "maintenance_type_id", title: "Maintenance Type", type: "select", width: 60, items: maintenanceType, valueField: "id", textField: "type" },
-                                { name: "purchase_date", title: "Purchase Date", type: "text", width: 50 },
-                                { name: "renewal_date", title: "Renewal Date", type: "text", width: 50 },
+                                //{ name: "purchase_date", title: "Purchase Date", type: "text", width: 50 },
+                                { name: "renewal_date", title: "Next Renewal Date", type: "text", width: 50 },
                                 //{ name: "business_unit_id", title: "B.U.", type: "text", width: 20},
                                 { name: "business_unit_id", title: "B.U.", type: "select", width: 30, items: businessUnits, valueField: "id", textField: "acronym" },
                                 //{ name: "paid_by_id", title: "Paid by...", type: "text", width: 30 },
                                 { name: "paid_by_id", title: "Paid by...", type: "select", width: 30, items: paidBy, valueField: "id", textField: "paidByEntity" },
-                                { name: "comments", title: "Comments", type: "text", width: 100 },
+                                //{ name: "comments", title: "Comments", type: "text", width: 100 },
 
 
-                                { type: "control" }
-                                ]
-                        });
+                                { type: "control",
+                                    modeSwitchButton: false,
+                                    editButton: false,
+                                    headerTemplate: function() {
+                                        return $("<button>").attr("type", "button").text("Add")
+                                            .on("click", function () {
+                                                showDetailsDialog("Add", {});
+                                            });
+                                    }
+                                }                             
+                            ]
+                        }); // end of $("#jsGrid").jsGrid({
+                        
+                        
+                        
+                        
 
-                    })    
+                    }) // end of (function(paidBy) {   
 
-                })
+                }) // end of (function(businessUnits) {
 
-            })
-        })
+            })// end of (function(maintenanceType) {
 
-    })
+        })// end of (function(purchaseType) {
+
+    }) // end of (function(fournisseurs) {
+
+    $("#detailsDialog").dialog({
+        autoOpen: false,
+        width: 500,
+        close: function() {
+            $("#detailsForm").validate().resetForm();
+            $("#detailsForm").find(".error").removeClass("error");
+        }
+    });
+
+    $("#detailsForm").validate({
+        rules: {
+            name_contract: "required",
+            //reference: "required",
+            supplier_id: "required",
+            purchase_type_id: "required",
+            maintenance_type_id: "required",
+            renewal_date: "required",
+            business_unit_id: "required",
+            paid_by_id: "required"
+        },
+        messages: {
+            name_contract: "Please enter a name",
+            //reference: "Please enter a reference",
+            supplier_id: "Please select supplier",
+            purchase_type_id: "Please select a purchase type",
+            maintenance_type_id: "Please select a maintenance type",
+            renewal_date: "Please select a renewal date",
+            //business_unit_id: "Please select a B.U.",
+            //paid_by_id: "Please select the entity who pay this maintenance"
+        },
+        submitHandler: function() {
+            formSubmitHandler();
+        }
+    });
+
+    var formSubmitHandler = $.noop;
+
+    var showDetailsDialog = function(dialogType, contract) {
+        $("#name_contract").val(contract.name_contract);
+        $("#reference").val(contract.reference);
+        $("#supplier_id").val(contract.supplier_id);
+        $("#purchase_type_id").val(contract.purchase_type_id);
+        $("#maintenance_type_id").val(contract.maintenance_type_id);
+        $("#renewal_date").val(contract.renewal_date);
+        $("#business_unit_id").val(contract.business_unit_id);
+        $("#paid_by_id").val(contract.paid_by_id);
+        $("#comments").val(contract.comments);
+
+        formSubmitHandler = function() {
+            saveContract(contract, dialogType === "Add");
+        };
+
+        $("#detailsDialog").dialog("option", "title", dialogType + " Contract")
+            .dialog("open");
+    };
+
+    var saveContract = function(contract, isNew) {
+        $.extend(contract, {
+            name_contract: $("#name_contract").val(),
+            reference: $("#reference").val(),
+            supplier_id: $("#supplier_id").val(),
+            purchase_type_id: $("#purchase_type_id").val(),
+            maintenance_type_id: $("#maintenance_type_id").val(),
+            renewal_date: $("#renewal_date").val(),
+            business_unit_id: $("#business_unit_id").val(),
+            paid_by_id: $("#paid_by_id").val(),
+            comments: $("#comments").val()
+        });
+
+        $("#jsGrid").jsGrid(isNew ? "insertItem" : "updateItem", contract);
+
+        $("#detailsDialog").dialog("close");
+    };
 
 });
 

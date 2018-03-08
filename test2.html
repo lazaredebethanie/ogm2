@@ -1,0 +1,1917 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"  content="width=device-width, height=device-height, initial-scale=1.0, 'maximum-scale=1.0, 'minimum-scale=1.0, user-scalable=no" />
+<meta name="DEINVersion" content="DEIN FrameWork version 2.1.0 ($Date: 2011-12-01 16:47:52 +0100 (jue, 01 dic 2011) $ $Revision: 2020 $)">
+<meta name="APPVersion" content="Application version 0.1.0 ($Date$ $Revision$)">
+
+<link rel="stylesheet" href="/dein/styles/psa_form_elements.css" type="text/css">
+<link rel="stylesheet" href="/dein/styles/all.css" type="text/css">
+<link rel="stylesheet" href="/wc/general/1/styles/dein.css" type="text/css">
+<link rel="stylesheet" href="/dein/styles/jquery/jquery.alerts.css" type="text/css">
+<link rel="stylesheet" href="/dein/styles/jquery/ui/ui.all.css" type="text/css">
+<link rel="stylesheet" href="/dein/styles/jquery/ui/ui.datepicker.css" type="text/css">
+<link rel="stylesheet" href="/dein/styles/jquery/jquery.alerts.css" type="text/css">
+<link rel="stylesheet" href="/styles/gim.css" type="text/css">
+<link rel="stylesheet" href="/styles/modules/fiches/contrat_maintenance.css" type="text/css">
+<link rel="stylesheet" href="/dein/styles/jquery/ui/ui.datepicker.css" type="text/css">
+
+<script type="text/JavaScript" src="/dein/script/jquery/jquery_1_7_2.js?1520344156"></script>
+<script type="text/JavaScript" src="/dein/script/i18n.js?1520344156"></script>
+<script type="text/JavaScript" src="/dein/script/resizeWindow.js?1520344156"></script>
+<script type="text/JavaScript" src="/dein/script/general_ext.js?1520344156"></script>
+<script type="text/JavaScript" src="/dein/script/general_dein.js?1520344156"></script>
+<script type="text/JavaScript" src="/dein/script/o2json.js?1520344156"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/jquery.alerts.js?1520344156"></script>
+<script type="text/JavaScript" src="/dein/script/ext/base64.js?1520344156"></script>
+<script type="text/JavaScript" src="/dein/script/ext/swfobject.js?1520344156"></script>
+<script type="text/JavaScript" src="/wc/script/site.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/init_events.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/general_dein.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/general_ext.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/swfobject.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/base64.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/o2json.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/i18n.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/psa_grid_flex.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.core.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.widget.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.mouse.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.draggable.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.resizable.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.dialog.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.position.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.tabs.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/jquery.alerts.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/jquery.autocomplete.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/jquery.corner.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/psa_container.js?1520344157"></script>
+<script type="text/JavaScript" src="/script/gim.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/i18n/jquery.ui.datepicker-es.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/ui.datepicker.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/ui_1_8_14/i18n/jquery.ui.datepicker-fr.js?1520344157"></script>
+<script type="text/JavaScript" src="/dein/script/jquery/jquery.form.js?1520344157"></script>
+<script type="text/JavaScript" src="/script/modules/fiches/fiches_contratMaintenance.js?1520344157"></script>
+
+
+<script type="text/JavaScript">
+var name = navigator.appName ; 
+if (name == 'Netscape') { 
+    document.write ('<link rel="stylesheet" href="/wc/general/1/styles/style_nn.css" type="text/css">'); 
+} else if (name == 'Microsoft Internet Explorer') { 
+    document.write ('<link rel="stylesheet" href="/wc/general/1/styles/style_ie.css" type="text/css">'); 
+} else if (name == 'Opera') { 
+    document.write ('<link rel="stylesheet" href="/wc/general/1/styles/style_nn.css" type="text/css">'); 
+} else { 
+    document.write ('<link rel="stylesheet" href="/wc/general/1/styles/style_ie.css" type="text/css">'); 
+}
+</script>
+
+<title>GIM</title>
+</head>
+
+<body>
+<!-- inicio de bandeau -->
+
+
+<!-- tableau bandeau haut //-->
+<body style="margin: 0px; border: 0px">
+<div id="bandeau_haut">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+
+    <!-- fusion 3 lignes pour logo site  + cellule ligne 1 //-->
+    <tr>
+        <td width="200px" align="left" rowspan="3" valign="top"
+            style="background-image:url('/wc/b/1/images/choix/logo_site.jpg')" >
+        <div class="sitename">O G M</div>
+        <div class="sitelabel">Outil de Gestion de la Maintenance</div>
+        </td>
+        <td align="right" valign="top"
+            style="background-image:url('/wc/b/1/images/bandeau_haut/fond1.gif')" ><img
+            src="/wc/b/1/images/bandeau_haut/logo_psa.jpg" alt="logo_psa"></td>
+    </tr>
+
+    <!-- cellule ligne 2 //-->
+    <tr>
+        <td align="right" valign="top"
+            style="background-image:url('/wc/b/1/images/bandeau_haut/fond2.gif')"><!-- tableau boutons + separateurs + icone portail //-->
+        <table cellpadding="0" cellspacing="0" border="0"
+            style="background-image:url('/wc/b/1/images/espaceur.gif')">
+            <tr>
+                                                                        
+                                                                                                                                                                                                                                        <!-- bouton liens //-->
+                            <td valign="top"><a href="/index.php" 
+                                 class="ico1"
+                                onMouseOut="poeImgOff('accueil');" onMouseOver="poeImgOn('accueil');"><img
+                                src="/wc/b/1/images/bandeau_haut/ico_accueil_off.gif" border="0" name="accueil" alt="ico_off"></a></td>
+                            <td valign="bottom">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td><a href="/index.php" 
+                                        class="ico1"
+                                        onMouseOut="poeImgOff('accueil');" onMouseOver="poeImgOn('accueil');">Accueil</a></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/wc/b/1/images/espaceur.gif" width="5" height="4" alt="espaceur"></td>
+                                </tr>
+                            </table>
+                        </td>
+                                        
+                                                                                                                <!-- séparateur entre 2 boutons //-->
+                            <td valign="top"><img src="/wc/b/1/images/bandeau_haut/sep1.gif" alt="sep1"></td>
+                                                                                                                                                                            <!-- bouton liens //-->
+                            <td valign="top"><a href="/contact.php" onclick="winOpen('','contact','270','380','0','0');"
+                                target='contact' class="ico1"
+                                onMouseOut="poeImgOff('contact');" onMouseOver="poeImgOn('contact');"><img
+                                src="/wc/b/1/images/bandeau_haut/ico_contact_off.gif" border="0" name="contact" alt="ico_off"></a></td>
+                            <td valign="bottom">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td><a href="/contact.php" onclick="winOpen('','contact','270','380','0','0');"
+                                       target='contact' class="ico1"
+                                        onMouseOut="poeImgOff('contact');" onMouseOver="poeImgOn('contact');">Contact</a></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/wc/b/1/images/espaceur.gif" width="5" height="4" alt="espaceur"></td>
+                                </tr>
+                            </table>
+                        </td>
+                                        
+                                                                                                                <!-- séparateur entre 2 boutons //-->
+                            <td valign="top"><img src="/wc/b/1/images/bandeau_haut/sep1.gif" alt="sep1"></td>
+                                                                                                                                                                            <!-- bouton liens //-->
+                            <td valign="top"><a href="/aide.php" onclick="winOpen('','aide','270','380','0','0');"
+                                target='aide' class="ico1"
+                                onMouseOut="poeImgOff('aide');" onMouseOver="poeImgOn('aide');"><img
+                                src="/wc/b/1/images/bandeau_haut/ico_aide_off.gif" border="0" name="aide" alt="ico_off"></a></td>
+                            <td valign="bottom">
+                            <table cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td><a href="/aide.php" onclick="winOpen('','aide','270','380','0','0');"
+                                       target='aide' class="ico1"
+                                        onMouseOut="poeImgOff('aide');" onMouseOver="poeImgOn('aide');">Aide</a></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/wc/b/1/images/espaceur.gif" width="5" height="4" alt="espaceur"></td>
+                                </tr>
+                            </table>
+                        </td>
+                                        
+                                                        
+                                                        
+                                
+                <!-- separateur entre boutons et icone portail //-->
+                <td><img src="/wc/b/1/images/bandeau_haut/sep2.gif" alt="sep2"></td>
+                <!-- icone portail //-->
+                <td style="background-image:url('/wc/b/1/images/espaceur.gif')">
+                <table cellpadding="0" cellspacing="0" border="0"
+                    style="background-image:url('/wc/b/1/images/bandeau_haut/fond4.gif')">
+                    <tr>
+                        <td valign="top" style="background-image:url('/wc/b/1/images/bandeau_haut/fond4.gif')"><a
+                            href="http://portail.inetpsa.com/" class="ico2"
+                            onMouseOut="poeImgOff('portail');"
+                            onMouseOver="poeImgOn('portail');" target="_blank"><img
+                            src="/wc/b/1/images/bandeau_haut/ico_portail_off.gif" border="0"
+                            name="portail" alt="portail"></a></td>
+                        <td style="background-image:url('/wc/b/1/images/bandeau_haut/fond4.gif')"><img
+                            src="/wc/b/1/images/espaceur.gif" width="15" height="3" alt="espaceur"><br>
+                        <a href="http://portail.inetpsa.com/" class="ico2"
+                            onMouseOut="poeImgOff('portail');"
+                            onMouseOver="poeImgOn('portail');" target="_blank">Portail</a><img
+                            src="/wc/b/1/images/espaceur.gif" width="5" height="3" alt="espaceur"><br>
+                        <img src="/wc/b/1/images/espaceur.gif" width="5" height="3" alt="espaceur"></td>
+                    </tr>
+                </table>
+                </td>
+
+                <!-- fin tableau boutons + separateurs + icone portail //-->
+            </tr>
+        </table>
+
+        </td>
+    </tr>
+
+    <!-- cellule ligne 3 //-->
+    <tr>
+        <td align="right" valign="top"
+            style="background-image:url('/wc/b/1/images/bandeau_haut/fond3.gif')">
+            <img src="/wc/b/1/images/espaceur.gif" width="5" height="4" alt="espaceur"></td>
+    </tr>
+
+</table>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0"
+    style="background-image:url('/wc/b/1/images/choix/filet_bas_e.gif')">
+    <tr>
+        <td align="left" width="1%" valign="top"><img
+            src="/wc/b/1/images/choix/onglet_filet.gif" alt="onglet_filet"><br>
+        <img src="/wc/b/1/images/espaceur.gif" width="5" height="24" alt="espaceur"><br>
+        <img src="/wc/b/1/images/choix/onglet.gif" alt="onglet"></td>
+        <td valign="top" align="right" width="99%">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td align="center" valign="bottom">
+                <table cellpadding="0" cellspacing="0" border="0" class="menu1table">
+                    <tr>
+                                                                                                                                                                                                                                                                                                                                                                                    <td valign="top"><img src="/wc/b/1/images/choix/separ2_left.gif" name="separ0" border="0" alt="separ2_left.gif"></td>
+                            <td valign="middle" style='background-color: #8FBED9'><a href="/modules/fiches/fiches_maintenance.php"  >Fiches</a></td>
+                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                <td valign="top"><img src="/wc/b/1/images/choix/separ2_right.gif" name="separ0" border="0" alt="separ2_right.gif"></td>
+                            <td valign="middle" ><a href="/modules/suivis/suivisOcEngages.php"  >Suivis, TdB</a></td>
+                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                <td valign="top"><img src="/wc/b/1/images/choix/separ2_off.gif" name="separ0" border="0" alt="separ2_off.gif"></td>
+                            <td valign="middle" ><a href="/modules/budget/budget.php"  >Budget</a></td>
+                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                <td valign="top"><img src="/wc/b/1/images/choix/separ2_off.gif" name="separ0" border="0" alt="separ2_off.gif"></td>
+                            <td valign="middle" ><a href="/modules/objectifs/objectifs.php"  >Objectifs</a></td>
+                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                <td valign="top"><img src="/wc/b/1/images/choix/separ2_off.gif" name="separ0" border="0" alt="separ2_off.gif"></td>
+                            <td valign="middle" ><a href="/modules/regularisations/regularisation.php"  >Régularisations CAP et Compta</a></td>
+                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                <td valign="top"><img src="/wc/b/1/images/choix/separ2_off.gif" name="separ0" border="0" alt="separ2_off.gif"></td>
+                            <td valign="middle" ><a href="/modules/administration/utilisateurs.php"  >Administration</a></td>
+                                                                                                                                                                            
+                                                                                                                                    
+                        <td valign="top"><img src="/wc/b/1/images/choix/separ2_off.gif" name="separ0" border="0"  alt="separ2_off.gif"></td>                        
+                    </tr>
+                </table>
+                </td>
+                                    <td valign="middle" nowrap align="right" width="1%"><img src="/wc/b/1/images/espaceur.gif" width="5" height="3" alt="espaceur"><br>
+                                            <a href="/modules/fiches/fiches_maintenance.php?lang=fr" class="lang">&lt;Français&gt;</a><img src="/wc/b/1/images/espaceur.gif" width="5" height="5" alt="espaceur">
+                                            <img src="/wc/b/1/images/espaceur.gif" width="10" height="5" alt="espaceur">
+                    </td>
+                            </tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</div>
+<div id="container_table" style="margin-top:2px">
+<!-- fin de bandeau -->
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"
+    style="height:100%;">
+    <tr>
+        <td width="120px" valign="top" height="100%" id="fleft">
+        <!-- Inicio de menu izquierdo -->
+
+            <table border="0" cellpadding="0" cellspacing="0" width="130"
+                style="height:100%;">
+                <tr>
+                    <td valign="top">
+                        <div class="fmenu">
+                            <span style="color: #FDDE7A; padding-left: 5px; text-transform: uppercase;">
+    J118923
+    </span><br>
+
+    <span style="color: #FFFFFF; padding-left: 5px; font-size: 12px;">
+    ERIC BROUILLARD
+    </span>
+
+<table cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+        <tr>
+            <td align="right" colspan="2">
+                <img src="/wc/b/1/images/separ_framegauche.gif" alt="separ_framegauche">
+                <br>
+                <br>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<table border="0" cellpadding="5" cellspacing="0">
+    <tr>
+        <td valign="top">
+        
+                        
+                    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+                        <td><img src="/wc/b/1/images/espaceur.gif" width="0" height="1" border="0" alt="espaceur"></td>
+            <td valign="top">
+            <table border="0" cellpadding="0" cellspacing="3">
+                <tr>
+                    <td valign="top">
+                                                                                                        <img src="/wc/b/1/images/puce_on.png" border="0" alt="puce_on">
+                                                                                            </td>
+                </tr>
+            </table>
+            </td>
+            <td>
+                                                                                  <a href="/modules/fiches/fiches_maintenance.php"  class="menu">Fiches Contrat Maintenance</a>
+                        </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img src="/wc/b/1/images/espaceur.gif" width="1" height="10" border="0" alt="espaceur">
+            </td>
+        </tr>
+    </table>
+    
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+                        <td><img src="/wc/b/1/images/espaceur.gif" width="0" height="1" border="0" alt="espaceur"></td>
+            <td valign="top">
+            <table border="0" cellpadding="0" cellspacing="3">
+                <tr>
+                    <td valign="top">
+                                                                                                        <img src="/wc/b/1/images/puce_off.png" border="0" alt="puce_off">
+                                                                                            </td>
+                </tr>
+            </table>
+            </td>
+            <td>
+                                                                                  <a href="/modules/fiches/filiales.php"  class="menu">Fiches Contrat FILIALES</a>
+                        </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img src="/wc/b/1/images/espaceur.gif" width="1" height="10" border="0" alt="espaceur">
+            </td>
+        </tr>
+    </table>
+    
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+                        <td><img src="/wc/b/1/images/espaceur.gif" width="0" height="1" border="0" alt="espaceur"></td>
+            <td valign="top">
+            <table border="0" cellpadding="0" cellspacing="3">
+                <tr>
+                    <td valign="top">
+                                                                                                        <img src="/wc/b/1/images/puce_off.png" border="0" alt="puce_off">
+                                                                                            </td>
+                </tr>
+            </table>
+            </td>
+            <td>
+                                                                                  <a href="/modules/fiches/fiches_societe.php"  class="menu">Fiches Société</a>
+                        </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img src="/wc/b/1/images/espaceur.gif" width="1" height="10" border="0" alt="espaceur">
+            </td>
+        </tr>
+    </table>
+    
+        <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+                        <td><img src="/wc/b/1/images/espaceur.gif" width="0" height="1" border="0" alt="espaceur"></td>
+            <td valign="top">
+            <table border="0" cellpadding="0" cellspacing="3">
+                <tr>
+                    <td valign="top">
+                                                                                                        <img src="/wc/b/1/images/puce_off.png" border="0" alt="puce_off">
+                                                                                            </td>
+                </tr>
+            </table>
+            </td>
+            <td>
+                                                                                  <a href="/modules/fiches/fiches_produit.php"  class="menu">Fiches Produit</a>
+                        </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img src="/wc/b/1/images/espaceur.gif" width="1" height="10" border="0" alt="espaceur">
+            </td>
+        </tr>
+    </table>
+    
+                    
+            
+        </td>
+    </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="2" align="right">
+            <img src="/wc/b/1/images/separ_framegauche.gif" alt="separ_framegauche">
+            <br>
+            <br>
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td style="color: #FFFFFF; padding-left: 5px; font-size: 12px; font-weight: bold;">
+            Outils:
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <img src="/wc/b/1/images/espaceur.gif" width="1" height="10" border="0" alt="espaceur">
+        </td>
+    </tr>
+</table>
+<table border="0" cellpadding="5" cellspacing="0">
+    <tr>
+        <td valign="top">
+        
+                        
+                    <table border="0" cellpadding="0" cellspacing="0">
+        <tr>
+                        <td><img src="/wc/b/1/images/espaceur.gif" width="0" height="1" border="0" alt="espaceur"></td>
+            <td valign="top">
+            <table border="0" cellpadding="0" cellspacing="3">
+                <tr>
+                    <td valign="top">
+                                                                                                        <img src="/wc/b/1/images/puce_off.png" border="0" alt="puce_off">
+                                                                                            </td>
+                </tr>
+            </table>
+            </td>
+            <td>
+                                                                                  <a href="/logout.php"  class="menu">Déconnexion</a>
+                        </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img src="/wc/b/1/images/espaceur.gif" width="1" height="10" border="0" alt="espaceur">
+            </td>
+        </tr>
+    </table>
+    
+                    
+            
+        </td>
+    </tr>
+</table>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        <!-- Fin de menu izquierdo -->
+        </td>
+        <td valign="top">
+        <!-- Inicio de contenido -->
+        
+                        <style>
+
+        .button_gim{
+            float: left;
+            clear: none !important;
+            margin-right: 1em;
+        }
+
+        .montant{
+            display: block;
+            float: right;
+        }
+        .montant span{
+            font-weight: bold;
+        }
+        
+        .montant_p{
+            font-family: arial;
+            font-size: 12px;
+        }
+        
+        .warning_ventil{
+            font-family: arial;
+            font-size: 12px;
+            padding: 2em 1em 0 2em;
+            display:none;
+            color: #ff0000;
+        }
+    </style>
+    <script>
+        var familles_texte = new Array();
+                    familles_texte[12]="ADHESIONS ABONNEMENTS";
+                    familles_texte[11]="BLABLA";
+                    familles_texte[4]="CONSOMMABLES INFORMATIQUES, LECTEURS OPTIQUES, MATÉRIEL BORD DE LIGNE";
+                    familles_texte[10]="IT BIS TERTIAIRE";
+                    familles_texte[5]="LOCIGIELS COMMERCE FABRICATION TERTIAIRE";
+                    familles_texte[7]="LOGICIELS POUR L&#039;INFRASTRUCTURE INFORMATIQUE (SGBD, MESSAGERIE, BUREAUTIQUE, ETC..)";
+                    familles_texte[6]="LOGICIELS R&amp;D";
+                    familles_texte[8]="MATERIEL DE SECURITE D&#039;ACCES - LECTEURS DE BADGE#";
+                    familles_texte[1]="MATÉRIEL INFORMATIQUE SERVEUR STOCKAGE";
+                    familles_texte[2]="MATÉRIEL RÉSEAUX INFORMATIQUES, TÉLÉPHONIE, VISIO CONFÉRENCE";
+                    familles_texte[9]="POSTES DE TRAVAIL BUREAUTIQUES, INDUSTRIELS, CAO/CFAO, REALITE VIRTUELLE";
+                    familles_texte[3]="REPROGRAPHIE/EMF - IMPRIMANTE - SCANNER";
+        
+        var const_id_prevision_ventil = 8;
+        
+    </script>
+
+<div class='title_gim' style=' margin-left: 20px;'><div class='title_gim_d'></div><div class='title_gim_text'>Fiches Maintenance</div><div class='title_gim_g' style='width: 160; float:left;'></div></div>
+<div class="espaciado"></div>
+<div style="clear: both;">
+    <form style="margin-left: 20px;">
+        <table id="table">
+            <tr>
+                <td>
+                    <div class="button_gim"><div class="gauche"></div><div class="libelle" style="width :160px; float:left"><a href="javascript:showNewContrat()">Créer Fiche Maintenance</a></div><div class="droite"/></div></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div class="espaciado"></div>
+
+<div id="dialog_ajouter_suivis" style="display:none;">
+
+    <div>
+        <p class="montant_p">Le montant a changé.</p>
+        <p class="montant_p">Évolution du contrat: <b id="montant_initial_info"></b> <b id="montant_operator_info"></b> <b id="montant_difference_info"></b>&nbsp;&nbsp;&nbsp;TOTAL: <b id="montant_total_info"></b></p>
+        <p class="montant_p">Le processus terminera lorsque vous indiquez un commentaire d'évolution pour la ligne modifiée:</p>
+    </div>
+    <div class="round_corners">
+            <!-- CONTENT -->
+            <form id="form_suivi_evolutions" name="form_suivi_evolutions" class="form_gim">
+                <table align="center" style="width: 100%; height: 100%" border="0">
+                    <tr>
+                        <td class="titre">Montant Initial <span class="obligatory">*</span></td>
+                        <td class="form_input" style="width:150px; overflow:hidden">
+                            <input type="text" id="form_montant_initial" class="currency" style="width:90%" value="0" tabindex="1" />
+                        </td>
+
+                        <td class="titre">Nouveau montant <span class="obligatory">*</span></td>
+                        <td class="form_input" style="width:120px; overflow:hidden">
+                            <input type="text" id="form_montant_evolution" class="currency" style="width:90%" value="0" tabindex="2" />
+                        </td>
+
+                        <td class="titre" style="width:130px">Montant évolution</td>
+                        <td class="form_input" style="width:120px; overflow:hidden">
+                            <input type="text" id="form_montant_difference" class="currency" style="width:90%" value="0" tabindex="3" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titre">Date évolution <span class="obligatory">*</span></td>
+                        <td class="form_input" style="width:150px; overflow:hidden">
+                            <input type="text" id="form_date_evolution" onchange="convertDates(this);" class="datepicker" style="width:90%" tabindex="4" />
+                        </td>
+
+                        <td class="titre">Qualification évolution prévision <span class="obligatory">*</span></td>
+                        <td class="form_input" style="width:350px; overflow:hidden" colspan="3">
+                            <select id="form_qualification_evolution" tabindex="5" style="width: 100%" onchange="changePrevision();">
+                                                                    <option value="1">Hausse périmètre</option>
+                                                                    <option value="2">Réduction périmètre</option>
+                                                                    <option value="3">Dossier non prévu</option>
+                                                                    <option value="4">RESILIATION</option>
+                                                                    <option value="5">Renégo DA</option>
+                                                                    <option value="6">Renégo IRMC</option>
+                                                                    <option value="7">Ecart parité</option>
+                                                                    <option value="8">Ventil° / lignes</option>
+                                                                    <option value="9">PMT origine sous-évalué</option>
+                                                                    <option value="10">PMT origine sur-évalué</option>
+                                                                    <option value="11">Pas de Syntec</option>
+                                                                    <option value="12">Maintenance arrêtée</option>
+                                                                    <option value="13">Maintenance réinitialisée</option>
+                                                                    <option value="16">Bug chargt données ds OGM</option>
+                                                                    <option value="15">Doublon</option>
+                                                                    <option value="17">Pris en charge hors MAINT</option>
+                                                                    <option value="18">Découpage budgétaire diff</option>
+                                                                    <option value="19">Erreur de saisie</option>
+                                                                    <option value="20">Autre à justifier</option>
+                                                                    <option value="21">Nouvelle maintenance</option>
+                                                                    <option value="22">Objectif baisse chantier</option>
+                                                                    <option value="23">Ajustement tarifaire</option>
+                                                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titre">Commentaire évolution <span class="obligatory">*</span></td>
+                        <td class="form_input" style="width:150px; overflow:hidden">
+                            <input type="text" id="form_commentaire_evolution" tabindex="6" style="width:90%" />
+                        </td>
+
+                        <td class="titre">Piéce justificative</td>
+                        <td class="form_input" style="width:350px; overflow:hidden" colspan="3">
+                            <input type="text" id="form_piece_justificative" style="width:100%" tabindex="7" />
+                            <input type="text" id="form_id_ligne" style="display: none" />
+                            <input type="text" id="form_suivi_annee_budgetaire" style="display: none" />
+                            <input type="text" id="form_suivi_designation" style="display: none" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <!-- END CONTENT -->
+    </div>
+    <div class="espaciado"></div>
+</div>
+
+<div id="dialog_creer_modifier" style="display:none;">
+    <ul>
+        <li id="linktab1"><a href="#tabs1">Contrat Maintenance</a></li>
+        <li id="linktab2"><a href="#tabs2">Produits</a></li>
+        <li id="linktab3"><a href="#tabs3">Lignes Maintenance</a></li>
+        <li id="linktab4"><a href="#tabs4">Suivi Evolutions</a></li>
+    </ul>
+    <div id="tabs1">
+
+                <div class="round_corners">
+                    <!-- CONTENT -->
+
+                    <form id="form_contrat" name="form_contrat" class="form_gim">
+                        <table>
+                            <tr>
+                                <td class="titre" >Nom Contrat <span class="obligatory">*</span></td>
+                                <td class="form_input"><input style="width: 100%"  type="text" id="id_nom_contrat" tabindex="1" maxlength="400"/></td>
+                                <td class="titre">Nom Focalisation</td>
+                                <td class="form_input"><input type="text" id="id_nom_focalisation" tabindex="3" /></td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Fournisseur <span class="obligatory">*</span></td>
+                                 <td class="form_input">
+                                    <select id="id_fk_societe" style="width: 80%" tabindex="2" />
+                                    <option value="0"></option>
+                                                                            <option value="314">3DXCITE (REALTIME TECH.)</option>
+                                                                            <option value="319">A PRECISER</option>
+                                                                            <option value="34">ACCENTURE Belgique</option>
+                                                                            <option value="378">ACCENTURE SAS</option>
+                                                                            <option value="298">ACROLINX</option>
+                                                                            <option value="35">ADN</option>
+                                                                            <option value="282">ADOBE</option>
+                                                                            <option value="36">ADVANCE FIRST</option>
+                                                                            <option value="324">ALERTENTREPRISE</option>
+                                                                            <option value="37">ALLEN SYSTEM GROUP</option>
+                                                                            <option value="39">ALTAIR CONSULTING France</option>
+                                                                            <option value="40">ALTAVEN</option>
+                                                                            <option value="41">ANSYS</option>
+                                                                            <option value="284">APPLE</option>
+                                                                            <option value="328">AppSense</option>
+                                                                            <option value="42">APX SYNSTAR</option>
+                                                                            <option value="43">ARDANS</option>
+                                                                            <option value="300">ARISMORE</option>
+                                                                            <option value="316">ARKADIN</option>
+                                                                            <option value="44">ARKOON</option>
+                                                                            <option value="45">ARMADILLO</option>
+                                                                            <option value="46">ARPSON</option>
+                                                                            <option value="47">ART (Advanced Realtime Tracking)</option>
+                                                                            <option value="38">ARTEDAS</option>
+                                                                            <option value="48">ARVE INFORMATIQUE</option>
+                                                                            <option value="49">ASAIS</option>
+                                                                            <option value="307">ASAM</option>
+                                                                            <option value="50">ATEGO</option>
+                                                                            <option value="51">AUTODESK</option>
+                                                                            <option value="52">AUTOFORM</option>
+                                                                            <option value="354">AUTOMIC SOFTWARE S.A.S.</option>
+                                                                            <option value="53">AUTONOMY</option>
+                                                                            <option value="54">AVENCIS</option>
+                                                                            <option value="55">AVL FRANCE</option>
+                                                                            <option value="56">AXWAY</option>
+                                                                            <option value="2">BARCO</option>
+                                                                            <option value="57">BAYESIA</option>
+                                                                            <option value="58">BETA CAE Systems</option>
+                                                                            <option value="59">BLUE MEGA</option>
+                                                                            <option value="315">BLUEMEGA DOC & PRINT SERV</option>
+                                                                            <option value="334">BMC SOFTWARE DISTRIBUTION</option>
+                                                                            <option value="60">BOREAL</option>
+                                                                            <option value="327">Brainwave SAS</option>
+                                                                            <option value="3">BROCADE</option>
+                                                                            <option value="358">BULL SAS</option>
+                                                                            <option value="385">BUSINESS & DECISION</option>
+                                                                            <option value="61">CA TECHNOLOGIES</option>
+                                                                            <option value="4">CADVISION</option>
+                                                                            <option value="62">CAMO SOFTWARE</option>
+                                                                            <option value="63">CANON</option>
+                                                                            <option value="64">CARLZEISS</option>
+                                                                            <option value="65">CDB SOFTWARE</option>
+                                                                            <option value="66">CDH</option>
+                                                                            <option value="361">CECURITY</option>
+                                                                            <option value="67">CEDRAT</option>
+                                                                            <option value="68">CEGEDIM</option>
+                                                                            <option value="69">CEGID</option>
+                                                                            <option value="70">CENIT</option>
+                                                                            <option value="71">CETIM</option>
+                                                                            <option value="72">CINCOM</option>
+                                                                            <option value="73">CLEAR 2PAY</option>
+                                                                            <option value="74">CLEMESSY</option>
+                                                                            <option value="374">CLUB GROUPE</option>
+                                                                            <option value="355">COBOL IT</option>
+                                                                            <option value="75">CODRA</option>
+                                                                            <option value="76">COGIS</option>
+                                                                            <option value="77">COHERIS</option>
+                                                                            <option value="78">COMPUWARE</option>
+                                                                            <option value="79">COMSOFT</option>
+                                                                            <option value="360">CONVERGENT SCIENCE GMBH</option>
+                                                                            <option value="80">CPT GLOBAL</option>
+                                                                            <option value="81">CST</option>
+                                                                            <option value="82">CSTB</option>
+                                                                            <option value="83">CT CORETECHNOLOGIE</option>
+                                                                            <option value="331">DASSAULT 3DEXCITE</option>
+                                                                            <option value="84">DASSAULT SYSTEMES</option>
+                                                                            <option value="85">DATA INTERCHANGE</option>
+                                                                            <option value="86">DATAKIT</option>
+                                                                            <option value="33">DATAMATIQUE</option>
+                                                                            <option value="302">DATAVOTE</option>
+                                                                            <option value="359">DATAVOTE INTERNATIONAL</option>
+                                                                            <option value="87">DELCAM</option>
+                                                                            <option value="88">DELL</option>
+                                                                            <option value="89">DENYALL/VULNIT</option>
+                                                                            <option value="349">DESMAREZ</option>
+                                                                            <option value="287">DICTAO (Log)</option>
+                                                                            <option value="90">DICTAO (Mat)</option>
+                                                                            <option value="92">DISTENE</option>
+                                                                            <option value="320">DO YOU DREAM UP</option>
+                                                                            <option value="364">DOCUSIGN</option>
+                                                                            <option value="339">DPS</option>
+                                                                            <option value="93">DSPACE</option>
+                                                                            <option value="333">DYNATRACE</option>
+                                                                            <option value="94">E FRONT</option>
+                                                                            <option value="110">E-XSTREAM</option>
+                                                                            <option value="95">EADS APSYS</option>
+                                                                            <option value="158">EASYPRINT - LEXMARK</option>
+                                                                            <option value="96">ELEKTROBIT</option>
+                                                                            <option value="8">ELEXO</option>
+                                                                            <option value="97">EMC2</option>
+                                                                            <option value="98">EMSS</option>
+                                                                            <option value="99">ENGINEERING SYSTEMS</option>
+                                                                            <option value="100">ENNOV</option>
+                                                                            <option value="384">ENTCO FRANCE SAS</option>
+                                                                            <option value="101">ENVENTIVE Engineering</option>
+                                                                            <option value="102">EPSY International</option>
+                                                                            <option value="103">ERT GROUPE</option>
+                                                                            <option value="104">ESI France</option>
+                                                                            <option value="377">ESTECO</option>
+                                                                            <option value="105">ETAS</option>
+                                                                            <option value="10">ETRALI</option>
+                                                                            <option value="106">EURILOGIC</option>
+                                                                            <option value="107">EUROBIOS</option>
+                                                                            <option value="109">EUROXA</option>
+                                                                            <option value="292">EXALEAD pour DASSAULT SYSTEMES</option>
+                                                                            <option value="382">EXOTHERMIA</option>
+                                                                            <option value="363">FASTCONNECT</option>
+                                                                            <option value="111">FERMAT</option>
+                                                                            <option value="112">FREE FIELD TECHNOLOGIES</option>
+                                                                            <option value="113">GAMMA TECHNOLOGIES INC</option>
+                                                                            <option value="114">GENERIX</option>
+                                                                            <option value="115">GENESIS</option>
+                                                                            <option value="116">GEOCONCEPT</option>
+                                                                            <option value="117">GEOMAP</option>
+                                                                            <option value="118">GEOMEDIA</option>
+                                                                            <option value="119">GEOMETRIC</option>
+                                                                            <option value="368">GlassIG SA</option>
+                                                                            <option value="120">GMI CONNECTIVITY</option>
+                                                                            <option value="121">GOM</option>
+                                                                            <option value="308">GRANTA DESIGN LTD</option>
+                                                                            <option value="11">HAPTION</option>
+                                                                            <option value="122">HARDIS</option>
+                                                                            <option value="123">HBM France (NCODE)</option>
+                                                                            <option value="124">HEXAGON</option>
+                                                                            <option value="125">HITEX</option>
+                                                                            <option value="126">HOPEWISER</option>
+                                                                            <option value="15">HP Espagne</option>
+                                                                            <option value="127">HP France</option>
+                                                                            <option value="348">HP France SAS</option>
+                                                                            <option value="12">HP Grande-Bretagne</option>
+                                                                            <option value="14">HP Portugal</option>
+                                                                            <option value="16">HP Slovaquie</option>
+                                                                            <option value="17">HP Tchéquie</option>
+                                                                            <option value="129">HR ACCESS SOLUTIONS</option>
+                                                                            <option value="18">Hub telecom</option>
+                                                                            <option value="130">HUMAN SOLUTIONS</option>
+                                                                            <option value="340">IBELEM (RIM BLACKBERRY)</option>
+                                                                            <option value="131">IBM</option>
+                                                                            <option value="132">ICON</option>
+                                                                            <option value="380">IDEMIA</option>
+                                                                            <option value="133">IGE-XAO</option>
+                                                                            <option value="322">IGNITED3D</option>
+                                                                            <option value="134">IMACS</option>
+                                                                            <option value="135">IMAGE 2 OUTPUT</option>
+                                                                            <option value="136">IMMERSION</option>
+                                                                            <option value="137">IMPACT DESIGN, EUROPE</option>
+                                                                            <option value="356">IMS HEALTH</option>
+                                                                            <option value="138">IN MODELIA</option>
+                                                                            <option value="313">INFOPRINT SOLUTIONS RICOH</option>
+                                                                            <option value="140">INFOR</option>
+                                                                            <option value="357">INFORMATICA FRANCE</option>
+                                                                            <option value="141">INFOTEL</option>
+                                                                            <option value="142">INFOVISTA</option>
+                                                                            <option value="143">INGE COM</option>
+                                                                            <option value="345">INNOVAT° DATA PROCESSING</option>
+                                                                            <option value="330">INSIGHT TECHNOLOGY</option>
+                                                                            <option value="145">INTER AC</option>
+                                                                            <option value="288">INTESA</option>
+                                                                            <option value="371">IPETRONIK GMBH</option>
+                                                                            <option value="299">IPG AUTOMOTIVE GMBH</option>
+                                                                            <option value="387">IQVIA</option>
+                                                                            <option value="372">IT LINK</option>
+                                                                            <option value="21">ITC</option>
+                                                                            <option value="332">ITC ARIANE SERVICES</option>
+                                                                            <option value="146">IVALUA</option>
+                                                                            <option value="381">ivanti</option>
+                                                                            <option value="147">JLB</option>
+                                                                            <option value="148">KAP IP</option>
+                                                                            <option value="149">KB INTELLIGENCE</option>
+                                                                            <option value="150">KEONYS</option>
+                                                                            <option value="151">KEYNECTIS</option>
+                                                                            <option value="152">KIASTEK</option>
+                                                                            <option value="153">KINEOCAM</option>
+                                                                            <option value="375">KOFAX</option>
+                                                                            <option value="321">KUHN ET WEYH</option>
+                                                                            <option value="379">LANER GROUP</option>
+                                                                            <option value="154">LANNER Group</option>
+                                                                            <option value="155">LASCOM</option>
+                                                                            <option value="156">LE MOTEUR MODERNE</option>
+                                                                            <option value="157">LEGISWAY</option>
+                                                                            <option value="376">LENOVO GLOBAL TECHNOLOGIE</option>
+                                                                            <option value="280">LEOSTREAM (WALTHAM)</option>
+                                                                            <option value="351">LEXSI</option>
+                                                                            <option value="159">LINAGORA</option>
+                                                                            <option value="160">LINEDATA SERVICES</option>
+                                                                            <option value="161">LMBA</option>
+                                                                            <option value="162">LMS International</option>
+                                                                            <option value="283">LOGICA</option>
+                                                                            <option value="163">LOGYSIL/ALTELIOS</option>
+                                                                            <option value="278">LPRAI</option>
+                                                                            <option value="164">LUMISCAPHE</option>
+                                                                            <option value="165">MACRO 4</option>
+                                                                            <option value="166">MAGMASOFT</option>
+                                                                            <option value="370">MATERIALISE NV</option>
+                                                                            <option value="167">MECAMASTER</option>
+                                                                            <option value="22">Mechdyne/Fakespace/Holobench</option>
+                                                                            <option value="168">MEDIAPOST</option>
+                                                                            <option value="169">MENTOR GRAPHICS</option>
+                                                                            <option value="170">METROLOGIC GROUP</option>
+                                                                            <option value="172">MICRO-HOST</option>
+                                                                            <option value="171">MICROFOCUS</option>
+                                                                            <option value="173">MICROSOFT</option>
+                                                                            <option value="336">MICROSOFT FRANCE</option>
+                                                                            <option value="174">MINITAB</option>
+                                                                            <option value="175">MISSLER SOFTWARE</option>
+                                                                            <option value="176">MMD France</option>
+                                                                            <option value="346">MOODY S</option>
+                                                                            <option value="366">MOTOR DESIGN GROUP (UK)</option>
+                                                                            <option value="293">MSC Software (Les Ulis)</option>
+                                                                            <option value="177">MSC Software GMBH</option>
+                                                                            <option value="362">MULESOFT</option>
+                                                                            <option value="369">NEDAP FRANCE</option>
+                                                                            <option value="178">NEEVA</option>
+                                                                            <option value="289">NEOCASE</option>
+                                                                            <option value="179">NEOLANE</option>
+                                                                            <option value="23">NETWORK APPLIANCE Netapp</option>
+                                                                            <option value="180">NEXTIRAONE</option>
+                                                                            <option value="181">NIHON UNISYS LTD</option>
+                                                                            <option value="182">NOVELL</option>
+                                                                            <option value="183">NUMLOG</option>
+                                                                            <option value="337">NXTO France</option>
+                                                                            <option value="306">OBIANE (ex OBS)</option>
+                                                                            <option value="24">OBS</option>
+                                                                            <option value="285">OBS</option>
+                                                                            <option value="367">OCD (Orange CyberDéfense)</option>
+                                                                            <option value="25">OCE</option>
+                                                                            <option value="184">OKTAL</option>
+                                                                            <option value="185">ON X SA</option>
+                                                                            <option value="186">OPEN MIND SOFTWARE</option>
+                                                                            <option value="187">OPEN TEXT</option>
+                                                                            <option value="188">OPEN TEXT CORPORATION</option>
+                                                                            <option value="335">OPENTRUST (ex KEYNECTIS)</option>
+                                                                            <option value="189">OPTIS</option>
+                                                                            <option value="190">OR SYSTEM</option>
+                                                                            <option value="191">ORACLE</option>
+                                                                            <option value="192">ORME</option>
+                                                                            <option value="193">ORSYP</option>
+                                                                            <option value="194">ORTEMS</option>
+                                                                            <option value="195">PC SOFT</option>
+                                                                            <option value="325">PEAK Solution GMBH</option>
+                                                                            <option value="197">PHL SOFT</option>
+                                                                            <option value="386">PIKETEC GMBH</option>
+                                                                            <option value="309">PLANISWARE</option>
+                                                                            <option value="198">PLATFORM</option>
+                                                                            <option value="1">PM2S</option>
+                                                                            <option value="199">POLYQUARK</option>
+                                                                            <option value="383">POLYWORKS</option>
+                                                                            <option value="200">PRECISE</option>
+                                                                            <option value="201">PROGRESS SOFTWARE</option>
+                                                                            <option value="323">PROSTEP AG</option>
+                                                                            <option value="202">PROSYS</option>
+                                                                            <option value="203">PROSYST</option>
+                                                                            <option value="204">PSION TEKLOGIX  SA (pour MOTOROLA SOLUTIONS)</option>
+                                                                            <option value="342">PSION TEKLOGIX SA</option>
+                                                                            <option value="343">PTC</option>
+                                                                            <option value="310">Q-DAS FRANCE</option>
+                                                                            <option value="207">QAS france</option>
+                                                                            <option value="208">QUALYS</option>
+                                                                            <option value="209">QUEST SOFTWARE</option>
+                                                                            <option value="210">QUOTIUM TECHNOLOGIES</option>
+                                                                            <option value="211">RASTERTECH</option>
+                                                                            <option value="212">RBS</option>
+                                                                            <option value="213">REACTION DESIGN</option>
+                                                                            <option value="214">REALTIME TECHNOLOGY</option>
+                                                                            <option value="215">REPORTIVE</option>
+                                                                            <option value="216">REYNOLDS & REYNOLDS</option>
+                                                                            <option value="217">RIM - BLACKBERRY</option>
+                                                                            <option value="290">ROGUE WAVE</option>
+                                                                            <option value="219">ROMAX</option>
+                                                                            <option value="338">RSD</option>
+                                                                            <option value="291">S & T</option>
+                                                                            <option value="220">SAFIG</option>
+                                                                            <option value="221">SAGE</option>
+                                                                            <option value="222">SAMTECH</option>
+                                                                            <option value="223">SAP/ERP</option>
+                                                                            <option value="224">SAS INSTITUTE</option>
+                                                                            <option value="225">SCALABLE GRAPHICS</option>
+                                                                            <option value="226">SCAPOS</option>
+                                                                            <option value="296">SCC</option>
+                                                                            <option value="227">SCC (ex Symantec)</option>
+                                                                            <option value="228">SCC pour BOTTOMLIME</option>
+                                                                            <option value="128">SCC pour HP</option>
+                                                                            <option value="294">SCC pour ORACLE</option>
+                                                                            <option value="326">SCC pour VERITAS</option>
+                                                                            <option value="365">SCHNEIDER ELECTRIC FRANCE</option>
+                                                                            <option value="229">SD TOOLS</option>
+                                                                            <option value="230">SDWORX</option>
+                                                                            <option value="231">SEAL SYSTEMS</option>
+                                                                            <option value="27">SECAP Pitney Bowes</option>
+                                                                            <option value="232">SEGULA</option>
+                                                                            <option value="233">SELECT BUSINESS SOLUTIONS</option>
+                                                                            <option value="234">SENTE SOFTWARE</option>
+                                                                            <option value="235">SESCOI SA</option>
+                                                                            <option value="329">SFR BUSINESS SOLUTIONS</option>
+                                                                            <option value="236">SIEMENS INDUSTRY SOFT. SAS</option>
+                                                                            <option value="28">SIEMENS SAS</option>
+                                                                            <option value="237">SOFICO</option>
+                                                                            <option value="238">SOFTEK</option>
+                                                                            <option value="341">SOFTLINE (STR)</option>
+                                                                            <option value="239">SOFTWARE AG</option>
+                                                                            <option value="241">SOPRA</option>
+                                                                            <option value="29">SPIRENT</option>
+                                                                            <option value="242">SPRING</option>
+                                                                            <option value="353">STORMSHIELD (ex ARKOON)</option>
+                                                                            <option value="243">SUMMIT SYSTEMS SA</option>
+                                                                            <option value="244">SUN</option>
+                                                                            <option value="245">SUNGARD</option>
+                                                                            <option value="246">SWIFT</option>
+                                                                            <option value="247">SYMANTEC</option>
+                                                                            <option value="248">SYNCSORT</option>
+                                                                            <option value="249">SYNOPSYS</option>
+                                                                            <option value="250">SYSPERTEC</option>
+                                                                            <option value="373">SYSTANCIA</option>
+                                                                            <option value="251">SYSTEM PLUS</option>
+                                                                            <option value="252">SYSTRAN</option>
+                                                                            <option value="253">TEBIS</option>
+                                                                            <option value="254">TECHNET</option>
+                                                                            <option value="255">TECHNILOG</option>
+                                                                            <option value="350">TECHNIPRINT S</option>
+                                                                            <option value="256">TECHVIZ</option>
+                                                                            <option value="5">TELIMA INFOSERVICES</option>
+                                                                            <option value="30">TELINDUS</option>
+                                                                            <option value="31">THALES Security</option>
+                                                                            <option value="257">THE MATHWORKS</option>
+                                                                            <option value="258">THEOREM SOLUTION</option>
+                                                                            <option value="281">THERMOANALYTICS</option>
+                                                                            <option value="304">THERMOANALYTICS France</option>
+                                                                            <option value="286">THINK 3</option>
+                                                                            <option value="344">THINKSTEP</option>
+                                                                            <option value="259">TIBCO</option>
+                                                                            <option value="260">TNO AUTOMOTIVE SAFETY Sol</option>
+                                                                            <option value="347">TRADER S</option>
+                                                                            <option value="262">TRANSEPT</option>
+                                                                            <option value="279">TRANSVALOR</option>
+                                                                            <option value="263">TRESCAL</option>
+                                                                            <option value="264">TSYSTEMS</option>
+                                                                            <option value="317">UNIFACE</option>
+                                                                            <option value="265">UNISERV</option>
+                                                                            <option value="266">UNYCOM</option>
+                                                                            <option value="267">UPTIME SYSTEMS</option>
+                                                                            <option value="32">URW++</option>
+                                                                            <option value="268">VAL SOLUTIONS</option>
+                                                                            <option value="269">VALIANTYS</option>
+                                                                            <option value="303">VECTOR</option>
+                                                                            <option value="270">VERITY</option>
+                                                                            <option value="311">VIMP GMBH</option>
+                                                                            <option value="312">VISEO</option>
+                                                                            <option value="318">VISU</option>
+                                                                            <option value="271">WALLIX</option>
+                                                                            <option value="272">WEBEX COMMUNICATION</option>
+                                                                            <option value="273">WEBORAMA</option>
+                                                                            <option value="274">WOLFRAM</option>
+                                                                            <option value="276">X-PERTEAM</option>
+                                                                            <option value="275">XC ENGINEERING</option>
+                                                                            <option value="277">YRIS TECHNOLOGIES</option>
+                                                                        </select>
+                                </td>
+                                <td class="titre">Référence du contrat</td>
+                                <td class="form_input"><input style="width: 100%" type="text" id="id_description" tabindex="3" /></td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Acheteur <span class="obligatory">*</span></td>
+                                <td class="form_input">
+                                    <select id="id_id_acheteur" style="width: 80%" tabindex="4" />
+                                    <option value="0"></option>
+                                                                                                                    <option value="11">DELSAUT Manon</option>
+                                                                                                                                                            <option value="5">FICO Ornella</option>
+                                                                                                                                                                                                                                        <option value="9">HIDE Gabriel</option>
+                                                                                                                                                            <option value="2">JEUNESSE Camille</option>
+                                                                                                                                                                                                                                        <option value="7">NAZARIANS Alice</option>
+                                                                                                                                                            <option value="8">POUIT Stéphane</option>
+                                                                                                                                                            <option value="10">SUNDARA Vanissa</option>
+                                                                                                                <option disabled="disabled"></option>
+                                    <option disabled="disabled">==== ARCHIVE ====</option>
+                                    <option disabled="disabled"></option>
+                                                                                                                                                                                                                                                                            <option value="4">FITUSSI Aurelie</option>
+                                                                                                                                                                                                                                                                                                                    <option value="1">MUSSIER Etienne</option>
+                                                                                                                                                                                                                                                                                                                                                    </select>
+                                </td>
+                                <td class="titre">Type de Maintenance <span class="obligatory">*</span></td>
+                                <td class="form_input">
+                                    <select id="id_type_proposition" tabindex="5" />
+                                        <option value="0"></option>
+                                                                                    <option value="1">Logiciel</option>
+                                                                                    <option value="2">Matériel</option>
+                                                                                    <option value="3">Matériels/Loc</option>
+                                                                            </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Famille d'achat <span class="obligatory">*</span></td>
+                                <td class="form_input">
+                                    <select id="id_fk_familles" style="width: 4em" onchange="changeFamilleTexte();" tabindex="6" />
+                                    <option value="0"></option>
+                                                                            <option value="5">B87</option>
+                                                                            <option value="12">L04</option>
+                                                                            <option value="11">L22</option>
+                                                                            <option value="3">L73</option>
+                                                                            <option value="1">T02</option>
+                                                                            <option value="10">T03</option>
+                                                                            <option value="6">T04</option>
+                                                                            <option value="9">T05</option>
+                                                                            <option value="7">T06</option>
+                                                                            <option value="2">T23</option>
+                                                                            <option value="4">T40</option>
+                                                                            <option value="8">T43</option>
+                                                                        </select>
+                                    <input type="text" disabled="disabled" id="id_nom_famille" style="width: 200px;">
+                                </td>
+                                <td class="titre">Date d'achat <span class="obligatory">*</span></td>
+                                <td class="form_input"><input type="text" id="id_dateachat" onchange="convertDates(this);" class="datepicker" tabindex="7" /></td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Date Debut <span class="obligatory">*</span></td>
+                                <td class="form_input"><input type="text" id="id_date_debut" onchange="convertDates(this);" class="datepicker" tabindex="8" /></td>
+                                <td class="titre">
+                                    Date Fin
+                                    <span class="obligatory">*</span>
+                                </td>
+                                <td class="form_input">
+                                    <input
+                                        type="text"
+                                        id="id_date_fin"
+                                        onchange="convertDates(this);"
+                                        class="datepicker"
+                                        tabindex="9"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Préavis de résiliation <span class="obligatory">*</span></td>
+                                <td class="form_input">
+                                    <select id="id_preavis" tabIndex="10" onchange="calculateResiliation();">
+                                        <option value="0"></option>
+                                        <option value="1">1 Mois</option>
+                                        <option value="2">2 Mois</option>
+                                        <option value="3">3 Mois</option>
+                                    </select>
+                                </td>
+                                <td class="titre">Alerte résiliation <span class="obligatory">*</span></td>
+                                <td class="form_input"><input type="text" id="id_alerte_resiliation" disabled="disabled" /></td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Refacturation Pays <span class="obligatory">*</span></td>
+                                <td class="form_input">
+                                    <select id="id_pays" tabIndex="11">
+                                        <option value="0"></option>
+                                                                                    <option value="1">DASI</option>
+                                                                                    <option value="2">DAML</option>
+                                                                                    <option value="3">DRUC</option>
+                                                                                    <option value="4">CENTRAL</option>
+                                                                                    <option value="12">OPEL</option>
+                                                                            </select>
+                                </td>
+                                <td class="titre">Commentaire démarrage</td>
+                                <td class="form_input">
+                                    <input type="text" id="id_commentaire" tabindex="12" style="width: 80%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Risque résiliation <span class="obligatory">*</span></td>
+                                <td class="form_input">
+                                    <select id="id_risque_resiliation" tabIndex="13">
+                                        <option value="0"></option>
+                                                                                    <option value="1">Oui</option>
+                                                                                    <option value="2">Non</option>
+                                                                                    <option value="3">Peut-être</option>
+                                                                            </select>
+                                </td>
+                                <td class="titre">Commentaire Risque</td>
+                                <td class="form_input">
+                                    <input type="text" id="id_commentaire_risque" tabindex="14" style="width: 80%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Montant <span class="obligatory">*</span></td>
+                                <td class="form_input">
+                                    <input type="text" id="id_montant" value="0.00" class="currency" tabindex="15" onfocus="saveMontant(this);" onchange="testMontant(this);"/>
+                                    <input type="checkbox" id="id_avoirs"/>Avoirs
+                                </td>
+                                <td class="titre">Type de contrat <span class="obligatory">*</span></td>
+                                <td class="form_input">
+                                    <select id="id_fk_type_contrat" tabIndex="16">
+                                        <option value="0"></option>
+                                                                                    <option value="1">Achat</option>
+                                                                                    <option value="2">Location</option>
+                                                                                    <option value="3">(Inconnu)</option>
+                                                                            </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="titre">BU concernée</td>
+                                <td class="form_input">
+                                    <select id="id_fk_nom_bu" tabIndex="17">
+                                        <option value="0"></option>
+                                                                                                                                    <option value="1">SIPP</option>
+                                                                                                                                                                                <option value="7">ASTI/PSPI</option>
+                                                                                                                                                                                <option value="11">BPF</option>
+                                                                                                                                                                                <option value="13">Autres BU</option>
+                                                                                                                                                                                <option value="14">OPEL</option>
+                                                                                                                    </select>
+                                </td> <!--
+                                <td class="titre">Fichier</td>
+                                <td class="form_input">
+                                    <input type="text" id="id_fichier" tabindex="14" style="width: 80%>
+                                </td> -->
+                                </tr>
+                                <tr>
+                                <td class="titre"></td>
+                                <td class="form_input">
+                                    <input type="text" id="id_id" style="display: none">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="titre">Commentaires année en cours</td>
+                                <td class="form_input" colspan="3">
+                                    <input type="text" id="id_commentaire_annee" tabindex="18" style="width: 90%;" maxlength="1550">
+                            </td>
+                        </tr>
+                        </table>
+                    </form>
+
+                    <!-- END CONTENT -->
+                </div>
+        <div class="espaciado"></div>
+        <div class="button_gim"><div class="gauche"></div><div class="libelle" style="width :160px; float:left"><a href="javascript:habilitarMontant()">Changer Montant</a></div><div class="droite"/></div></div>
+
+        <span class="montant">
+            Total engagé: <span class="montant_total">0</span>,
+            Reste à engager: <span class="montant_restant">0</span>
+        </span>
+    </div>
+    <div id="tabs2">
+
+        <div class="round_corners">
+            <!-- CONTENT -->
+
+            <form id="form_produits" name="form_produits" class="form_gim">
+                <table align="center" style="width: 100%" border="0">
+                    <tr>
+                        <td class="titre">Produit <span class="obligatory">*</span></td>
+                        <td class="form_input">
+                            <select id="form_id_produits">
+                                <option value="0"></option>
+                                                            <option value="317">1 lic EXCITE_Designer pour la Chine (DASI)</option>
+                                                            <option value="206">1 lic RSD Folders Unix supp + upgrade de 25 à 150 util (MADD)</option>
+                                                            <option value="384">1 lic. PAM-ASSEMBLY + 1 lic. VISUAL MESH + 1 lic. SYSWELD</option>
+                                                            <option value="208">1 upgrade au dela de 150 util concurrents pour licence RSD Folders pour NSID</option>
+                                                            <option value="207">1 upgrade au-delà de 150 util concurrents pour la dernière licence RSD Folders (MADD)</option>
+                                                            <option value="59">200 L Bureautique PC loués</option>
+                                                            <option value="249">2011 uniquement : montée de version log pour mal voyant</option>
+                                                            <option value="60">202L Interventions  sur Périphériques</option>
+                                                            <option value="61">205L Bureautique interventions sur devis</option>
+                                                            <option value="390">25 lic INCA/EIP</option>
+                                                            <option value="16">25 WA</option>
+                                                            <option value="312">3 licences sup pour INCA DRIVE</option>
+                                                            <option value="414">3DVIA</option>
+                                                            <option value="357">3DVIA : 3 DVIA Virtools</option>
+                                                            <option value="526">3DVIA JTCadVerter Flottante</option>
+                                                            <option value="205">4 lic RSD Folders Unix (jusqu'à 25 util concurrents)</option>
+                                                            <option value="149">5 HOT FIX supplémentaires (uniq 2011)</option>
+                                                            <option value="46">700L Espagne</option>
+                                                            <option value="45">700L France</option>
+                                                            <option value="48">700L TRNAVA</option>
+                                                            <option value="47">700L UK</option>
+                                                            <option value="574">75 lic GENESYS pour le CTI de Bessancourt</option>
+                                                            <option value="13">800 L Espagne</option>
+                                                            <option value="11">800 L France</option>
+                                                            <option value="12">800 L Portugal</option>
+                                                            <option value="14">800 L Slovaquie</option>
+                                                            <option value="15">800 L Tchéquie</option>
+                                                            <option value="53">902 L Maintenance des PC et stations CFAO loués</option>
+                                                            <option value="462">A004</option>
+                                                            <option value="358">ABAQUS</option>
+                                                            <option value="361">ABAQUS : Loc 3 lic AFC et ABAQUS 2011 (3ème année en mars 2011)</option>
+                                                            <option value="359">ABAQUS : Loc lic Abaqus Chine : 3 lic CAE (DASI)</option>
+                                                            <option value="360">ABAQUS_MERCOSUR (DAML)</option>
+                                                            <option value="560">Achat 2 lic MOTORCAD</option>
+                                                            <option value="567">Achat de 3 lic Q DAS Solara + formation associée</option>
+                                                            <option value="262">Achat de lic post sur envir SUN Solaris pour l'Allemagne</option>
+                                                            <option value="261">Achat de lic post sur envir SUN Solaris pour la Pologne</option>
+                                                            <option value="260">Achat de lic post sur envir SUN Solaris pour la Slovaquie</option>
+                                                            <option value="476">Achat de lic SIM MANAGER</option>
+                                                            <option value="87">ACHAT DE LIC uniq 2012</option>
+                                                            <option value="175">Achat lic multi-postes MINITAB</option>
+                                                            <option value="429">Achat log en déc 10 LIS2010</option>
+                                                            <option value="264">Achat moter de recherche doc</option>
+                                                            <option value="569">Achat pack lic log VIMP pour le portail Video</option>
+                                                            <option value="554">Achat Support Telerik</option>
+                                                            <option value="352">Acq lic ADOBE Macintosh pour STYP</option>
+                                                            <option value="458">Acq lics MDCS et PCT pour le déport des calculs MATLAB</option>
+                                                            <option value="546">Acrolinx</option>
+                                                            <option value="237">Acronis</option>
+                                                            <option value="236">ActivPDF</option>
+                                                            <option value="398">ACTRAN</option>
+                                                            <option value="130">Adelia</option>
+                                                            <option value="90">adobe</option>
+                                                            <option value="86">ADOBE CS + ACROBAT PRO</option>
+                                                            <option value="79">Adobe Present Central Pro</option>
+                                                            <option value="441">ADVITIUM/CESARE</option>
+                                                            <option value="195">Aladin/Fadiese</option>
+                                                            <option value="592">AlertEnteprise</option>
+                                                            <option value="282">ALTAIR Jambe FLEX PLI</option>
+                                                            <option value="344">AMLS</option>
+                                                            <option value="182">AnaDefi</option>
+                                                            <option value="151">Anael Financial</option>
+                                                            <option value="535">Analyse cycle de vie GABI</option>
+                                                            <option value="30">Analyseur longues distances</option>
+                                                            <option value="29">Analyseurs de routeurs</option>
+                                                            <option value="334">ANSA Chine (DASI)</option>
+                                                            <option value="335">ANSA DPMO</option>
+                                                            <option value="331">Ansa France</option>
+                                                            <option value="336">ANSA Mercosur (DAML)</option>
+                                                            <option value="332">ANSA pour le Mercosur  (DAML)</option>
+                                                            <option value="444">APOGEE ACV</option>
+                                                            <option value="258">Applications Solveur & Routeur</option>
+                                                            <option value="508">ARENA</option>
+                                                            <option value="425">ARIS</option>
+                                                            <option value="70">Arpson</option>
+                                                            <option value="559">Asam pour accès doc d echange</option>
+                                                            <option value="388">ASCET/INTECRIO/EIP</option>
+                                                            <option value="168">Assistance et Maintenance Alicia RH</option>
+                                                            <option value="309">ATI Chine et AMLAT  (DASI) (DAML)</option>
+                                                            <option value="307">ATI Chine lic AUTORFORM (DASI)</option>
+                                                            <option value="407">ATOS TRITOP PCI</option>
+                                                            <option value="82">AUDACE  NEW EA Subscri Premise, ex : Accord Entreprise Microsoft</option>
+                                                            <option value="97">Auto Unload</option>
+                                                            <option value="490">AUTOCAD</option>
+                                                            <option value="302">Autocad Russie (DRUC)</option>
+                                                            <option value="404">autodesk autocad map</option>
+                                                            <option value="303">AUTOFORM</option>
+                                                            <option value="310">Autoform pour DCH/ASC</option>
+                                                            <option value="400">AUTOSAR BUILDER/REQTIFY/RTBUILDER</option>
+                                                            <option value="217">avenant 11</option>
+                                                            <option value="442">AVL DRIVE</option>
+                                                            <option value="54">Avoir sur dossier Support Calcul CFD</option>
+                                                            <option value="91">AXWAY INTEGRATOR</option>
+                                                            <option value="136">BAC + PC (nvelle dénomination à partir de 2011)</option>
+                                                            <option value="241">BAFI + FINREP</option>
+                                                            <option value="222">Bag/Conso - Mics- Statistiques</option>
+                                                            <option value="1">Baies de stockage + logiciels associés</option>
+                                                            <option value="223">Bâle 2 - serveurs + postes clients</option>
+                                                            <option value="225">Bâle 2 : Migration X86, SAS V9 et Oracle 10g</option>
+                                                            <option value="212">Base Folders MADD sous Unix avec API illimitées</option>
+                                                            <option value="330">BAYESIALab</option>
+                                                            <option value="577">BCC</option>
+                                                            <option value="378">BD STYLE</option>
+                                                            <option value="181">BDTE</option>
+                                                            <option value="259">BL Unix Post + OE- unix Post + Projet Sysame</option>
+                                                            <option value="94">BlackBerry</option>
+                                                            <option value="313">BOOST</option>
+                                                            <option value="38">Bras virtuose HW+SW</option>
+                                                            <option value="428">BunkSpeed + Achats logs Bunkspeed pour l'ATI Chine (DASI)</option>
+                                                            <option value="108">CA Gen (Coolgen/Advantage Gen)</option>
+                                                            <option value="525">CADVERTER Bresil  (DAML)</option>
+                                                            <option value="523">CADVERTER pour la Chine (DASI)</option>
+                                                            <option value="524">CADVERTER5</option>
+                                                            <option value="104">CAIDE - Lic Panorama E2 - Clients et Serveurs</option>
+                                                            <option value="389">CALIBRATION INCA</option>
+                                                            <option value="582">CANDELA (QuickWin)</option>
+                                                            <option value="415">CATIA</option>
+                                                            <option value="367">CATIA : CAO-3D Master - Acq Lic 2D Layout</option>
+                                                            <option value="416">CATIA Support SUN</option>
+                                                            <option value="371">CATUNV5</option>
+                                                            <option value="437">CAVA V5</option>
+                                                            <option value="3">CES</option>
+                                                            <option value="349">CETIM-COBRA (licences Monde)</option>
+                                                            <option value="92">CFT G3 + Secure Transport + Central Gouvernance</option>
+                                                            <option value="498">CHEMKIM</option>
+                                                            <option value="263">Chimed</option>
+                                                            <option value="77">Citrix (sessions + incidents) + Support</option>
+                                                            <option value="63">CKP Support & maintenance - Gateway</option>
+                                                            <option value="2">CMS</option>
+                                                            <option value="537">Cody Draw</option>
+                                                            <option value="170">Colombus OM+colombus central</option>
+                                                            <option value="36">Colorimétrie Style</option>
+                                                            <option value="532">COM/VPM</option>
+                                                            <option value="370">Compilateur Intel pour Linux</option>
+                                                            <option value="593">Compilateur Intel pour Windows</option>
+                                                            <option value="544">Compl de lic EVOLAN pour fourniture Ratio de liquididté Bill</option>
+                                                            <option value="570">Compl de lic SAP Business One Projet CMI</option>
+                                                            <option value="573">Compl mnt Sopra pour util Schema A pour la Belgique</option>
+                                                            <option value="314">CONCERTO</option>
+                                                            <option value="121">Confiance</option>
+                                                            <option value="132">Contrat 1er (nvelle dénomination à partir de 2011)</option>
+                                                            <option value="138">Contrat 1er (nvelle dénomination à partir de 2011)</option>
+                                                            <option value="600">Contrat AppleCare OS - Prefererd pour Terminaux iOS Groupe</option>
+                                                            <option value="99">contrat de services declaratifs - portail ETAFI</option>
+                                                            <option value="461">Contrat global 1ère année de loc 2011</option>
+                                                            <option value="216">contrat initial + avenant 5</option>
+                                                            <option value="41">Contrat MMSS + Support VTL</option>
+                                                            <option value="158">Contrathèque</option>
+                                                            <option value="588">Converge</option>
+                                                            <option value="351">COREL / Painter</option>
+                                                            <option value="65">Cortex-PDB & Cortex-Redesign- (Sisro) - Workload Planner</option>
+                                                            <option value="497">CORVET Mobile</option>
+                                                            <option value="401">COSIMATE</option>
+                                                            <option value="491">COVADIS</option>
+                                                            <option value="430">Craft Animations</option>
+                                                            <option value="396">Croissance lic client Powerflow</option>
+                                                            <option value="368">CROSSXPERT</option>
+                                                            <option value="28">Cryptographiques</option>
+                                                            <option value="64">Daisie</option>
+                                                            <option value="372">DATA LOADER</option>
+                                                            <option value="173">Dataset vision</option>
+                                                            <option value="118">DCS (Sodexa)</option>
+                                                            <option value="468">Deamon Flexlm/EBM</option>
+                                                            <option value="417">DELMIA /CATIA + Avenants 10 et 33 (une seule ligne à partir de 11/12)</option>
+                                                            <option value="419">DELMIA : Avenant 18</option>
+                                                            <option value="362">DELMIA : IGRIP</option>
+                                                            <option value="366">DELMIA : Lic DELMIA Robotique Automation pour simulation Emboutissage</option>
+                                                            <option value="365">DELMIA : Log MCM</option>
+                                                            <option value="274">Déploiement de l'outil de gestion de câblage ORGABAT</option>
+                                                            <option value="500">DESIGNER 1 et 2</option>
+                                                            <option value="408">DesignLife</option>
+                                                            <option value="96">dev spécifique stations chêques UK</option>
+                                                            <option value="112">DHTMLX</option>
+                                                            <option value="50">DI800 mise sous plis</option>
+                                                            <option value="503">Direct Transport Compositor</option>
+                                                            <option value="128">DISPATCHER/OPTRANS</option>
+                                                            <option value="192">Dollar Universe</option>
+                                                            <option value="418">DOORS RMF</option>
+                                                            <option value="80">DRM</option>
+                                                            <option value="167">DTK V2</option>
+                                                            <option value="230">DVS Loader</option>
+                                                            <option value="267">EAI Suic V1</option>
+                                                            <option value="377">EB GUIDE STUDIO</option>
+                                                            <option value="129">Ebanks</option>
+                                                            <option value="347">EcoPaint Simulation</option>
+                                                            <option value="55">Ecran station CFAO</option>
+                                                            <option value="214">Edibase</option>
+                                                            <option value="453">EDIRIS</option>
+                                                            <option value="100">EDITAXE</option>
+                                                            <option value="164">Ekip</option>
+                                                            <option value="486">EnginFrame</option>
+                                                            <option value="364">ENOVIA V6</option>
+                                                            <option value="374">ENSIGHT GOLD</option>
+                                                            <option value="229">Enterprise Architect Corporate</option>
+                                                            <option value="382">Enventive</option>
+                                                            <option value="210">EOS, EPS, RSD - 16 serveurs EOS OS390, EPS, 1200 EOS Workplace, 500 licences RSD et Complément de mnt pour 1500 lic EOS TC, 500 lic RSD Forders TC, Lic. RSD AFP View. + 500 lic Thin Client sur RSD FOLD. z/OS</option>
+                                                            <option value="553">EPAK</option>
+                                                            <option value="189">Essbase</option>
+                                                            <option value="143">Etude optimisation consommation Mainframe</option>
+                                                            <option value="585">EVA</option>
+                                                            <option value="243">Evolan Report modèle CRT</option>
+                                                            <option value="244">Evolan Report Pack sécurité</option>
+                                                            <option value="238">Evolan Report V3</option>
+                                                            <option value="240">Evolan Risk V9</option>
+                                                            <option value="245">Evolan Treasury</option>
+                                                            <option value="124">EXALEAD : Exalead Cloudview</option>
+                                                            <option value="141">Exceed</option>
+                                                            <option value="549">Excel Writer V8,6</option>
+                                                            <option value="315">EXCITE</option>
+                                                            <option value="320">EXCITE 2 lic FEA Input Linear (EIA)+1lic Excite Designer</option>
+                                                            <option value="316">EXCITE pour la Chine (DASI)</option>
+                                                            <option value="319">EXCITE Powertrain Dynamics pour la Chine (DASI)</option>
+                                                            <option value="318">EXCITE_excite timing drive</option>
+                                                            <option value="150">Expense Manag. ASTER</option>
+                                                            <option value="596">Extension de maintenance Liquidity Ratios</option>
+                                                            <option value="109">Extension Introscope - Introscope</option>
+                                                            <option value="148">Extension support Version Domino 7</option>
+                                                            <option value="511">Factory Flow</option>
+                                                            <option value="191">Falconstor</option>
+                                                            <option value="469">FAO_TopSolid CAM</option>
+                                                            <option value="348">FASTRIM et FASTRIM pour Rennes (1 seule ligne pour Fastrim)</option>
+                                                            <option value="156">FDR / CPK / FDR Instant / FDR Upstreams USS - PY & BE</option>
+                                                            <option value="379">FEKO</option>
+                                                            <option value="125">Fermat CAD</option>
+                                                            <option value="434">FIPER (abandon Isight)</option>
+                                                            <option value="321">FIRE</option>
+                                                            <option value="540">flow3d</option>
+                                                            <option value="285">Fluent</option>
+                                                            <option value="345">FLUX 2D</option>
+                                                            <option value="433">FoamPro</option>
+                                                            <option value="529">Forge 2 et Forge 3</option>
+                                                            <option value="505">FORM XPRESS maint PCM</option>
+                                                            <option value="479">FT MASTER SOCHAUX/VELIZY/PROXY OFTP2</option>
+                                                            <option value="443">GEDIX</option>
+                                                            <option value="179">Genesys "Cusco/Matrix"</option>
+                                                            <option value="178">Genesys - Maint Support Plateformes téléphoniques de BPF</option>
+                                                            <option value="342">GEOMAGIC STUDIO</option>
+                                                            <option value="405">GEOMAP</option>
+                                                            <option value="406">GEOMCALIPER</option>
+                                                            <option value="209">Glass</option>
+                                                            <option value="409">GLYPHWORKS</option>
+                                                            <option value="470">GOELAN</option>
+                                                            <option value="561">Gomez Data Center Real User Monitoring</option>
+                                                            <option value="565">GRANTA</option>
+                                                            <option value="399">GT-POWER Lease 20 GUI + 20 solver</option>
+                                                            <option value="169">GUPTA</option>
+                                                            <option value="531">HASTING</option>
+                                                            <option value="17">HDI029 France</option>
+                                                            <option value="51">HDI046 Fluent Linux</option>
+                                                            <option value="273">Hebergement et mnt CAPFOR</option>
+                                                            <option value="105">Horus</option>
+                                                            <option value="6">HP 01XA</option>
+                                                            <option value="598">HP Exstream</option>
+                                                            <option value="137">HP00</option>
+                                                            <option value="140">HR Access</option>
+                                                            <option value="481">HYPERMILL</option>
+                                                            <option value="279">HYPERWORKS</option>
+                                                            <option value="194">I3 - Indepth & Interpoint (ex - Precise) / Precise for Data Base DB2 et SQL</option>
+                                                            <option value="289">ICARE</option>
+                                                            <option value="354">ICARE</option>
+                                                            <option value="420">ICEM 42 lic ISD Avenant 16</option>
+                                                            <option value="422">ICEM : SURF CHINE (DASI)</option>
+                                                            <option value="423">ICEM : SURF France</option>
+                                                            <option value="424">ICEM : SURF MERCOSUR (DAML)</option>
+                                                            <option value="533">IDEAS France/Chine et Mercosur (DASI)(DAML)</option>
+                                                            <option value="311">IDOL Vs ex K2</option>
+                                                            <option value="66">IFI Manager (ex fiscalis) (produit remplacé par OPTIM'ES fin 2010 )</option>
+                                                            <option value="445">ImaginLab_AMESim/AMESim croissance</option>
+                                                            <option value="39">Imprimante Hpdesinjet 3d</option>
+                                                            <option value="49">Imprimante VS7200</option>
+                                                            <option value="122">Indice</option>
+                                                            <option value="152">InfoPak DL1 et Dialog</option>
+                                                            <option value="153">Infovista</option>
+                                                            <option value="120">Inside</option>
+                                                            <option value="201">INSYNC</option>
+                                                            <option value="266">Integration Platform - SIDM</option>
+                                                            <option value="277">INTERCEPT maint PCM</option>
+                                                            <option value="25">IP2010 (IBM)</option>
+                                                            <option value="24">IP2010 (OBS)</option>
+                                                            <option value="536">IPMS</option>
+                                                            <option value="26">IRONPORT</option>
+                                                            <option value="197">Isodraw</option>
+                                                            <option value="147">Jconfigurator</option>
+                                                            <option value="73">JIRA ENTREPRISE COMMERCIAL + Plugins (une seule ligne à partir de 2011)+Jira Orasi</option>
+                                                            <option value="435">JLB-NET</option>
+                                                            <option value="509">JMATPRO</option>
+                                                            <option value="202">Jprobe Suite licence flottante 30 jetons - aller sur page web</option>
+                                                            <option value="541">Justinmind Prototyper</option>
+                                                            <option value="160">K.STAMP</option>
+                                                            <option value="218">KA</option>
+                                                            <option value="159">KAP IT</option>
+                                                            <option value="436">KB CRAWL</option>
+                                                            <option value="450">KBM EDIRIS  maintPCM - Gael</option>
+                                                            <option value="439">KPP</option>
+                                                            <option value="463">L001/CHS/CAPM</option>
+                                                            <option value="464">L009 : ligne reprise dans contrat global</option>
+                                                            <option value="465">L016 - CHINE (DASI)</option>
+                                                            <option value="466">L017</option>
+                                                            <option value="467">L018</option>
+                                                            <option value="52">Lecteurs optiques</option>
+                                                            <option value="581">Lic ADD</option>
+                                                            <option value="295">Lic éditeur SYSML 177AD</option>
+                                                            <option value="451">Lic ERP PCM</option>
+                                                            <option value="457">Lic fixes Matlab pour DCTC/VCT - otpimisation INCA</option>
+                                                            <option value="551">Lic LN ex Lic KBM</option>
+                                                            <option value="543">Lic Moody's Riskauthority-Riskfoundation</option>
+                                                            <option value="566">Lic Planisware et I DATA</option>
+                                                            <option value="324">Lic suite (compléments lic FIRE)</option>
+                                                            <option value="583">Lic THEMA</option>
+                                                            <option value="255">Licence SSI OPC ESSER</option>
+                                                            <option value="325">Licences CRETA et CRETA Lite</option>
+                                                            <option value="499">Licences RTT (y compris DELTAGEN au 01 01 12)</option>
+                                                            <option value="480">Licences SCANER : 1 ligne en 2012</option>
+                                                            <option value="478">Lightmagic</option>
+                                                            <option value="166">LLD</option>
+                                                            <option value="328">Loc 1 lic cfdwm+1lic Impresschart pour la Chine (DASI)</option>
+                                                            <option value="329">Loc 1 lic excite designer+1lic excite poxertrain dynamics our la Chine (DASI)</option>
+                                                            <option value="571">Loc 1 lic PowerAcoustics</option>
+                                                            <option value="308">Loc 2 lic ATI Chine lic AUTORFORM (DASI)</option>
+                                                            <option value="280">Loc 2012 jetons hyperworks pour ONE STEP</option>
+                                                            <option value="287">Loc annuelle de 2 lic post et 2 lic TGRID</option>
+                                                            <option value="341">Loc ANSA pour DCH/ASC (Chine) (DASI)</option>
+                                                            <option value="306">Loc Autoform pour Brésil</option>
+                                                            <option value="339">Loc d'1 lic CATIA V5 Traducteur</option>
+                                                            <option value="373">Loc d'1 lic CATIA V5 Traducteur</option>
+                                                            <option value="340">Loc de 1600 jetons ANSA (1400BEX+200BV)</option>
+                                                            <option value="518">Loc de 2 lic Madymo Chine (DASI)</option>
+                                                            <option value="528">Loc de 2 lic supp Radtherm pour AERO</option>
+                                                            <option value="337">Loc de 3 lic ANSA pour le MERCOSUR (DAML)</option>
+                                                            <option value="283">Loc de 3500 jetons MDEPEN pour le Mercosur (DAML)</option>
+                                                            <option value="338">Loc de 5 lic ANSA pour le MERCOSUR (DAML)</option>
+                                                            <option value="305">Loc de lic. Autoform pour la Chine (DASI)</option>
+                                                            <option value="380">Loc extension DMP des lic SMP Sysweld</option>
+                                                            <option value="322">Loc lic  FIRE paralleles et solveur</option>
+                                                            <option value="284">Loc lic GridWorksUnits pour util MDEPEN en Chine (DASI)</option>
+                                                            <option value="579">Loc lic mannequins/barrières RADIOSS périmètre Chine (2ème année en 2013)</option>
+                                                            <option value="580">Loc mannequin WorldSid France (mars/avril 2013)</option>
+                                                            <option value="355">Loc mod "radiosité et particule"ICARE</option>
+                                                            <option value="323">Loc modules PAC FIRE 2ème année</option>
+                                                            <option value="485">Loc upgrade GABI5</option>
+                                                            <option value="327">Location 2 lic module multiphasique Fire</option>
+                                                            <option value="304">Location 4ème année de 2 licences pour la Chine (DASI)</option>
+                                                            <option value="397">Location DIGIMAT lic Client</option>
+                                                            <option value="502">Location du log SAMCEF</option>
+                                                            <option value="587">Location jetons Romax pour module NVH</option>
+                                                            <option value="56">Location PCF postes de bord de lignes</option>
+                                                            <option value="460">LOCATIONS MENTOR</option>
+                                                            <option value="356">Log 3D Evolution</option>
+                                                            <option value="115">Log MVS</option>
+                                                            <option value="550">Lorentz III</option>
+                                                            <option value="23">lot H3C CISCO POLYCOM</option>
+                                                            <option value="394">Lot2_PowerCASE_PowerVIZ_
+PowerPREP,PowerClay,PowerExport,PowerSpectrum, Power DELTA (ex PowerWrap) (lic. CLIENTS)</option>
+                                                            <option value="487">LSF</option>
+                                                            <option value="586">M/TEST </option>
+                                                            <option value="515">MADYMO</option>
+                                                            <option value="517">MADYMO Amérique Latine (DAML)</option>
+                                                            <option value="516">MADYMO Chine (DASI)</option>
+                                                            <option value="455">MAGMASOFT + CLUSTER</option>
+                                                            <option value="220">Magnitude</option>
+                                                            <option value="107">MAINFRAME (contrat cadre + application)</option>
+                                                            <option value="103">maintenance corrective synauto</option>
+                                                            <option value="269">Maintenance et support</option>
+                                                            <option value="597">Maintenance SURFI BCE 33/34</option>
+                                                            <option value="292">Maintenance téléphonique</option>
+                                                            <option value="101">Mantis</option>
+                                                            <option value="472">MASTERKEY Worldwild ex ADAMS+MASTERKEY Country ex NASTRAN/EALU+Mnt migration NASTRAN contrat d'application du 010611</option>
+                                                            <option value="10">Mat bord de ligne</option>
+                                                            <option value="495">MATHCAD</option>
+                                                            <option value="539">MATHEMATICA</option>
+                                                            <option value="456">MATLAB (ts pdts MATLAB en 2011) + Polyspace</option>
+                                                            <option value="459">MECAmaster Assembly Windows + module pour liaisons au sol</option>
+                                                            <option value="286">Mechanical + VPS</option>
+                                                            <option value="172">MediaPost</option>
+                                                            <option value="68">Médiathèque Citroen</option>
+                                                            <option value="69">Médiathèque Peugeot</option>
+                                                            <option value="95">Megaform</option>
+                                                            <option value="333">Meta post</option>
+                                                            <option value="78">MEX 400</option>
+                                                            <option value="492">MEZZOTEAM ex GAPIA au 01 01 11</option>
+                                                            <option value="40">MIA403</option>
+                                                            <option value="75">Microfocus/Cobol</option>
+                                                            <option value="353">Microwave Studio (MWS)</option>
+                                                            <option value="568">Miles</option>
+                                                            <option value="471">MIND MANAGER</option>
+                                                            <option value="595">Mnt Compliance Report Schéma A</option>
+                                                            <option value="57">Mnt Marques Réseau Propre France</option>
+                                                            <option value="239">Modèle Finrep d'Evolan Report V3</option>
+                                                            <option value="165">Module Ekip SRA</option>
+                                                            <option value="98">Modules campagne fiscale "ETAFI réseau"</option>
+                                                            <option value="301">MOLDFLOW</option>
+                                                            <option value="215">Mutualisé- BdDesigner, Explorer, Reporter forwiew, supervisor</option>
+                                                            <option value="473">MVISION</option>
+                                                            <option value="512">NCSIMUL</option>
+                                                            <option value="411">NCSpeed</option>
+                                                            <option value="449">NEMRODW</option>
+                                                            <option value="293">NERO</option>
+                                                            <option value="248">Netbackup server</option>
+                                                            <option value="477">Neuro one + Neuro fit</option>
+                                                            <option value="186">NEW Jess</option>
+                                                            <option value="176">New SI GestionFormation</option>
+                                                            <option value="231">Nomad</option>
+                                                            <option value="134">Nouvelle ligne en 2011 : log qui remplace les sondes Marsys : HB BAC Anywhere</option>
+                                                            <option value="211">Nouvelles Licences RSD Folders UNIX</option>
+                                                            <option value="85">Nvel accord de souscription pour les pdts "on premise"</option>
+                                                            <option value="84">Nvel accord de souscription pour les pdts "online"</option>
+                                                            <option value="226">Nvelle ligne 2012 : environnement ZOS/capée à 200 MSU avec une évol vers 2 modules (Base et Connect)</option>
+                                                            <option value="227">Nvelle ligne 2012 : utilisation SAS en mode Full Capacity sur 3 machines physiques X86  16 ou 24 c?urs</option>
+                                                            <option value="228">Nvelle ligne en 2012 : Renouv. Profit clients PSA Postes clients + accès étranger</option>
+                                                            <option value="299">Nvelle Répart en 2011 : Argentine  (DAML)</option>
+                                                            <option value="296">Nvelle répart en 2011 : BRESIL (3DS3/Maya/Showcase)  (DAML)</option>
+                                                            <option value="297">Nvelle répart en 2011 : CHINE (3DS3/Acad/Automotive/Surface) (DASI)</option>
+                                                            <option value="298">Nvelle Répart en 2011 : France (3DS3/Automotive/Maya/Mudbox/Showcase/Surface)</option>
+                                                            <option value="288">OBJECTARCHIVE</option>
+                                                            <option value="256">Objectstar</option>
+                                                            <option value="116">Odex</option>
+                                                            <option value="117">Odex Solaris</option>
+                                                            <option value="494">ODIL2/VISUAL</option>
+                                                            <option value="542">On premises Real User Monitoring Analysis Units</option>
+                                                            <option value="589">OpenPDM</option>
+                                                            <option value="482">OpenText Content Srver/Livelink</option>
+                                                            <option value="548">OpenTrust Enterprise PKI</option>
+                                                            <option value="392">OPTIMOD</option>
+                                                            <option value="489">ORACLE DATA SERVER</option>
+                                                            <option value="183">Oracle DataBase+GlassFish+outils associés ex : Oracle DB services de support Oracle + IAM + Jess</option>
+                                                            <option value="184">Oracle hors DATA BASE</option>
+                                                            <option value="185">ORACLE Identity manager : IAM+RAC+RAT+ActivDataGuard+Compression+Outils associés</option>
+                                                            <option value="278">ORCAD</option>
+                                                            <option value="139">Orchestrateur+UCMDB+Release Control</option>
+                                                            <option value="22">Oscar</option>
+                                                            <option value="383">OSIFIAB+</option>
+                                                            <option value="547">Outil de modélisation d'environnement véhicule</option>
+                                                            <option value="506">Outils d'analyse pour la réponse viscoélastique et acoustique</option>
+                                                            <option value="33">PABX</option>
+                                                            <option value="34">PABX</option>
+                                                            <option value="35">PABX de la salle des marchés du groupe</option>
+                                                            <option value="504">Pack Assistant V3.1 en déc 10 (4ème année)</option>
+                                                            <option value="385">PAMSTAMP 2G</option>
+                                                            <option value="31">PAOLO ALTO</option>
+                                                            <option value="155">Part LOG+MAT- Serveur Rightfax à Ryton + Poissy+Espagne</option>
+                                                            <option value="454">PATCHWORK3D croissance</option>
+                                                            <option value="71">PDF Converter pro</option>
+                                                            <option value="599">Peak ODS Server</option>
+                                                            <option value="187">Peoplesoft GRC CRM Support Personnalisé</option>
+                                                            <option value="188">Peoplesoft GRC CRM Support Standard</option>
+                                                            <option value="250">PGP CommandLine</option>
+                                                            <option value="193">PHL XML</option>
+                                                            <option value="402">Plateforme de simulation électrique</option>
+                                                            <option value="562">PLM Catia V6</option>
+                                                            <option value="563">PLM Delmia V6</option>
+                                                            <option value="564">PLM Enovia V6</option>
+                                                            <option value="281">PLM NUM CHOC  loc mannequin ES2 FTSS</option>
+                                                            <option value="412">POINTMASTER maintPCI</option>
+                                                            <option value="294">POWER DVD</option>
+                                                            <option value="395">POWERFLOW</option>
+                                                            <option value="369">Powermill CV5, Rhino</option>
+                                                            <option value="590">PPM/MASHZONE</option>
+                                                            <option value="381">PRISMA</option>
+                                                            <option value="493">PRO AEC (ou PRO PLAN)</option>
+                                                            <option value="131">Probe pour NSID</option>
+                                                            <option value="126">Profinance + Développements commandés</option>
+                                                            <option value="446">Programme AMESIM 100+</option>
+                                                            <option value="157">Projet E PROCUREMENT</option>
+                                                            <option value="290">Projet SESAME</option>
+                                                            <option value="161">Projur - JURITECH</option>
+                                                            <option value="393">ProSpecT V2</option>
+                                                            <option value="83">Provision pour le 1/3 de 1412160? - Report de New EA suscription 2012</option>
+                                                            <option value="58">PSA Box</option>
+                                                            <option value="4">Pyramide ESPAGNE</option>
+                                                            <option value="5">Pyramide Slovaquie</option>
+                                                            <option value="438">Q CHECKER</option>
+                                                            <option value="391">QAC et MISRA</option>
+                                                            <option value="135">QC (nvelle dénomination à partir de 2011)</option>
+                                                            <option value="200">Qualysguard</option>
+                                                            <option value="257">Quick EDD & Archiv</option>
+                                                            <option value="198">quickadress pour CITROEN</option>
+                                                            <option value="199">quickadress pour PEUGEOT</option>
+                                                            <option value="410">QUINDOS</option>
+                                                            <option value="272">Quizz Manager</option>
+                                                            <option value="32">Radio "BIP"</option>
+                                                            <option value="527">RADTHERM</option>
+                                                            <option value="413">RAMSIS</option>
+                                                            <option value="213">Recherche Homonymie</option>
+                                                            <option value="9">Régularisations hors contrats</option>
+                                                            <option value="572">Remplaçant de Cody Draw</option>
+                                                            <option value="452">Remplacement Broker SAM - Achat log Leostream</option>
+                                                            <option value="204">Reportive</option>
+                                                            <option value="27">Réseau SAN stockage</option>
+                                                            <option value="21">Réseau SUIG</option>
+                                                            <option value="584">RIP EFI COLORPROOF de chez ADITEC</option>
+                                                            <option value="594">Risk Integrity besoin SOLVENCY II</option>
+                                                            <option value="534">ROBCAD</option>
+                                                            <option value="119">RSA Keon/Application Indice</option>
+                                                            <option value="421">RTRT</option>
+                                                            <option value="513">SABER France et Brésil (à partir de 2013)</option>
+                                                            <option value="521">SAF</option>
+                                                            <option value="326">SANTORIN</option>
+                                                            <option value="219">SAP R3 4.7 de PLPR ( Tyle Hill et Melun)</option>
+                                                            <option value="291">SATURNE et DIVA</option>
+                                                            <option value="221">Scorix</option>
+                                                            <option value="474">SDM Connecteurs</option>
+                                                            <option value="475">SDM licences SimManager</option>
+                                                            <option value="507">SDT et FEMLink</option>
+                                                            <option value="432">SEA XP2 - SEA +</option>
+                                                            <option value="67">Security box - MSI SECURITY BOX</option>
+                                                            <option value="247">SEP ex ANTI VIRUS/ FIREWALL</option>
+                                                            <option value="62">Serveurs et baies louées BE et HR</option>
+                                                            <option value="8">Serveurs NSA</option>
+                                                            <option value="133">Service Center (nvelle dénomination à partir de 2011)</option>
+                                                            <option value="174">Service/Contrat Premier</option>
+                                                            <option value="403">SHERPA et SON3D</option>
+                                                            <option value="190">SI Fleet - Achat de lic Oracle Policy Automation OPA</option>
+                                                            <option value="376">SIMFIA</option>
+                                                            <option value="72">SL net</option>
+                                                            <option value="552">SOCKS</option>
+                                                            <option value="591">SOLARA MP</option>
+                                                            <option value="545">Solaris Cluster</option>
+                                                            <option value="102">Solution Etebac</option>
+                                                            <option value="177">Solution log neolane marketing multi-canaux</option>
+                                                            <option value="146">Solver, Planner, Scheduler?</option>
+                                                            <option value="427">SONATE</option>
+                                                            <option value="350">SPAD</option>
+                                                            <option value="483">SPEOS</option>
+                                                            <option value="203">Spitab & VSAM</option>
+                                                            <option value="246">STORAGE FOUNDATION</option>
+                                                            <option value="300">Suisse (3DS3/Automotive/Maya/Mudbox/Showcase/Surface)</option>
+                                                            <option value="268">Sungard Trax</option>
+                                                            <option value="556">Support BCS pour NBK; Support TAM pour SEP et PGP</option>
+                                                            <option value="242">SURFI</option>
+                                                            <option value="180">Suse Linux Enterprise Server (SLES)</option>
+                                                            <option value="254">Swift</option>
+                                                            <option value="76">SYBASE ex Avant GO</option>
+                                                            <option value="253">Synapse (en rempl d'Imediat de Soft AG) / PFFR</option>
+                                                            <option value="171">Synchro</option>
+                                                            <option value="93">SYNCHRONY ex RDJ - Maintenance Règles Du Jeu 8.3</option>
+                                                            <option value="251">SyncSort Z OS</option>
+                                                            <option value="162">Synergimpro</option>
+                                                            <option value="514">SYSCOST</option>
+                                                            <option value="558">SYSCOST+</option>
+                                                            <option value="43">Syst. de vidéo projection</option>
+                                                            <option value="37">Systèmes visualisation</option>
+                                                            <option value="89">SYSTRAN Enterprise Server 7 pour Linux</option>
+                                                            <option value="88">SYSTRAN Enterprise Server 7 pour Windows</option>
+                                                            <option value="386">SYSWELD</option>
+                                                            <option value="234">Tamino + Tamino Server EE (une seule ligne)</option>
+                                                            <option value="19">Tandem Espagne</option>
+                                                            <option value="18">Tandem France</option>
+                                                            <option value="20">Tandem Slovaquie</option>
+                                                            <option value="375">TARGELINK+SYSTEM DESK (une seule ligne en 2011)</option>
+                                                            <option value="233">TDMF ex Fujitsu devient Softek chez IBM (Fujitsu a été racheté par IBM)</option>
+                                                            <option value="501">TEA PIPE + Tea Pipe lot 2</option>
+                                                            <option value="520">TEBIS</option>
+                                                            <option value="522">TECHVIZ</option>
+                                                            <option value="447">TESTLAB</option>
+                                                            <option value="142">TOPAZ (ex ESSO)</option>
+                                                            <option value="144">TOPAZ (Ex ESSO) Acquisitions</option>
+                                                            <option value="145">TOPAZ (Ex ESSO) Sécurité plafond MLC</option>
+                                                            <option value="42">Traceurs d'impression et de découpe Roland</option>
+                                                            <option value="484">TRACK REPORT</option>
+                                                            <option value="127">Traducteur EDI Trade Express</option>
+                                                            <option value="235">Traiding Networks exB2B Starter Suite</option>
+                                                            <option value="163">Truecrypt</option>
+                                                            <option value="110">Uniface</option>
+                                                            <option value="232">Unify & Leasebase</option>
+                                                            <option value="343">UNSCRAMBLER</option>
+                                                            <option value="346">Upgrade vers Reportive V9 - Achat 10 L</option>
+                                                            <option value="387">VA ONE - AUTO SEA2</option>
+                                                            <option value="114">Vantage</option>
+                                                            <option value="111">Vantage analyse de flux applicatifs  VERUM</option>
+                                                            <option value="44">video conduite simulateur SHERPA</option>
+                                                            <option value="252">Virtel - SYPERTEC VIRTEL</option>
+                                                            <option value="448">VIRTUAL LAB</option>
+                                                            <option value="431">Visual Crash Studio</option>
+                                                            <option value="74">VNC</option>
+                                                            <option value="196">Vocal Magasins</option>
+                                                            <option value="7">VOSTRO</option>
+                                                            <option value="575">VPS</option>
+                                                            <option value="81">Vulnit</option>
+                                                            <option value="271">WBT Manager - WBT Manager en licence illimitée</option>
+                                                            <option value="538">webex</option>
+                                                            <option value="123">Webholding / Isocel</option>
+                                                            <option value="270">Weboscope</option>
+                                                            <option value="265">WildCard</option>
+                                                            <option value="496">WiseImag</option>
+                                                            <option value="440">WITNESS</option>
+                                                            <option value="510">WORK NC</option>
+                                                            <option value="106">Workbench</option>
+                                                            <option value="488">Wrapstyler/CATIA + Wrapstyler</option>
+                                                            <option value="557">X86 TECHNICIEN SUR SITE</option>
+                                                            <option value="426">XELEC</option>
+                                                            <option value="113">Xpediter</option>
+                                                            <option value="530">Zmat zebulon</option>
+                                                        </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <!-- END CONTENT -->
+        </div>
+        <div class="espaciado"></div>
+
+        <div class="button_gim"><div class="gauche"></div><div class="libelle" style="width :160px; float:left"><a href="javascript:ajouterProduit()">Ajouter Produit</a></div><div class="droite"/></div></div>
+        <div class="espaciado"></div>
+
+        <div id="container_psagrid_produits" style="height: 360px"></div>
+    </div>
+    <div id="tabs3">
+        <div class="round_corners">
+            <!-- CONTENT -->
+
+            <form id="form_lignes" name="form_lignes" class="form_gim">
+                <table align="center" style="width: 100%; height: 100%" border="0">
+                    <tr>
+                        <td class="titre">Designation <span class="obligatory">*</span></td>
+                        <td class="form_input"><input type="text" id="form_designation" style="width: 90%" tabindex="1"></td>
+                        <td class="titre">Type de Part <span class="obligatory">*</span></td>
+                        <td class="form_input">
+                            <select id="form_type_part" style="width: 80%" tabindex="2">
+                                                                    <option value="8">(Non Défini)</option>
+                                                                    <option value="1">Engagement partiel</option>
+                                                                    <option value="2">Engagement total</option>
+                                                                    <option value="3">Jetons</option>
+                                                                    <option value="4">Part fixe</option>
+                                                                    <option value="5">Part variable</option>
+                                                                    <option value="6">Regul</option>
+                                                                    <option value="7">Talon</option>
+                                                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="titre">Montant <span class="obligatory">*</span></td>
+                        <td class="form_input"><input type="text" id="form_montant" class="currency" value="0" tabindex="3"></td>
+                        <td class="titre">Date echéance <span class="obligatory">*</span></td>
+                        <td class="form_input"><input type="text" id="form_date_echeance" onchange="convertDates(this);" class="datepicker" tabindex="4"></td>
+                    </tr>
+                    <tr>
+                        <td class="titre">Année Budgétaire <span class="obligatory">*</span></td>
+                        <td class="form_input"><input type="text" id="annee_budgetaire" tabindex="5"/></td>
+                        <td class="form_input">
+                            <input type="text" id="form_montant_old" style="display: none">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <!-- END CONTENT -->
+        </div>
+        <div class="espaciado"></div>
+
+        <div style="clear: both;">
+            <form style="margin-left: 20px;">
+                <table id="table">
+                    <tr>
+                        <td>
+                            <div class="button_gim"><div class="gauche"></div><div class="libelle" style="width :160px; float:left"><a href="javascript:ajouterLigne()">Ajouter Ligne</a></div><div class="droite"/></div></div>
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <span class="montant">
+            Total engagé: <span class="montant_total">0</span>,
+            Reste à engager: <span class="montant_restant">0</span>
+        </span>
+        <div class="espaciado"></div>
+
+        <div id="container_psagrid_lignes" style="height: 360px;"></div>
+    </div>
+    <div id="tabs4">
+        <div id="container_psagrid_suivis" style="height: 360px;"></div>
+    </div>
+    
+    <div id="warning_ventil" class="warning_ventil">
+        <img src="/images/icones/iconWarning.png" style="padding-right: 0.5em;"/>
+        <span style="padding-right: 0.5em;">Attention : vous devez ventiler la totalité du montant initial de la ligne sur plusieurs lignes pour pouvoir sortir de cette fenêtre</span>
+    </div>
+</div>
+
+<div id="container_psagrid" style="margin-left: 20px;"><div id="flashContentgrid_gim_contrat_maintenance" class="container_flex_grid" style="width:980; height:480">
+            {t}Veuillez d'installer Adobe Flash Player (version 10.0.0 ou +) pour pouvoir regarder cette ecran{/t}
+        </div><script type="text/javascript" src="/flex/psa_flex_grid/component/javascript/swfobject.js"></script>
+        <script type="text/javascript" src="/flex/psa_flex_grid/component/javascript/PSA_FlexGrid.js"></script>
+        <script type="text/javascript" src="/flex/psa_flex_grid/component/javascript/FlashPrintFix.js"></script>
+        <script type="text/javascript">
+            var swfVersionStr = "10.1.0";
+            var xiSwfUrlStr = "/flex/psa_flex_grid/component//playerProductInstall.swf";
+            var flashvars = {
+                    gatewayPath: "/flex/psa_flex_grid/amfphp/",
+                    gatewayMethod: "JSON",
+                    gridName: "grid_gim_contrat_maintenance",
+                    visible: true,
+                    debugMode: ""
+                };
+            var params = {};
+            params.wmode = "transparent";
+            params.quality = "high";
+            params.bgcolor = "#ffffff";
+            params.allowscriptaccess = "sameDomain";
+            params.allowfullscreen = "true";
+            var attributes = {};
+                attributes.id = "FlexGrid_grid_gim_contrat_maintenance";
+                attributes.name = "FlexGrid_grid_gim_contrat_maintenance";
+                attributes.align = "middle";
+            swfobject.embedSWF(
+                "/flex/psa_flex_grid/component/PSA_FlexGrid.swf", "flashContentgrid_gim_contrat_maintenance",
+                "980", "480",
+                swfVersionStr, xiSwfUrlStr,
+                flashvars, params, attributes);
+        </script>
+        <script type="text/javascript" src="/script/flex/psa_flex_grid/grid_gim_contrat_maintenance.js"></script></div>
+<div id="dialog_upload_file" style="display:none;">
+    <form id="form_upload_file" method="POST" action="/modules/fiches/import_maintenance_file.php">
+        <input type="file"  class="psa_form_element_input" name="input_upload" id="input_upload">
+        <input type="submit" class="ui-button" value="Upload File" name="submit_upload" id="submit_upload">
+    </form>
+</div>
+                <!-- Fin de contenido -->
+        </td>
+    </tr>
+</table>
+</div>
+</body>
+<div id="dialogLoadingContainer" style="display:none;height: 30px;text-align: center">
+    <img src="/dein/images/icones/loading_ajax.gif" title="Ajax Loading" style="position:relative;top:3px;">
+    <span style="font-size: 12px;margin-left: 5px;font-weight: bold; ">Cargando</span>
+</div>
+
+</body>
+
+</html>

@@ -20,7 +20,7 @@ class FournisseursRepo {
     }
 
     public function getAll() {
-        $sql = "SELECT * FROM fournisseurs";
+        $sql = "SELECT * FROM fournisseurs ORDER BY nom_usuel ASC";
         $q = $this->db->prepare($sql);
         $q->execute();
         $rows = $q->fetchAll();
