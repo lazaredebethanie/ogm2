@@ -99,6 +99,10 @@
                 <label for="renewal_date">Renewal Date :</label>
                 <input id="renewal_date" name="renewal_date" type="date" />
             </div>
+            <div class="details-form-field">
+                <label for="total_amount">Total Amount :</label>
+                <input id="total_amount" name="total_amount" type="date" />
+            </div>
             <?php include('../select/businessUnitsFormSelect.php'); ?>
             <?php include('../select/paidbyFormSelect.php'); ?>
             <div class="details-form-field">

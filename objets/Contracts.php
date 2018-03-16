@@ -11,6 +11,7 @@ class Contracts {
     public $renewal_date;
     public $business_unit_id;
     public $paid_by_id;
+    public $total_amount;
     public $comments;
     
 }

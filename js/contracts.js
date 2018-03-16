@@ -93,19 +93,13 @@ $(function() {
                             fields: [
                                 { name: "name_contract", title: "Name of contract", type: "text",width: 150},
                                 { name: "reference", title: "Reference", type: "text", width: 30 },
-                                //{ name: "supplier_id", title: "Supplier", type: "text", width: 70 },
                                 { name: "supplier_id", title: "Supplier", type: "select", width: 100, items: fournisseurs, valueField: "id", textField: "nom_usuel" },
-                                //{ name: "purchase_type_id", title: "Purchase Type", type: "text", width: 50 },
                                 { name: "purchase_type_id", title: "Purchase Type", type: "select", width: 50, items: purchaseType, valueField: "id", textField: "type" },
-                                //{ name: "maintenance_type_id", title: "Maintenance Type", type: "text", width: 50 },
                                 { name: "maintenance_type_id", title: "Maintenance Type", type: "select", width: 60, items: maintenanceType, valueField: "id", textField: "type" },
-                                //{ name: "purchase_date", title: "Purchase Date", type: "text", width: 50 },
                                 { name: "renewal_date", title: "Next Renewal Date", type: "text", width: 50 },
-                                //{ name: "business_unit_id", title: "B.U.", type: "text", width: 20},
+                                { name: "total_amount", title: "Total Amount", type: "number", width: 70 },
                                 { name: "business_unit_id", title: "B.U.", type: "select", width: 30, items: businessUnits, valueField: "id", textField: "acronym" },
-                                //{ name: "paid_by_id", title: "Paid by...", type: "text", width: 30 },
                                 { name: "paid_by_id", title: "Paid by...", type: "select", width: 30, items: paidBy, valueField: "id", textField: "paidByEntity" },
-                                //{ name: "comments", title: "Comments", type: "text", width: 100 },
 
 
                                 { type: "control",
@@ -179,7 +173,8 @@ $(function() {
         $("#purchase_type_id").val(contract.purchase_type_id);
         $("#maintenance_type_id").val(contract.maintenance_type_id);
         $("#renewal_date").val(contract.renewal_date);
-        $("#business_unit_id").val(contract.business_unit_id);
+        $("#total_amount").val(contract.renewal_date);
+        $("#business_unit_id").val(contract.total_amount);
         $("#paid_by_id").val(contract.paid_by_id);
         $("#comments").val(contract.comments);
 
@@ -199,6 +194,7 @@ $(function() {
             purchase_type_id: $("#purchase_type_id").val(),
             maintenance_type_id: $("#maintenance_type_id").val(),
             renewal_date: $("#renewal_date").val(),
+            total_amount: $("#total_amount").val(),
             business_unit_id: $("#business_unit_id").val(),
             paid_by_id: $("#paid_by_id").val(),
             comments: $("#comments").val()

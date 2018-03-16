@@ -33,7 +33,7 @@ switch ($_SERVER ["REQUEST_METHOD"]) {
 				"renewal_date" => $_POST ["renewal_date"],
 				"business_unit_id" => $_POST ["business_unit_id"],
 				"paid_by_id" => $_POST ["paid_by_id"],
-				// "comments" => $_POST["comments"],
+				"comments" => $_POST["comments"],
 				"comments" => "" 
 		) );
 		break;
@@ -106,22 +106,22 @@ echo "<title>Page de test pour le développement...</title>\n";
 echo "</head>\n";
 echo "<body>\n";
 echo "		<form name=\"Contract Details\" action=\"screens/contractDetailsValidate.php\" method=\"POST\" autocomplete=\"on\">\n";
-echo "			<input name=\"id\" type=\"hidden\" value=" . $result->id . ">\n";
-echo "			<input name=\"supplier_id\" type=\"hidden\" value=" . $result->supplier_id. ">\n";
-echo "			<input name=\"purchase_type_id\" type=\"hidden\" value=" . $result->purchase_type_id. ">\n";
-echo "			<input name=\"maintenance_type_id\" type=\"hidden\" value=" . $result->maintenance_type_id. ">\n";
-echo "			<input name=\"business_unit_id\" type=\"hidden\" value=" . $result->business_unit_id. ">\n";
-echo "			<input name=\"paid_by_id\" type=\"hidden\" value=" . $result->paid_by_id. ">\n";
+/*echo "			<input name=\"p1_id\" type=\"hidden\" value=" . $result->id . ">\n";
+echo "			<input name=\"p1_supplier_id\" type=\"hidden\" value=" . $result->supplier_id. ">\n";
+echo "			<input name=\"p1_purchase_type_id\" type=\"hidden\" value=" . $result->purchase_type_id. ">\n";
+echo "			<input name=\"p1_maintenance_type_id\" type=\"hidden\" value=" . $result->maintenance_type_id. ">\n";
+echo "			<input name=\"p1_business_unit_id\" type=\"hidden\" value=" . $result->business_unit_id. ">\n";
+echo "			<input name=\"p1_paid_by_id\" type=\"hidden\" value=" . $result->paid_by_id. ">\n";*/
 echo "          <TABLE>\n";
 echo "          <TR>\n";
 echo "			   <TD>Contract Name </TD>\n";
-echo "			   <TD><input name=\"name_contract\" type=\"text\" value=\"" . $result->name_contract. "\"></TD>\n";
+echo "			   <TD><input name=\"p1_name_contract\" type=\"text\" value=\"" . $result->name_contract. "\"></TD>\n";
 echo "			   <TD>Reference </TD>\n";
-echo "			   <TD><input name=\"reference\" type=\"text\" value=\"" . $result->reference. "\"></TD>\n";
+echo "			   <TD><input name=\"p1_reference\" type=\"text\" value=\"" . $result->reference. "\"></TD>\n";
 echo "   		</TR>\n";
 echo "          <TR>\n";
 echo "			   <TD>Supplier </TD>\n";
-echo "			   <TD><SELECT name=\"supplier\" size=\"1\">\n";
+echo "			   <TD><SELECT name=\"p1_supplier\" size=\"1\">\n";
 foreach ($suppliers_tab as $row) {
 	if ($row->id==$result->supplier_id) {
 		$selected="selected=\"SELECTED\"";
@@ -132,18 +132,17 @@ foreach ($suppliers_tab as $row) {
 	echo "				<OPTION " . $selected . " value=\"" . $row->id . "\">" . $row->nom_usuel . " \n";
 }
 
-//echo "			   <TD><input name=\"supplier\" type=\"text\" value=\"" . $result_text->supplier_id . "\"></TD>\n";
 echo "			   </SELECT></TD>\n";
 echo "			   <TD>Supplier Code </TD>\n";
-echo "			   <TD><input name=\"supplier_code\" type=\"text\" value=\"" . "" . "\"></TD>\n";
+echo "			   <TD><input name=\"p1_supplier_code\" type=\"text\" value=\"" . "" . "\"></TD>\n";
 echo "   		</TR>\n";
 echo "          <TR>\n";
 echo "			   <TD>Purchase Family </TD>\n";
-echo "			   <TD><input name=\"purchase_family\" type=\"text\" value=\"" . "" . "\"></TD>\n";
+echo "			   <TD><input name=\"p1_purchase_family\" type=\"text\" value=\"" . "" . "\"></TD>\n";
 echo "   		</TR>\n";
 echo "          <TR>\n";
 echo "			   <TD>Purchase Type </TD>\n";
-echo "			   <TD><SELECT name=\"purchase_type\" size=\"1\">\n";
+echo "			   <TD><SELECT name=\"p1_purchase_type\" size=\"1\">\n";
 foreach ($purchase_type_tab as $row) {
 	if ($row->id==$result->purchase_type_id) {
 		$selected="selected=\"SELECTED\"";
@@ -154,16 +153,15 @@ foreach ($purchase_type_tab as $row) {
 	echo "				<OPTION " . $selected . " value=\"" . $row->id . "\">" . $row->type . " \n";
 }
 
-//echo "			   <TD><input name=\"purchase_type\" type=\"text\" value=\"" . $result_text->purchase_type_id. "\"></TD>\n";
 echo "			   <TD>Purchase Date </TD>\n";
-echo "			   <TD><input name=\"purchase_date\" type=\"text\" value=\"" . $result->purchase_date. "\"></TD>\n";
+echo "			   <TD><input name=\"p1_purchase_date\" type=\"text\" value=\"" . $result->purchase_date. "\"></TD>\n";
 echo "   		</TR>\n";
 echo "          <TR>\n";
 echo "			   <TD>&nbsp;</TD>\n";
 echo "   		</TR>\n";
 echo "          <TR>\n";
 echo "			   <TD>Maintenance Type </TD>\n";
-echo "			   <TD><SELECT name=\"maintenance_type\" size=\"1\">\n";
+echo "			   <TD><SELECT name=\"p1_maintenance_type\" size=\"1\">\n";
 foreach ($maintenance_type_tab as $row) {
 	if ($row->id==$result->maintenance_type_id) {
 		$selected="selected=\"SELECTED\"";
@@ -173,15 +171,14 @@ foreach ($maintenance_type_tab as $row) {
 	}
 	echo "				<OPTION " . $selected . " value=\"" . $row->id . "\">" . $row->type . " \n";
 }
-//echo "			   <TD><input name=\"maintenance_type\" type=\"text\" value=\"" . $result_text->maintenance_type_id. "\"></TD>\n";
 echo "			   <TD>Amount </TD>\n";
-echo "			   <TD><input name=\"amount\" type=\"text\" value=\"" . "" . "\"></TD>\n";
+echo "			   <TD><input name=\"p1_amount\" type=\"text\" value=\"" . "" . "\"></TD>\n";
 echo "   		</TR>\n";
 echo "          <TR>\n";
 echo "			   <TD>Renewal Date</TD>\n";
-echo "			   <TD><input name=\"renewal_date\" type=\"text\" value=\"" . $result->renewal_date. "\"></TD>\n";
+echo "			   <TD><input name=\"p1_renewal_date\" type=\"text\" value=\"" . $result->renewal_date. "\"></TD>\n";
 echo "			   <TD>Duration </TD>\n";
-echo "			   <TD><input name=\"maintenance_duration\" type=\"text\" value=\"" . "" . "\"></TD>\n";
+echo "			   <TD><input name=\"p1_maintenance_duration\" type=\"text\" value=\"" . "" . "\"></TD>\n";
 echo "   		</TR>\n";
 echo "          <TR>\n";
 echo "   		</TR>\n";
@@ -190,7 +187,7 @@ echo "			   <TD>&nbsp;</TD>\n";
 echo "   		</TR>\n";
 echo "          <TR>\n";
 echo "			   <TD>Business Unit </TD>\n";
-echo "			   <TD><SELECT name=\"business_unit\" size=\"1\">\n";
+echo "			   <TD><SELECT name=\"p1_business_unit\" size=\"1\">\n";
 foreach ($bu_tab as $row) {
 	if ($row->id==$result->business_unit_id) {
 		$selected="selected=\"SELECTED\"";
@@ -200,9 +197,8 @@ foreach ($bu_tab as $row) {
 	}
 	echo "				<OPTION " . $selected . " value=\"" . $row->id . "\">" . $row->acronym . " \n";
 }
-//echo "			   <TD><input name=\"business_unit\" type=\"text\" value=\"" . $result_text->business_unit_id. "\"></TD>\n";
 echo "			   <TD>Paid by </TD>\n";
-echo "			   <TD><SELECT name=\"paid_by\" size=\"1\">\n";
+echo "			   <TD><SELECT name=\"p1_paid_by\" size=\"1\">\n";
 foreach ($paid_by_tab as $row) {
 	if ($row->id==$result->paid_by_id) {
 		$selected="selected=\"SELECTED\"";
@@ -212,27 +208,16 @@ foreach ($paid_by_tab as $row) {
 	}
 	echo "				<OPTION " . $selected . " value=\"" . $row->id . "\">" . $row->paidByEntity . " \n";
 }
-//echo "			   <TD><input name=\"paid_by\" type=\"text\" value=\"" . $result_text->paid_by_id. "\"></TD>\n";
+echo "   		</TR>\n";
+echo "          <TR>\n";
+echo "			   <TD>Comment </TD>\n";
+echo "			   <TD  colspan=\"3\"><TEXTAREA name=\"p1_comment\" maxlength =\"255\" rows=\"5\" >" . $result->comments . "</TEXTAREA></TD>\n";
 echo "   		</TR>\n";
 echo " 	        </TABLE>\n";
 echo "<br><br><button type=\"submit\">Envoi</button>\n";
 echo "</form>\n";
 echo "</body>\n";
 echo "</html>\n";
-/*echo $result->id . "\n";
-echo $result_text->supplier_id . "\n";
-echo $result->reference . "\n";
-echo $result->purchase_type_id . " - ";
-echo $result_text->purchase_type_id. "\n";
-echo $result->maintenance_type_id . " - ";
-echo $result_text->maintenance_type_id. "\n";
-echo $result->purchase_date . "\n";
-echo $result->business_unit_id. " - ";
-echo $result_text->business_unit_id. "\n";
-echo $result->renewal_date. "\n";
-echo $result->paid_by_id. " - ";
-echo $result_text->paid_by_id. "\n";
-echo $result->comments. "\n";
-*/
+
 ?>
 

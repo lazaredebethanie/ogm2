@@ -20,6 +20,7 @@ class ContractsActions {
         $result->maintenance_type_id= $row["maintenance_type_id"];
         //$result->purchase_date= $row["purchase_date"];
         $result->renewal_date= $row["renewal_date"];
+        $result->total_amount= $row["total_amount"];
         $result->business_unit_id= $row["business_unit_id"];
         $result->paid_by_id= $row["paid_by_id"];
         //$result->comments= $row["comments"];
@@ -44,14 +45,15 @@ class ContractsActions {
         //$purchase_date= "%" . $filter["purchase_date"] . "%";
         $purchase_date= "%";
         $renewal_date= "%" . $filter["renewal_date"] . "%";
+        $total_amount= '\\d*' . $filter["total_amount"] . '\\d*';
         $business_unit_id= "%" . $filter["business_unit_id"] . "%";
         $paid_by_id= "%" . $filter["paid_by_id"] . "%";
         //$comments= "%" . $filter["comments"] . "%";
         $comments= "%" ;
         $sql = "SELECT * FROM contracts WHERE name_contract LIKE :name_contract AND reference LIKE :reference";
         $sql .=" AND supplier_id LIKE :supplier_id AND purchase_type_id LIKE :purchase_type_id AND maintenance_type_id LIKE :maintenance_type_id";	 
-        $sql .= " AND purchase_date LIKE :purchase_date AND renewal_date LIKE :renewal_date AND business_unit_id LIKE :business_unit_id";
-        $sql .= " AND paid_by_id LIKE :paid_by_id AND comments LIKE :comments";
+        $sql .= " AND purchase_date LIKE :purchase_date AND renewal_date LIKE :renewal_date AND total_amount REGEXP :total_amount";
+        $sql .= " AND business_unit_id LIKE :business_unit_id AND paid_by_id LIKE :paid_by_id AND comments LIKE :comments";
         $q = $this->db->prepare($sql);
         $q->bindParam(":name_contract", $name_contract);
         $q->bindParam(":reference", $reference);
@@ -60,6 +62,7 @@ class ContractsActions {
         $q->bindParam(":maintenance_type_id", $maintenance_type_id);
         $q->bindParam(":purchase_date", $purchase_date);
         $q->bindParam(":renewal_date", $renewal_date);
+        $q->bindParam(":total_amount", $total_amount);
         $q->bindParam(":business_unit_id", $business_unit_id);
         $q->bindParam(":paid_by_id", $paid_by_id);
         $q->bindParam(":comments", $comments);
@@ -74,8 +77,8 @@ class ContractsActions {
     }
     
     public function insert($data) {
-        $sql = "INSERT INTO contracts (name_contract, reference,supplier_id,purchase_type_id,maintenance_type_id,purchase_date, renewal_date,business_unit_id,paid_by_id,comments) ";
-        $sql .= "VALUES (:name_contract, :reference,:supplier_id,:purchase_type_id,:maintenance_type_id,:purchase_date,:renewal_date,:business_unit_id,:paid_by_id,:comments)";
+        $sql = "INSERT INTO contracts (name_contract, reference,supplier_id,purchase_type_id,maintenance_type_id,purchase_date, renewal_date,total_amount, business_unit_id,paid_by_id,comments) ";
+        $sql .= "VALUES (:name_contract, :reference,:supplier_id,:purchase_type_id,:maintenance_type_id,:purchase_date,:renewal_date,:total_amount,:business_unit_id,:paid_by_id,:comments)";
         $q = $this->db->prepare($sql);
         $q->bindParam(":name_contract", $data["name_contract"]);
         $q->bindParam(":reference", $data["reference"]);
@@ -84,6 +87,7 @@ class ContractsActions {
         $q->bindParam(":maintenance_type_id", $data["maintenance_type_id"]);
         $q->bindParam(":purchase_date", $data["purchase_date"]);
         $q->bindParam(":renewal_date", $data["renewal_date"]);
+        $q->bindParam(":total_amount", $data["total_amount"]);
         $q->bindParam(":business_unit_id", $data["business_unit_id"]);
         $q->bindParam(":paid_by_id", $data["paid_by_id"]);
         $q->bindParam(":comments", $data["comments"]);
@@ -93,7 +97,7 @@ class ContractsActions {
     
     public function update($data) {
         $sql = "UPDATE contracts SET name_contract = :name_contract, reference = :reference, supplier_id = :supplier_id, purchase_type_id = :purchase_type_id, "; 
-        $sql .= "maintenance_type_id = :maintenance_type_id, purchase_date = :purchase_date, renewal_date = :renewal_date, business_unit_id = :business_unit_id,";
+        $sql .= "maintenance_type_id = :maintenance_type_id, purchase_date = :purchase_date, renewal_date = :renewal_date, total_amount=:total_amount, business_unit_id = :business_unit_id,";
         $sql .= "paid_by_id = :paid_by_id, comments = :comments WHERE id = :id";
         $q = $this->db->prepare($sql);
         $q->bindParam(":name_contract", $data["name_contract"]);
@@ -103,6 +107,7 @@ class ContractsActions {
         $q->bindParam(":maintenance_type_id", $data["maintenance_type_id"]);
         $q->bindParam(":purchase_date", $data["purchase_date"]);
         $q->bindParam(":renewal_date", $data["renewal_date"]);
+        $q->bindParam(":total_amount", $data["total_amount"]);
         $q->bindParam(":business_unit_id", $data["business_unit_id"]);
         $q->bindParam(":paid_by_id", $data["paid_by_id"]);
         $q->bindParam(":comments", $data["comments"]);

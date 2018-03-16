@@ -1,6 +1,5 @@
 <?php
 
-//print ">".$_POST["name_contract"]."<>".$_POST["reference"]."<>".$_POST["supplier_id"];
 include "../actions/ContractsActions.php";
 
 $config = include("../db/config.php");
@@ -18,6 +17,7 @@ switch($_SERVER["REQUEST_METHOD"]) {
         "maintenance_type_id" => $_GET["maintenance_type_id"],
         //"purchase_date" => $_GET["purchase_date"],
         "renewal_date" => $_GET["renewal_date"],
+        "total_amount" => $_GET["total_amount"],
         "business_unit_id" => $_GET["business_unit_id"],
         "paid_by_id" => $_GET["paid_by_id"],
         //"comments" => $_GET["comments"],
@@ -70,7 +70,5 @@ switch($_SERVER["REQUEST_METHOD"]) {
 
 header("Content-Type: application/json");
 echo json_encode($result);
-
-
 ?>
 
