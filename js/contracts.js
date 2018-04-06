@@ -97,7 +97,7 @@ $(function() {
                                 { name: "purchase_type_id", title: "Purchase Type", type: "select", width: 50, items: purchaseType, valueField: "id", textField: "type" },
                                 { name: "maintenance_type_id", title: "Maintenance Type", type: "select", width: 60, items: maintenanceType, valueField: "id", textField: "type" },
                                 { name: "renewal_date", title: "Next Renewal Date", type: "text", width: 50 },
-                                { name: "total_amount", title: "Total Amount", type: "number", width: 70 },
+                                { name: "total_amount", title: "Total Amount", type: "text", width: 70, align: "right"},
                                 { name: "business_unit_id", title: "B.U.", type: "select", width: 30, items: businessUnits, valueField: "id", textField: "acronym" },
                                 { name: "paid_by_id", title: "Paid by...", type: "select", width: 30, items: paidBy, valueField: "id", textField: "paidByEntity" },
 

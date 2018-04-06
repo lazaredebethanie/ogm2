@@ -43,16 +43,41 @@ class ContractsActions {
         $purchase_type_id= "%" . $filter["purchase_type_id"] . "%";
         $maintenance_type_id= "%" . $filter["maintenance_type_id"] . "%";
         //$purchase_date= "%" . $filter["purchase_date"] . "%";
-        $purchase_date= "%";
+        $purchase_date= "%%";
         $renewal_date= "%" . $filter["renewal_date"] . "%";
-        $total_amount= '\\d*' . $filter["total_amount"] . '\\d*';
+        
+        $total_amount= $filter["total_amount"];
+        //$total_amount= "<-1";
+        $op="";
+        
+        if (stripos($total_amount, ">") !== false) {
+        	$op=">=";	
+        } elseif (stripos($total_amount, "<") !== false) {
+        	$op="<=";
+        } elseif (stripos($total_amount, "<>") !== false) {
+        	$op="<>";
+        } elseif (stripos($total_amount, "=") !== false) {
+        	$op="=";
+        } elseif ($total_amount<>"") {
+        		$total_amount= "%" . $filter["total_amount"] . "%" ;
+        		$op="LIKE";
+        } else {
+        	  $total_amount="%";
+        	  $op="LIKE"; 	
+        }
+        	
+        
+       	$speCar = array (">","<","=");
+        $total_amount = str_replace($speCar, "", $total_amount);
+        
         $business_unit_id= "%" . $filter["business_unit_id"] . "%";
         $paid_by_id= "%" . $filter["paid_by_id"] . "%";
         //$comments= "%" . $filter["comments"] . "%";
-        $comments= "%" ;
+        $comments= "%%" ;
         $sql = "SELECT * FROM contracts WHERE name_contract LIKE :name_contract AND reference LIKE :reference";
         $sql .=" AND supplier_id LIKE :supplier_id AND purchase_type_id LIKE :purchase_type_id AND maintenance_type_id LIKE :maintenance_type_id";	 
-        $sql .= " AND purchase_date LIKE :purchase_date AND renewal_date LIKE :renewal_date AND total_amount REGEXP :total_amount";
+        $sql .= " AND purchase_date LIKE :purchase_date AND renewal_date LIKE :renewal_date AND ";
+        $sql .= "total_amount " . $op .  " :total_amount";
         $sql .= " AND business_unit_id LIKE :business_unit_id AND paid_by_id LIKE :paid_by_id AND comments LIKE :comments";
         $q = $this->db->prepare($sql);
         $q->bindParam(":name_contract", $name_contract);
@@ -62,7 +87,11 @@ class ContractsActions {
         $q->bindParam(":maintenance_type_id", $maintenance_type_id);
         $q->bindParam(":purchase_date", $purchase_date);
         $q->bindParam(":renewal_date", $renewal_date);
-        $q->bindParam(":total_amount", $total_amount);
+        if ($op=="LIKE") {
+        	$q->bindParam(":total_amount", $total_amount, PDO::PARAM_STR );
+        } else {
+        	$q->bindParam(":total_amount", $total_amount, PDO::PARAM_INT );
+        }
         $q->bindParam(":business_unit_id", $business_unit_id);
         $q->bindParam(":paid_by_id", $paid_by_id);
         $q->bindParam(":comments", $comments);

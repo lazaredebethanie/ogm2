@@ -3,9 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link href="../css/style.css" rel="stylesheet" />
-    <link href="../jsgrid/css/jsgrid.min.css" rel="stylesheet" />
+    
     <link href="../jsgrid/css/jsgrid-theme.min.css" rel="stylesheet" />
+    <link href="../jsgrid/css/jsgrid.min.css" rel="stylesheet" /> <!-- -->
+    
+    <link href="../css/style.css" rel="stylesheet" /> <!-- -->
+    
+     
     <title>Maintenance Contracts management - Gestion des Contrats de Maintenance</title>
 
     <style>
@@ -101,7 +105,7 @@
             </div>
             <div class="details-form-field">
                 <label for="total_amount">Total Amount :</label>
-                <input id="total_amount" name="total_amount" type="date" />
+                <input id="total_amount" name="total_amount" type="number" />
             </div>
             <?php include('../select/businessUnitsFormSelect.php'); ?>
             <?php include('../select/paidbyFormSelect.php'); ?>
