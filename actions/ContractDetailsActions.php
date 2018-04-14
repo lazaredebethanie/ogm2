@@ -17,9 +17,12 @@ class ContractDetailsActions {
         $result->reference = $row["reference"];
         $result->supplier_id= $row["supplier_id"];
         $result->purchase_type_id= $row["purchase_type_id"];
+        $result->purchase_family_id= $row["purchase_family_id"];
         $result->maintenance_type_id= $row["maintenance_type_id"];
         $result->purchase_date= $row["purchase_date"];
         $result->renewal_date= $row["renewal_date"];
+        $result->end_date= $row["end_date"];
+        $result->total_amount= $row["total_amount"];
         $result->business_unit_id= $row["business_unit_id"];
         $result->paid_by_id= $row["paid_by_id"];
         $result->comments= $row["comments"];
@@ -40,26 +43,30 @@ class ContractDetailsActions {
         $reference = "%" . $filter["reference"] . "%";
         $supplier_id= "%" . $filter["supplier_id"] . "%";
         $purchase_type_id= "%" . $filter["purchase_type_id"] . "%";
+        $purchase_family_id= "%" . $filter["purchase_family_id"] . "%";
         $maintenance_type_id= "%" . $filter["maintenance_type_id"] . "%";
         //$purchase_date= "%" . $filter["purchase_date"] . "%";
         $purchase_date= "%";
         $renewal_date= "%" . $filter["renewal_date"] . "%";
+        $end_date= "%" . $filter["end_date"] . "%";
         $business_unit_id= "%" . $filter["business_unit_id"] . "%";
         $paid_by_id= "%" . $filter["paid_by_id"] . "%";
         //$comments= "%" . $filter["comments"] . "%";
         $comments= "%" ;
         $sql = "SELECT * FROM contracts WHERE name_contract LIKE :name_contract AND reference LIKE :reference";
-        $sql .=" AND supplier_id LIKE :supplier_id AND purchase_type_id LIKE :purchase_type_id AND maintenance_type_id LIKE :maintenance_type_id";	 
-        $sql .= " AND purchase_date LIKE :purchase_date AND renewal_date LIKE :renewal_date AND business_unit_id LIKE :business_unit_id";
+        $sql .=" AND supplier_id LIKE :supplier_id AND purchase_type_id LIKE :purchase_family_id AND purchase_type_id LIKE :purchase_family_id AND maintenance_type_id LIKE :maintenance_type_id";	 
+        $sql .= " AND purchase_date LIKE :purchase_date AND renewal_date LIKE :renewal_date AND end_date LIKE :end_date AND business_unit_id LIKE :business_unit_id";
         $sql .= " AND paid_by_id LIKE :paid_by_id AND comments LIKE :comments";
         $q = $this->db->prepare($sql);
         $q->bindParam(":name_contract", $name_contract);
         $q->bindParam(":reference", $reference);
         $q->bindParam(":supplier_id", $supplier_id);
         $q->bindParam(":purchase_type_id", $purchase_type_id);
+        $q->bindParam(":purchase_family_id", $purchase_type_id);
         $q->bindParam(":maintenance_type_id", $maintenance_type_id);
         $q->bindParam(":purchase_date", $purchase_date);
         $q->bindParam(":renewal_date", $renewal_date);
+        $q->bindParam(":end_date", $renewal_date);
         $q->bindParam(":business_unit_id", $business_unit_id);
         $q->bindParam(":paid_by_id", $paid_by_id);
         $q->bindParam(":comments", $comments);
@@ -74,16 +81,18 @@ class ContractDetailsActions {
     }
     
     public function insert($data) {
-        $sql = "INSERT INTO contracts (name_contract, reference,supplier_id,purchase_type_id,maintenance_type_id,purchase_date, renewal_date,business_unit_id,paid_by_id,comments) ";
+        $sql = "INSERT INTO contracts (name_contract, reference,supplier_id,purchase_type_id,purchase_family_id,maintenance_type_id,purchase_date, renewal_date, end_date, business_unit_id,paid_by_id,comments) ";
         $sql .= "VALUES (:name_contract, :reference,:supplier_id,:purchase_type_id,:maintenance_type_id,:purchase_date,:renewal_date,:business_unit_id,:paid_by_id,:comments)";
         $q = $this->db->prepare($sql);
         $q->bindParam(":name_contract", $data["name_contract"]);
         $q->bindParam(":reference", $data["reference"]);
         $q->bindParam(":supplier_id", $data["supplier_id"]);
         $q->bindParam(":purchase_type_id", $data["purchase_type_id"]);
+        $q->bindParam(":purchase_family_id", $data["purchase_family_id"]);
         $q->bindParam(":maintenance_type_id", $data["maintenance_type_id"]);
         $q->bindParam(":purchase_date", $data["purchase_date"]);
         $q->bindParam(":renewal_date", $data["renewal_date"]);
+        $q->bindParam(":end_date", $data["end_date"]);
         $q->bindParam(":business_unit_id", $data["business_unit_id"]);
         $q->bindParam(":paid_by_id", $data["paid_by_id"]);
         $q->bindParam(":comments", $data["comments"]);
@@ -92,22 +101,26 @@ class ContractDetailsActions {
     }
     
     public function update($data) {
-        $sql = "UPDATE contracts SET name_contract = :name_contract, reference = :reference, supplier_id = :supplier_id, purchase_type_id = :purchase_type_id, "; 
-        $sql .= "maintenance_type_id = :maintenance_type_id, purchase_date = :purchase_date, renewal_date = :renewal_date, business_unit_id = :business_unit_id,";
+    	list($supplier_id,$cofor)=explode("|",$data["supplier_id"]);
+    	$sql = "UPDATE contracts SET name_contract = :name_contract, reference = :reference, supplier_id = :supplier_id, purchase_type_id = :purchase_type_id, purchase_family_id = :purchase_family_id,"; 
+        $sql .= "maintenance_type_id = :maintenance_type_id, purchase_date = :purchase_date, renewal_date = :renewal_date, end_date = :end_date, business_unit_id = :business_unit_id,";
         $sql .= "paid_by_id = :paid_by_id, comments = :comments WHERE id = :id";
         $q = $this->db->prepare($sql);
         $q->bindParam(":name_contract", $data["name_contract"]);
         $q->bindParam(":reference", $data["reference"]);
-        $q->bindParam(":supplier_id", $data["supplier_id"]);
+        $q->bindParam(":supplier_id", $supplier_id);
         $q->bindParam(":purchase_type_id", $data["purchase_type_id"]);
+        $q->bindParam(":purchase_family_id", $data["purchase_family_id"]);
         $q->bindParam(":maintenance_type_id", $data["maintenance_type_id"]);
         $q->bindParam(":purchase_date", $data["purchase_date"]);
         $q->bindParam(":renewal_date", $data["renewal_date"]);
+        $q->bindParam(":end_date", $data["end_date"]);
         $q->bindParam(":business_unit_id", $data["business_unit_id"]);
         $q->bindParam(":paid_by_id", $data["paid_by_id"]);
         $q->bindParam(":comments", $data["comments"]);
-        $q->bindParam(":id", $data["id"], PDO::PARAM_INT);
+        $q->bindParam(":id",  $data["id"], PDO::PARAM_INT);
         $q->execute();
+        return $this->getById($data["id"]);
     }
     
     public function remove($id) {

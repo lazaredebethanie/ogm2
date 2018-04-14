@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+body {
+    background-color: white;
+    color: black
+} /* page blanche avec une police noire */
+.menu1 { /* boite qui contient le menu (les onglets) */
+    border-bottom: solid 2px black; /* crée le trait noir en-dessous des onglets */
+    padding-top: 12px; /* marge intérieure haute */
+    padding-bottom: 0px
+} /* marge intérieure basse */
+.onglet { /* style des onglets inactifs */
+    margin: 5px 5px 0px 20px; /* marge extérieure */
+    padding: 11px 0px 0px 0px; /* marge intérieure */
+    font-size: 16px; /* taille de la police des onglets */
+    float: left; /* boite en mode float, pour pouvoir en définir la largeur */
+    width: 100px; /* largeur de la boite float */
+    background: url(onglet.gif) bottom no-repeat; /* image de fond de la boite float, calée en bas */
+    text-decoration: none; /* les lien dans les onglets ne sont pas soulignés */
+    text-align: center
+} /* Le texte des onglets est centré */
+a.onglet:hover {
+    color: green
+} /* lors du survol d'un lien, la police devient verte */
+.onglet-actif { /* style de l'onglet de la page active */
+    position: relative; /* l'onglet inactif est mis en position relative */
+    top: 2px; /* pour pouvoir baisser l'onglet de 2 pixels */
+    border-bottom: solid 0px white
+} /*on efface le trait inférieur du menu */
+.spacer {
+    clear: both
+} /* force le retour à la ligne après des boites float */
+</style>
+</head>
+
+<body>
+
+    <div class="menu1">
+        <!-- début de la boite contenant les onglets -->
+        <a class="onglet" href="css-index.htm">Sommaire</a>
+        <!-- onglet inactif -->
+        <a class="onglet" href="onglets-1.htm">Onglets 1</a>
+        <!-- onglet inactif -->
+        <span class="onglet onglet-actif">Onglets 2</span>
+        <!-- onglet ACTIF -->
+        <a class="onglet" href="onglets-3.htm">Onglets 3</a>
+        <!-- onglet inactif -->
+        <div class="spacer"></div>
+        <!-- permet le retour à la ligne à la fin des boites float -->
+    </div>
+
+</body>
+</html>

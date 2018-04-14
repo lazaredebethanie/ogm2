@@ -6,9 +6,11 @@ class Contracts {
     public $reference;
     public $supplier_id;
     public $purchase_type_id;
+    public $purchase_family_id;
     public $maintenance_type_id;
     public $purchase_date;
     public $renewal_date;
+    public $end_date;
     public $business_unit_id;
     public $paid_by_id;
     public $total_amount;
