@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Contract Details...</title>
+<meta charset="UTF-8">
+<link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/ogm.css" />
+<link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/onglets2.css" />
+</head>
+<body>
+    <div class="onglets_html">
+        <DIV class="tabs_panels">
+            <DIV class="onglets">
+                <DIV class="onglet_y onglet">
+                    <a href="../screens/contractDetails.php">Contract Details</a>
+                </DIV>
+                <DIV class="onglet_n onglet">
+                    <a href="../screens/maintenance_lines.html">Maintenance Lines</a>
+                </DIV>
+            </DIV>
+            <DIV class="contenu">
+                <H1 id="titlePage"></H1>
+                <form id="contractDetails" name="Contract Details" method="POST" autocomplete="on">
+                    <INPUT id="method" name="method" type="hidden"> <INPUT id="id" name="id" type="hidden">
+                    <TABLE><TBODY id="body">
+                        <TR>
+                            <TD>Contract Name</TD>
+                            <TD colspan="3"><input id="nameContract" name="name_contract" type="text" size="60"></TD>
+                        </TR>
+                        <TR>
+                            <TD>Reference</TD>
+                            <TD><input id="reference" name="reference" type="text"></TD>
+                        </TR>
+                        <TR>
+                            <TD>Supplier</TD>
+                            <TD><SELECT id="supplierId" name="supplier_id" size="1" onChange="changeVal(event)">
+                                    <OPTION value="0|">
+                                    <OPTION value="1|xxx">xxx
+                            </SELECT></TD>
+                            <TD>Supplier Code</TD>
+                            <TD><input id="supplierCode" name="supplier_code" type="text" disabled></TD>
+                        </TR>
+                        <TR>
+                            <TD>Purchase Family</TD>
+                            <TD colspan="3"><SELECT id="purchaseFamilyId name=" purchase_family_id" size="1">
+                                    <OPTION value="0"> 
+                            </SELECT></TD>
+                        </TR>
+                        <TR>
+                            <TD>Purchase Type</TD>
+                            <TD><SELECT id="purchaseTypeId" name="purchase_type_id" size="1">
+                                    <OPTION value="0">
+                            </SELECT></TD>
+                            <TD>Purchase Date</TD>
+                            <TD><input id="purchaseDate" name="purchase_date" type="text"></TD>
+                        </TR>
+                        <TR>
+                            <TD>&nbsp;</TD>
+                        </TR>
+                        <TR>
+                            <TD>Maintenance Type</TD>
+                            <TD><SELECT id="maintenanceTypeId" name="maintenance_type_id" size="1">
+                                    <OPTION value="0"> 
+                            </SELECT></TD>
+                            <TD>Amount</TD>
+                            <TD><input id="totalAmount" name="total_amount" type="text" value="0"></TD>
+                        </TR>
+                        <TR>
+                            <TD>Renewal Date</TD>
+                            <TD><input id="renewalDate" name="renewal_date" type="text"></TD>
+                            <TD>End Date</TD>
+                            <TD><input id="endDate" name="end_date" type="text"></TD>
+                        </TR>
+                        <TR>
+                        </TR>
+                        <TR>
+                            <TD>&nbsp;</TD>
+                        </TR>
+                        <TR>
+                            <TD>Business Unit</TD>
+                            <TD><SELECT id="BusinessUnitId" name="business_unit_id" size="1">
+                                    <OPTION value="0">
+                            </SELECT></TD>
+                            <TD>Paid by</TD>
+                            <TD><SELECT id="paidById" name="paid_by_id" size="1">
+                                    <OPTION value="0">
+                            </SELECT></TD>
+                        </TR>
+                        <TR>
+                            <TD>Comment</TD>
+                            <TD colspan="3"><TEXTAREA id="comments" name="comments" maxlength="255" rows="5" cols="60"></TEXTAREA></TD>
+                        </TR>
+
+                    </TBODY></TABLE>
+                    <br>
+                    <br>
+                    <button id="submit" type="submit">Save</button>
+                    &nbsp;&nbsp;
+                    <button id="reset" type="reset" value="Reset">Reset</button>
+                    &nbsp;&nbsp;
+                    <button id="close" type="reset" onClick="window.close()">Close</button>
+                    <DIV id="retour"></div>
+                </form>
+            </DIV>
+            <script >
+                function changeVal(event) {
+                    var elem=event.target.value.split('|');
+                        document.forms[0].supplier_code.value=elem[1];
+                }
+            </script>
+            
+            <script src="../jsgrid/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript">
+            		$(function () 
+            		  {
+                    	var argSec=location.search.substring(1, location.search.length).split('&');
+                    	var arg=argSec[0].split('=');
+                    	if (arg[0]=="id")  {
+        					var id=arg[1];                	
+            				//alert(id);
+                        	};
+            		    //-----------------------------------------------------------------------
+            		    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+            		    //-----------------------------------------------------------------------
+            		    $.ajax({                                      
+            		      url: '../calls/contractDetailsIndex.php',                  //the script to call to get data          
+            		      data: argSec[0],                        //you can insert url argumnets here to pass to .php
+            		                                       //for example "id=5&parent=6"
+            		      method: "GET",                                 
+            		      dataType: 'json',                //data format      
+            		      success: function(data)          //on recieve of reply
+            		      {
+            		    	  console.log("call contractDetailsIndex : success");
+            		        //--------------------------------------------------------------------
+            		        // 3) Update html content
+            		        //--------------------------------------------------------------------
+            		        $('#nameContract').val(data["name_contract"]); //Set output element 
+            		        $('#reference').val(data["reference"]); //Set output element
+            		        $('#purchaseDate').val(data["purchase_date"]); //Set output element
+            		        $('#totalAmount').val(data["total_amount"]); //Set output element
+            		        $('#renewalDate').val(data["renewal_date"]); //Set output element
+            		        $('#endDate').val(data["end_date"]); //Set output element
+            		        //recommend reading up on jquery selectors they are awesome 
+            		        // http://api.jquery.com/category/selectors/
+            		      } 
+            		    }).done(function(data) {
+            		    	alert(data["supplier_id"]);
+            		    });
+            		  }); 
+            </script>
+        
+
+</body>
+</html>
+

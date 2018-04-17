@@ -14,28 +14,28 @@ $(function() {
                 loadData: function(filter) {
                     return $.ajax({
                         type: "GET",
-                        url: "../screens/famillesAchatIndex.php",
+                        url: "../calls/famillesAchatIndex.php",
                         data: filter
                     });
                 },
                 insertItem: function(item) {
                     return $.ajax({
                         type: "POST",
-                        url: "../screens/famillesAchatIndex.php",
+                        url: "../calls/famillesAchatIndex.php",
                         data: item
                     });
                 },
                 updateItem: function(item) {
                     return $.ajax({
                         type: "PUT",
-                        url: "../screens/famillesAchatIndex.php",
+                        url: "../calls/famillesAchatIndex.php",
                         data: item
                     });
                 },
                 deleteItem: function(item) {
                     return $.ajax({
                         type: "DELETE",
-                        url: "../screens/famillesAchatIndex.php",
+                        url: "../calls/famillesAchatIndex.php",
                         data: item
                     });
                 }

@@ -21,28 +21,28 @@ $(function() {
                 loadData: function(filter) {
                     return $.ajax({
                         type: "GET",
-                        url: "../screens/fournisseursIndex.php",
+                        url: "../calls/fournisseursIndex.php",
                         data: filter
                     });
                 },
                 insertItem: function(item) {
                     return $.ajax({
                         type: "POST",
-                        url: "../screens/fournisseursIndex.php",
+                        url: "../calls/fournisseursIndex.php",
                         data: item
                     });
                 },
                 updateItem: function(item) {
                     return $.ajax({
                         type: "PUT",
-                        url: "../screens/fournisseursIndex.php",
+                        url: "../calls/fournisseursIndex.php",
                         data: item
                     });
                 },
                 deleteItem: function(item) {
                     return $.ajax({
                         type: "DELETE",
-                        url: "../screens/fournisseursIndex.php",
+                        url: "../calls/fournisseursIndex.php",
                         data: item
                     });
                 }

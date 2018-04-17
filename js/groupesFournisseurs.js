@@ -14,28 +14,28 @@ $(function() {
                 loadData: function(filter) {
                     return $.ajax({
                         type: "GET",
-                        url: "../screens/groupesFournisseursIndex.php",
+                        url: "../calls/groupesFournisseursIndex.php",
                         data: filter
                     });
                 },
                 insertItem: function(item) {
                     return $.ajax({
                         type: "POST",
-                        url: "../screens/groupesFournisseursIndex.php",
+                        url: "../calls/groupesFournisseursIndex.php",
                         data: item
                     });
                 },
                 updateItem: function(item) {
                     return $.ajax({
                         type: "PUT",
-                        url: "../screens/groupesFournisseursIndex.php",
+                        url: "../calls/groupesFournisseursIndex.php",
                         data: item
                     });
                 },
                 deleteItem: function(item) {
                     return $.ajax({
                         type: "DELETE",
-                        url: "../screens/groupesFournisseursIndex.php",
+                        url: "../calls/groupesFournisseursIndex.php",
                         data: item
                     });
                 }

@@ -14,28 +14,28 @@ $(document).ready(function() {
                 loadData: function(filter) {
                     return $.ajax({
                         type: "GET",
-                        url: "../screens/businessUnitsIndex.php",
+                        url: "../calls/businessUnitsIndex.php",
                         data: filter
                     });
                 },
                 insertItem: function(item) {
                     return $.ajax({
                         type: "POST",
-                        url: "../screens/businessUnitsIndex.php",
+                        url: "../calls/businessUnitsIndex.php",
                         data: item
                     });
                 },
                 updateItem: function(item) {
                     return $.ajax({
                         type: "PUT",
-                        url: "../screens/businessUnitsIndex.php",
+                        url: "../calls/businessUnitsIndex.php",
                         data: item
                     });
                 },
                 deleteItem: function(item) {
                     return $.ajax({
                         type: "DELETE",
-                        url: "../screens/businessUnitsIndex.php",
+                        url: "../calls/businessUnitsIndex.php",
                         data: item
                     });
                 }

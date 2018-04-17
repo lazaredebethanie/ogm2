@@ -14,28 +14,28 @@ $(function() {
                 loadData: function(filter) {
                     return $.ajax({
                         type: "GET",
-                        url: "../screens/typesEvolutionsIndex.php",
+                        url: "../calls/typesEvolutionsIndex.php",
                         data: filter
                     });
                 },
                 insertItem: function(item) {
                     return $.ajax({
                         type: "POST",
-                        url: "../screens/typesEvolutionsIndex.php",
+                        url: "../calls/typesEvolutionsIndex.php",
                         data: item
                     });
                 },
                 updateItem: function(item) {
                     return $.ajax({
                         type: "PUT",
-                        url: "../screens/typesEvolutionsIndex.php",
+                        url: "../calls/typesEvolutionsIndex.php",
                         data: item
                     });
                 },
                 deleteItem: function(item) {
                     return $.ajax({
                         type: "DELETE",
-                        url: "../screens/typesEvolutionsIndex.php",
+                        url: "../calls/typesEvolutionsIndex.php",
                         data: item
                     });
                 }

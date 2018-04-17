@@ -14,28 +14,28 @@ $(function() {
                 loadData: function(filter) {
                     return $.ajax({
                         type: "GET",
-                        url: "../screens/typesMaintenanceIndex.php",
+                        url: "../calls/typesMaintenanceIndex.php",
                         data: filter
                     });
                 },
                 insertItem: function(item) {
                     return $.ajax({
                         type: "POST",
-                        url: "../screens/typesMaintenanceIndex.php",
+                        url: "../calls/typesMaintenanceIndex.php",
                         data: item
                     });
                 },
                 updateItem: function(item) {
                     return $.ajax({
                         type: "PUT",
-                        url: "../screens/typesMaintenanceIndex.php",
+                        url: "../calls/typesMaintenanceIndex.php",
                         data: item
                     });
                 },
                 deleteItem: function(item) {
                     return $.ajax({
                         type: "DELETE",
-                        url: "../screens/typesMaintenanceIndex.php",
+                        url: "../calls/typesMaintenanceIndex.php",
                         data: item
                     });
                 }

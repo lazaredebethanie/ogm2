@@ -49,28 +49,28 @@ $(function() {
                                 loadData: function(filter) {
                                     return $.ajax({
                                         type: "GET",
-                                        url: "../screens/contractsIndex.php",
+                                        url: "../calls/contractsIndex.php",
                                         data: filter
                                     });
                                 },
                                 insertItem: function(item) {
                                     return $.ajax({
                                         type: "POST",
-                                        url: "../screens/contractsIndex.php",
+                                        url: "../calls/contractsIndex.php",
                                         data: item
                                     });
                                 },
                                 updateItem: function(item) {
                                     return $.ajax({
                                         type: "PUT",
-                                        url: "../screens/contractsIndex.php",
+                                        url: "../calls/contractsIndex.php",
                                         data: item
                                     });
                                 },
                                 deleteItem: function(item) {
                                     return $.ajax({
                                         type: "DELETE",
-                                        url: "../screens/contractsIndex.php",
+                                        url: "../calls/contractsIndex.php",
                                         data: item
                                     });
                                 }
@@ -78,7 +78,7 @@ $(function() {
 
                             rowClick: function (args) {
                                 //window.location = "/Reservations/Edit/" + args.item.id + args.item.acronym;
-                                window.open ("contractDetails.php?id="+args.item.id,"popup name","menubar=no, scrollbars=no, top=100, left=100, width=1000, height=600");
+                                window.open ("contractDetails.html?id="+args.item.id,"popup name","menubar=no, scrollbars=no, top=100, left=100, width=1000, height=600");
                             },
 
                             pageSize: 10,
