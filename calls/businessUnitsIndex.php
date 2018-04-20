@@ -9,9 +9,11 @@ $businessUnits = new BusinessUnitsActions($db);
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
+		$acronym= isset($_GET['acronym']) ? $_GET['acronym'] : NULL;
+		$nameBU= isset($_GET['nameBU']) ? $_GET['nameBU'] : NULL;
 		$result = $businessUnits->getAll(array(
-		"acronym" => $_GET["acronym"],
-		"nameBU" => $_GET["nameBU"],
+				"acronym" => $acronym,
+				"nameBU" => $nameBU,
 		));
 		break;
 		

@@ -6,7 +6,7 @@ $config = include("../db/config.php");
 $db = new PDO($config["db"], $config["username"], $config["password"]);
 $contractDetails = new ContractDetailsActions($db);
 
-// ************************** pour le DEBUG *************************************
+/* ************************** pour le DEBUG *************************************
 if (! isset($_SERVER["REQUEST_METHOD"])){
 	$_SERVER["REQUEST_METHOD"]="GET";
 	
@@ -14,7 +14,7 @@ if (! isset($_SERVER["REQUEST_METHOD"])){
 if (! isset($_GET["id"] )) {
 	$_GET["id"]=10;
  	}
-// *******************************************************************************
+// ******************************************************************************* */
  	
 switch ($_SERVER ["REQUEST_METHOD"]) {
 	case "GET" :

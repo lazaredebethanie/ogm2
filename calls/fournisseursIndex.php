@@ -5,15 +5,18 @@ include "../actions/FournisseursActions.php";
 $config = include("../db/config.php");
 $db = new PDO($config["db"], $config["username"], $config["password"]);
 $fournisseursbusinessUnits = new FournisseursActions($db);
-//$_SERVER["REQUEST_METHOD"]="PUT";
+$_SERVER["REQUEST_METHOD"]="GET";
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
-
+		$nom_usuel= isset($_GET['nom_usuel']) ? $_GET['nom_usuel'] : NULL;
+		$cofor= isset($_GET['cofor']) ? $_GET['cofor'] : NULL;
+		$groupe_id= isset($_GET['groupe_id']) ? $_GET['groupe_id'] : NULL;
+		
 	    $result = $fournisseursbusinessUnits->getAll(array(
-		"nom_usuel" => $_GET["nom_usuel"],
-		"cofor" => $_GET["cofor"],
-		"groupe_id" => $_GET["groupe_id"],
+	    		"nom_usuel" => $nom_usuel,
+	    		"cofor" => $cofor,
+	    		"groupe_id" => $groupe_id
 		
 		));
 		break;

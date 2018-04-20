@@ -9,9 +9,12 @@ $famillesAchat = new FamillesAchatActions($db);
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
+		$code= isset($_GET['code']) ? $_GET['code'] : NULL;
+		$designation= isset($_GET['designation']) ? $_GET['designation'] : NULL;
+		
 		$result = $famillesAchat->getAll(array(
-		"code" => $_GET["code"],
-		"designation" => $_GET["designation"],
+				"code" => $code,
+				"designation" => $designation,
 		));
 		break;
 		

@@ -9,8 +9,9 @@ $typesMaintenance = new TypesMaintenanceActions($db);
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
+		$type= isset($_GET['type']) ? $_GET['type'] : NULL;
 		$result = $typesMaintenance->getAll(array(
-		"type" => $_GET["type"]
+				"type" => $type
 		));
 		break;
 		

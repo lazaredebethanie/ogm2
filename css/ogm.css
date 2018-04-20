@@ -80,3 +80,43 @@ iframe[name='action'] {
     height: 100%;
     border: none;
 }
+
+#retourOK {
+    width: 300px;
+    height: 30px;
+  /* border:1px ridge grey;*/
+  font-size:1.5rem;
+  color:white;
+  text-align:center;
+  line-height:30px;
+    animation-name: animateOK;
+    animation-duration: 5s;
+   visibility:hidden;
+}
+
+@keyframes animateOK {
+    from {visibility:visible;
+      background-color:green;}
+    to {background-color:white;
+      visibility:hidden;}
+}
+
+#retourKO {
+    width: 300px;
+    height: 30px;
+  /* border:1px ridge grey;*/
+  font-size:1.5rem;
+  color:white;
+  text-align:center;
+  line-height:30px;
+    animation-name: animateKO;
+    animation-duration: 5s;
+   visibility:hidden;
+}
+
+@keyframes animateKO {
+    from {visibility:visible;
+      background-color:red;}
+    to {background-color:white;
+      visibility:hidden;}
+}

@@ -5,12 +5,13 @@ include "../actions/PurchaseTypeActions.php";
 $config = include("../db/config.php");
 $db = new PDO($config["db"], $config["username"], $config["password"]);
 $purchaseType = new PurchaseTypeActions($db);
-//$_SERVER["REQUEST_METHOD"]="GET";
+$_SERVER["REQUEST_METHOD"]="GET";
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
+		$type= isset($_GET['type']) ? $_GET['type'] : NULL;
 		$result = $purchaseType->getAll(array(
-		"type" => $_GET["type"]
+		"type" => $type
 		));
 		break;
 		

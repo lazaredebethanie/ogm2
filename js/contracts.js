@@ -78,7 +78,25 @@ $(function() {
 
                             rowClick: function (args) {
                                 //window.location = "/Reservations/Edit/" + args.item.id + args.item.acronym;
-                                window.open ("contractDetails.html?id="+args.item.id,"popup name","menubar=no, scrollbars=no, top=100, left=100, width=1000, height=600");
+                                var w=900;
+                                var h=500;
+                                var urlDet="contractDetails.html?id="+args.item.id
+                                var title="Contract Details";
+                                var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
+                                var dualScreenTop = window.screenTop != undefined ? window.screenTop : window.screenY;
+
+                                var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+                                var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+                                var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+                                var top = ((height / 2) - (h / 2)) + dualScreenTop;
+                                var newWindow = window.open(urlDet, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+                                /*if (window.focus) {
+                                    newWindow.focus();*/
+                            
+
+                                //window.open ("contractDetails.html?id="+args.item.id,"popup name","menubar=no, scrollbars=no, top=100, left=100, width=1000, height=600");
+
                             },
 
                             pageSize: 10,

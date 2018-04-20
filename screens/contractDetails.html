@@ -8,20 +8,16 @@
 <link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/onglets2.css" />
 </head>
 <body>
-    <div class="onglets_html">
+    <DIV class="onglets_html">
         <DIV class="tabs_panels">
             <DIV class="onglets">
-                <DIV class="onglet_y onglet">
-                    <a href="../screens/contractDetails.php">Contract Details</a>
-                </DIV>
-                <DIV class="onglet_n onglet">
-                    <a href="../screens/maintenance_lines.html">Maintenance Lines</a>
-                </DIV>
+                <DIV class="onglet_y onglet"><a href="../screens/contractDetails.php">Contract Details</a></DIV>
+                <DIV class="onglet_n onglet"><a id="hrefMaiLines" href="../screens/maintenance_lines.html">Maintenance Lines</a></DIV>
             </DIV>
             <DIV class="contenu">
                 <H1 id="titlePage"></H1>
-                <form id="contractDetails" name="Contract Details" method="POST" autocomplete="on">
-                    <INPUT id="method" name="method" type="hidden"> <INPUT id="id" name="id" type="hidden">
+                <form id="contractDetailsForm" autocomplete="on"> <!--  name="../contractDetailsIndex.php" method="POST"  -->
+                    <INPUT id="id" name="id" type="hidden">
                     <TABLE><TBODY id="body">
                         <TR>
                             <TD>Contract Name</TD>
@@ -42,7 +38,7 @@
                         </TR>
                         <TR>
                             <TD>Purchase Family</TD>
-                            <TD colspan="3"><SELECT id="purchaseFamilyId name=" purchase_family_id" size="1">
+                            <TD colspan="3"><SELECT id="purchaseFamilyId" name=" purchase_family_id" size="1">
                                     <OPTION value="0"> 
                             </SELECT></TD>
                         </TR>
@@ -67,9 +63,9 @@
                         </TR>
                         <TR>
                             <TD>Renewal Date</TD>
-                            <TD><input id="renewalDate" name="renewal_date" type="text"></TD>
+                            <TD><input id="renewalDate" name="renewal_date" type="date"></TD>
                             <TD>End Date</TD>
-                            <TD><input id="endDate" name="end_date" type="text"></TD>
+                            <TD><input id="endDate" name="end_date" type="date"></TD>
                         </TR>
                         <TR>
                         </TR>
@@ -93,61 +89,202 @@
 
                     </TBODY></TABLE>
                     <br>
+                    
                     <br>
+                    <table><tr><td>
                     <button id="submit" type="submit">Save</button>
                     &nbsp;&nbsp;
-                    <button id="reset" type="reset" value="Reset">Reset</button>
+                    <button id="reset" type="reset">Reset</button>
                     &nbsp;&nbsp;
                     <button id="close" type="reset" onClick="window.close()">Close</button>
-                    <DIV id="retour"></div>
+                    </td>
+                    <td><DIV id="tempo"></div></td>
+                    </tr></table>
                 </form>
             </DIV>
-            <script >
-                function changeVal(event) {
-                    var elem=event.target.value.split('|');
-                        document.forms[0].supplier_code.value=elem[1];
-                }
-            </script>
-            
+        </DIV>
+     </DIV>
+     <DIV><input id="hiddenId" type="hidden"></DIV>
+
+    <!-- ************************* DEBUT PARTIE JS *****************************  -->
+
             <script src="../jsgrid/jquery-3.2.1.min.js"></script>
-            <script type="text/javascript">
-            		$(function () 
-            		  {
-                    	var argSec=location.search.substring(1, location.search.length).split('&');
-                    	var arg=argSec[0].split('=');
-                    	if (arg[0]=="id")  {
-        					var id=arg[1];                	
-            				//alert(id);
-                        	};
-            		    //-----------------------------------------------------------------------
-            		    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
-            		    //-----------------------------------------------------------------------
-            		    $.ajax({                                      
-            		      url: '../calls/contractDetailsIndex.php',                  //the script to call to get data          
-            		      data: argSec[0],                        //you can insert url argumnets here to pass to .php
-            		                                       //for example "id=5&parent=6"
-            		      method: "GET",                                 
-            		      dataType: 'json',                //data format      
-            		      success: function(data)          //on recieve of reply
-            		      {
-            		    	  console.log("call contractDetailsIndex : success");
-            		        //--------------------------------------------------------------------
-            		        // 3) Update html content
-            		        //--------------------------------------------------------------------
-            		        $('#nameContract').val(data["name_contract"]); //Set output element 
-            		        $('#reference').val(data["reference"]); //Set output element
-            		        $('#purchaseDate').val(data["purchase_date"]); //Set output element
-            		        $('#totalAmount').val(data["total_amount"]); //Set output element
-            		        $('#renewalDate').val(data["renewal_date"]); //Set output element
-            		        $('#endDate').val(data["end_date"]); //Set output element
-            		        //recommend reading up on jquery selectors they are awesome 
-            		        // http://api.jquery.com/category/selectors/
-            		      } 
-            		    }).done(function(data) {
-            		    	alert(data["supplier_id"]);
-            		    });
-            		  }); 
-            </script>
+
+    <script >
+
+         var argSec;
+
+    
+            function changeVal(event) {
+                    var elem=event.target.value.split('|');
+                        $("#supplierCode").val(elem[1]);
+                }
+            
+            
+            $(document).ready(function () 
+        		  {
+                    //alert("go");
+                    //alert(args.item.id);
+                    argSec=location.search.substring(1, location.search.length).split('&');
+                    $("#hrefMaiLines").attr("href",$("#hrefMaiLines").attr("href")+"?"+argSec[0]);
+                    //alert($("#hrefMaiLines").attr("href"));
+                    getContractById(argSec[0]);
+                  });
+
+                function getContractById (id) { 
+                    //-----------------------------------------------------------------------
+        		    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
+        		    //-----------------------------------------------------------------------
+        		    $.ajax
+        		        ({                                      
+        		        url: '../calls/contractDetailsIndex.php',                  //the script to call to get data          
+        		        data: id,                        //you can insert url argumnets here to pass to .php
+        		                                                //for example "id=5&parent=6"
+        		        method: "GET",                                 
+        		        dataType: 'json',                //data format
+        		        })
+        		        .done(function(data) { // start DONE contractDetailsIndex
+            		    	//alert("Entry in 'done' on contractDetailsIndex -- "+data["supplier_id"]);
+        		            console.log("call contractDetailsIndex : success");
+                            //--------------------------------------------------------------------
+                            // 3) Update form content
+                            //--------------------------------------------------------------------
+                            var arg=argSec[0].split('=');
+                            if (arg[0]=="id")  {
+                                var idNr=arg[1];                    
+                            };
+                            $('#id').val(idNr); //Set input element 
+                            $('#nameContract').val(data["name_contract"]); //Set input element 
+                            $('#reference').val(data["reference"]); //Set input element
+                            $('#purchaseDate').val(data["purchase_date"]); //Set input element
+                            $('#totalAmount').val(data["total_amount"]); //Set input element
+                            $('#renewalDate').val(data["renewal_date"]); //Set input element
+                            $('#endDate').val(data["end_date"]); //Set input element
+                            $('#comments').val(data["comments"]); //Set input element
+                            //suppliersSelect(data["supplier_id"]);
+                            var dataSel;
+                            dataSel=ajaxSelect("../calls/fournisseursIndex.php");
+                            appendSuppliers(dataSel,data["supplier_id"]);
+                            
+                            dataSel=ajaxSelect("../calls/purchaseTypeIndex.php");
+                            appendPurchaseType(dataSel,data["purchase_type_id"]);
+                            
+                            dataSel=ajaxSelect("../calls/famillesAchatIndex.php");
+                            appendPurchaseFamily(dataSel,data["purchase_family_id"]);
+                            
+                            dataSel=ajaxSelect("../calls/typesMaintenanceIndex.php");
+                            appendMaintenanceTypes(dataSel,data["maintenance_type_id"]);
+                            
+                            dataSel=ajaxSelect("../calls/businessUnitsIndex.php");
+                            appendBU(dataSel,data["business_unit_id"]);
+                            
+                            dataSel=ajaxSelect("../calls/paidByIndex.php");
+                            appendPaidBy(dataSel,data["paid_by_id"]);
+                          }) // end DONE contractDetailsIndex
+                          .fail(function(){ // start FAIL contractDetailsIndex
+                             alert("contract fail"); 
+                          }); // end FAIL contractDetailsIndex and call AJAX  contractDetailsIndex
+        		  }
+        		  function ajaxSelect(urlCalled) {
+        		      var result;
+                      $.ajax
+                      ({
+                      url: urlCalled,
+                      async: false,
+                      method:"GET",
+                      dataType: "json"
+                      })
+                      .done(function(data2) {
+                          //alert("DONE call "+urlCalled);
+                          console.log("call ajaxSelect : success for "+urlCalled);
+                          result=data2;
+                      })
+                      .fail(function(){
+                          alert("FAIL call "+urlCalled);
+                          result="";
+                      }); 
+                      return result;
+                  }; // end of function ajaxSelect
+                  
+                  function appendSuppliers (dataSel,id) {
+                      var cofor;
+                      for (let row of dataSel) {
+                          //alert(row["cofor"]);
+                          if (row["id"]==id) {
+                              id=id+"|"+row["cofor"];
+                              cofor=row["cofor"];
+                          }
+                          $("#supplierId").append('<OPTION value="'+row["id"]+'|'+row["cofor"]+'">'+row["nom_usuel"])
+                      }
+                      $("#supplierId").val(id);
+                      $("#supplierCode").val(cofor);
+                  }; // end of appendSuppliers
+                  
+                  function appendPurchaseType (dataSel,id) {
+                      for (let row of dataSel) {
+                          $("#purchaseTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"])
+                      }
+                      $("#purchaseTypeId").val(id);
+                  }; // end of appendPurchaseType
+                  
+                  function appendPurchaseFamily (dataSel,id) {
+                      for (let row of dataSel) {
+                          $("#purchaseFamilyId").append('<OPTION value="'+row["id"]+'">'+row["code"]+" - "+row["designation"])
+                      }
+                      $("#purchaseFamilyId").val(id);
+                  }; // end of appendPurchaseFamily
+                  
+                  function appendMaintenanceTypes (dataSel,id) {
+                      for (let row of dataSel) {
+                          $("#maintenanceTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"])
+                      }
+                      $("#maintenanceTypeId").val(id);
+                  }; // end of appendMaintenanceTypes
+                  
+                  function appendBU (dataSel,id) {
+                      for (let row of dataSel) {
+                          $("#BusinessUnitId").append('<OPTION value="'+row["id"]+'">'+row["acronym"])
+                      }
+                      $("#BusinessUnitId").val(id);
+                  }; // end of appendBU
+                  
+                  function appendPaidBy (dataSel,id) {
+                      for (let row of dataSel) {
+                          $("#paidById").append('<OPTION value="'+row["id"]+'">'+row["paidByEntity"])
+                      }
+                      $("#paidById").val(id);
+                  }; // end of appendPaidBy
+                  
+            $("#reset").click(function() {
+                    getContractById(argSec[0]);  
+            });
+
+            $("#contractDetailsForm").submit(function(event) {
+               event.preventDefault();
+               //alert("submit");
+               var parm = $(this).serialize();
+               $.ajax
+                  ({
+                      url: "../calls/contractDetailsIndex.php",
+                      data: parm,
+                      type: "PUT",
+                      cache: false
+                  })
+                  .done(function(){
+                      //be careful, the PHP program is called with succes but the result of SQL request is not verified... to develop 
+                      $("#tempo").html("<div id='retourOK'>Successful Update</div>");
+                      //return false;
+                  }) // end done
+                  .fail(function(){
+                      $("#tempo").html("<div id='retourKO'>Update Failed</div>");
+                  }) // end fail
+            });
+                  
+        </script>
+
+
+
+    <!-- ************************* FIN PARTIE JS *****************************  -->
         
 
 </body>

@@ -9,9 +9,11 @@ $paidBy = new PaidByActions($db);
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
+		$paidByEntity= isset($_GET['paidByEntity']) ? $_GET['paidByEntity'] : NULL;
+		$longName= isset($_GET['longName']) ? $_GET['longName'] : NULL;
 		$result = $paidBy->getAll(array(
-		"paidByEntity" => $_GET["paidByEntity"],
-		"longName" => $_GET["longName"],
+				"paidByEntity" => $paidByEntity,
+				"longName" => $longName,
 		));
 		break;
 		
