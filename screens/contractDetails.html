@@ -28,6 +28,9 @@
                             <TD><input id="reference" name="reference" type="text"></TD>
                         </TR>
                         <TR>
+                            <TD>&nbsp;</TD>
+                        </TR>
+                        <TR>
                             <TD>Supplier</TD>
                             <TD><SELECT id="supplierId" name="supplier_id" size="1" onChange="changeVal(event)">
                                     <OPTION value="0|">
@@ -48,10 +51,7 @@
                                     <OPTION value="0">
                             </SELECT></TD>
                             <TD>Purchase Date</TD>
-                            <TD><input id="purchaseDate" name="purchase_date" type="text"></TD>
-                        </TR>
-                        <TR>
-                            <TD>&nbsp;</TD>
+                            <TD><input id="purchaseDate" name="purchase_date" type="date"></TD>
                         </TR>
                         <TR>
                             <TD>Maintenance Type</TD>
@@ -108,11 +108,12 @@
 
     <!-- ************************* DEBUT PARTIE JS *****************************  -->
 
-            <script src="../jsgrid/jquery-3.2.1.min.js"></script>
+    <script src="../jsgrid/jquery-3.2.1.min.js"></script>
 
     <script >
 
          var argSec;
+         var flOpt=true;
 
     
             function changeVal(event) {
@@ -120,7 +121,7 @@
                         $("#supplierCode").val(elem[1]);
                 }
             
-            
+			            
             $(document).ready(function () 
         		  {
                     //alert("go");
@@ -131,7 +132,7 @@
                     getContractById(argSec[0]);
                   });
 
-                function getContractById (id) { 
+			function getContractById (id) { 
                     //-----------------------------------------------------------------------
         		    // 2) Send a http request with AJAX http://api.jquery.com/jQuery.ajax/
         		    //-----------------------------------------------------------------------
@@ -180,12 +181,15 @@
                             
                             dataSel=ajaxSelect("../calls/paidByIndex.php");
                             appendPaidBy(dataSel,data["paid_by_id"]);
+                            
+                            flOpt=false;
                           }) // end DONE contractDetailsIndex
                           .fail(function(){ // start FAIL contractDetailsIndex
                              alert("contract fail"); 
                           }); // end FAIL contractDetailsIndex and call AJAX  contractDetailsIndex
         		  }
-        		  function ajaxSelect(urlCalled) {
+
+			function ajaxSelect(urlCalled) {
         		      var result;
                       $.ajax
                       ({
@@ -206,7 +210,7 @@
                       return result;
                   }; // end of function ajaxSelect
                   
-                  function appendSuppliers (dataSel,id) {
+            function appendSuppliers (dataSel,id) {
                       var cofor;
                       for (let row of dataSel) {
                           //alert(row["cofor"]);
@@ -214,43 +218,56 @@
                               id=id+"|"+row["cofor"];
                               cofor=row["cofor"];
                           }
-                          $("#supplierId").append('<OPTION value="'+row["id"]+'|'+row["cofor"]+'">'+row["nom_usuel"])
+                          if (flOpt) {
+							$("#supplierId").append('<OPTION value="'+row["id"]+'|'+row["cofor"]+'">'+row["nom_usuel"])
+                          }
+                          
                       }
                       $("#supplierId").val(id);
                       $("#supplierCode").val(cofor);
                   }; // end of appendSuppliers
                   
-                  function appendPurchaseType (dataSel,id) {
+            function appendPurchaseType (dataSel,id) {
                       for (let row of dataSel) {
-                          $("#purchaseTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"])
+                          if (flOpt) {
+								$("#purchaseTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"])
+                          }
                       }
                       $("#purchaseTypeId").val(id);
                   }; // end of appendPurchaseType
                   
-                  function appendPurchaseFamily (dataSel,id) {
+            function appendPurchaseFamily (dataSel,id) {
                       for (let row of dataSel) {
-                          $("#purchaseFamilyId").append('<OPTION value="'+row["id"]+'">'+row["code"]+" - "+row["designation"])
+                    	  if (flOpt) {
+                    		  $("#purchaseFamilyId").append('<OPTION value="'+row["id"]+'">'+row["code"]+" - "+row["designation"])
+                    	  }
                       }
                       $("#purchaseFamilyId").val(id);
                   }; // end of appendPurchaseFamily
                   
-                  function appendMaintenanceTypes (dataSel,id) {
+            function appendMaintenanceTypes (dataSel,id) {
                       for (let row of dataSel) {
-                          $("#maintenanceTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"])
+                    	  if (flOpt) {
+                    		  $("#maintenanceTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"])
+                    	  }
                       }
                       $("#maintenanceTypeId").val(id);
                   }; // end of appendMaintenanceTypes
                   
-                  function appendBU (dataSel,id) {
+            function appendBU (dataSel,id) {
                       for (let row of dataSel) {
-                          $("#BusinessUnitId").append('<OPTION value="'+row["id"]+'">'+row["acronym"])
+                    	  if (flOpt) {
+                    		  $("#BusinessUnitId").append('<OPTION value="'+row["id"]+'">'+row["acronym"])
+                    	  }
                       }
                       $("#BusinessUnitId").val(id);
                   }; // end of appendBU
                   
-                  function appendPaidBy (dataSel,id) {
+            function appendPaidBy (dataSel,id) {
                       for (let row of dataSel) {
-                          $("#paidById").append('<OPTION value="'+row["id"]+'">'+row["paidByEntity"])
+                    	  if (flOpt) {
+                    		  $("#paidById").append('<OPTION value="'+row["id"]+'">'+row["paidByEntity"])
+                    	  }
                       }
                       $("#paidById").val(id);
                   }; // end of appendPaidBy
