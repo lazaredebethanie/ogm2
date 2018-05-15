@@ -1,27 +1,27 @@
 <?php
 
-include "../actions/FamillesAchatActions.php";
+include "../actions/LifeCyclesActions.php";
 
 $config = include("../db/config.php");
 $db = new PDO($config["db"], $config["username"], $config["password"]);
-$cyclesLife = new FamillesAchatActions($db);
+$cyclesLife = new LifeCyclesActions($db);
 //$_SERVER["REQUEST_METHOD"]="GET";
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
-		$state= isset($_GET['code']) ? $_GET['code'] : NULL;
-		$order= isset($_GET['designation']) ? $_GET['designation'] : NULL;
+		$state= isset($_GET['state']) ? $_GET['state'] : NULL;
+		$rank= isset($_GET['rank']) ? $_GET['rank'] : NULL;
 		
 		$result = $cyclesLife->getAll(array(
-				"code" => $state,
-				"designation" => $order,
+				"state" => $state,
+				"rank" => $rank,
 		));
 		break;
 		
 	case "POST":
 		$result = $cyclesLife->insert(array(
-		"code" => $_POST["code"],
-		"designation" => $_POST["designation"],
+		"state" => $_POST["state"],
+		"rank" => $_POST["rank"],
 		));
 		break;
 		
@@ -30,8 +30,8 @@ switch($_SERVER["REQUEST_METHOD"]) {
 		
 		$result = $cyclesLife->update(array(
 				"id" => intval($_PUT["id"]),
-				"code" => $_PUT["code"],
-				"designation" => $_PUT["designation"],
+				"state" => $_PUT["state"],
+				"rank" => $_PUT["rank"],
 		));
 		break;
 		

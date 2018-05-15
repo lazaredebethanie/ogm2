@@ -5,7 +5,7 @@ include "../actions/PurchaseTypeActions.php";
 $config = include("../db/config.php");
 $db = new PDO($config["db"], $config["username"], $config["password"]);
 $purchaseType = new PurchaseTypeActions($db);
-$_SERVER["REQUEST_METHOD"]="GET";
+//$_SERVER["REQUEST_METHOD"]="DELETE";
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":
@@ -34,6 +34,7 @@ switch($_SERVER["REQUEST_METHOD"]) {
 		parse_str(file_get_contents("php://input"), $_DELETE);
 		
 		$result = $purchaseType->remove(intval($_DELETE["id"]));
+		//$result = $purchaseType->remove(8);
 		break;
 }
 

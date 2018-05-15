@@ -5,16 +5,92 @@
     <title>Maintenance Lines</title>
     <link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/ogm.css" />
     <link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/onglets2.css" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../jsgrid/css/jsgrid.min.css" rel="stylesheet" />
+    <link href="../jsgrid/css/jsgrid-theme.min.css" rel="stylesheet" />
+    
 </head>
 <body>
         <div class="onglets_html">
         <div class="onglets">
             <div class="onglet_n onglet"><a id="hrefContractDet" href="../screens/contractDetails.html">Contract Details</a></div>
-            <div class="onglet_y onglet"><a href="../screens/maintenance_lines.html">Maintenance Lines</a></div>
+            <div class="onglet_y onglet"><a id="hrefMaiLines" href="../screens/maintenance_lines.html">Maintenance Lines</a></div>
         </div>
         <div class="contenu">
-            <h1>Maintenance Lines</h1>
-            A venir...
+    <table>
+        <tbody>
+            <tr>
+                <td><h2>Contract : </h2></td>
+                <td><h2 id="contract"></h2></td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td><h2>Supplier : </h2></td>
+                <td><h2 id="supplier"></h2></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="newLine">
+    <fieldset><h3>New line...</h3>
+    <form name="linesContractMngtAdd" autocomplete="on">
+      <table style="width: 100%;" border="0">
+        <tbody>
+          <tr>
+            <td>Subject</td>
+            <td colspan="3"><input name="subject" size="60" type="text"> </td>
+          </tr>
+          <tr>
+            <td>Start date</td>
+            <td><input name="renewal_date" type="date"></td>
+            <td>Amount<br>
+            </td>
+            <td><input name="amount" type="number"><br>
+            </td>
+          </tr>
+          <tr>
+            <td>End date or Duration</td>
+            <td><input name="end_date" type="date"> </td>
+            <td>
+              <select name="time_unity" size="1">
+                <option value="years">Years</option>
+                <option value="months">Months</option>
+                <option value="days">Days</option>
+              </select>
+            </td>
+            <td><input name="nb_unity" size="5" type="number"> </td>
+          </tr>
+          <tr>
+            <td>Budget years</td>
+            <td colspan="3">
+                <input name="budget_years" value="yes" checked="checked" type="radio"> Yes (imputation on each year)&nbsp;&nbsp; 
+                <input name="budget_years" value="no" type="radio">No (imputation on the start year) 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="addLine" type="button">Add</button> 
+      <button name="reset" type="reset">Reset</button>
+      <button id="closeNewLine" type="button">Close</button> <br>
+    </form></fieldset>
+    </div>
+    <fieldset>
+    <form name="lines_period" autocomplete="on">
+      <h3> Selected periods...</h3>
+      <div id="jsGridSelectedPeriod"></div>
+      <p>JSGRID ?<br>
+      </p>
+      <p><br>
+      </p>
+    </form></fieldset>
+    <fieldset>
+    <form name="lines_period" autocomplete="on">
+      <h3>Existing periods...</h3>
+      <button id="displayNewLine" type="button">Add</button>
+      <button id="displayByYears" type="button">Display by years</button>
+      <button id="displayByPeriods" type="button">Display by periods</button>
+      <div id="jsGridExistingPeriod"></div>
+      <p><br>
+      </p>
+    </form>
+    </fieldset>
         </div>
     </div>
 </body> 
@@ -22,10 +98,26 @@
  <!-- ************************* DEBUT PARTIE JS *****************************  -->
 
     <script src="../jsgrid/jquery-3.2.1.min.js"></script>
-
+    <script src="../jsgrid/jsgrid.min.js"></script>
 
     <script>
-       var argSec=location.search.substring(1, location.search.length).split('&');
-       $("#hrefContractDet").attr("href",$("#hrefContractDet").attr("href")+"?"+argSec[0]);
+           var argSec=location.search.substring(1, location.search.length).split('&');
+           $("#hrefContractDet").attr("href",$("#hrefContractDet").attr("href")+"?"+argSec[0]);
+           var argTmp;
+           argTmp=argSec[1].split('=');
+           $("#contract").html(decodeURIComponent(argTmp[1]));
+           argTmp=argSec[2].split('=');
+           $("#supplier").html(decodeURIComponent(argTmp[1]));
+           $("#newLine").hide();
+           $("#displayByPeriods").hide();
+           $("#displayNewLine").on("click",function() {
+               $("#newLine").show();
+           });
+           $("#closeNewLine").on("click",function() {
+               $("#newLine").hide();
+           });       
+    
     </script>
+    
+    <script src="../js/MaintenanceLinesPeriods.js"></script>
 </html>

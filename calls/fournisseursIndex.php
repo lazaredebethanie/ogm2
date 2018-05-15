@@ -5,7 +5,7 @@ include "../actions/FournisseursActions.php";
 $config = include("../db/config.php");
 $db = new PDO($config["db"], $config["username"], $config["password"]);
 $fournisseursbusinessUnits = new FournisseursActions($db);
-$_SERVER["REQUEST_METHOD"]="GET";
+//$_SERVER["REQUEST_METHOD"]="GET";
 
 switch($_SERVER["REQUEST_METHOD"]) {
 	case "GET":

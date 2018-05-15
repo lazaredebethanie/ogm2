@@ -59,10 +59,10 @@ class PurchaseTypeActions {
 	}
 	
 	public function remove($id) {
-		$sql = "DELETE FROM purchase_type WHERE id = :id";
-		$q = $this->db->prepare($sql);
-		$q->bindParam(":id", $id, PDO::PARAM_INT);
-		$q->execute();
+			$sql = "DELETE FROM purchase_type WHERE id = :id";
+			$q = $this->db->prepare($sql);
+			$q->bindParam(":id", $id, PDO::PARAM_INT);
+			$q->execute();
 	}
 	
 }

@@ -4,20 +4,24 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>Contract Details...</title>
 <meta charset="UTF-8">
-<link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/ogm.css" />
-<link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/onglets2.css" />
+    <link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/ogm.css" />
+    <link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/onglets2.css" />
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../jsgrid/css/jsgrid.min.css" rel="stylesheet" />
+    <link href="../jsgrid/css/jsgrid-theme.min.css" rel="stylesheet" />
+
 </head>
 <body>
     <DIV class="onglets_html">
         <DIV class="tabs_panels">
             <DIV class="onglets">
-                <DIV class="onglet_y onglet"><a href="../screens/contractDetails.php">Contract Details</a></DIV>
+                <DIV class="onglet_y onglet"><a id="hrefContractDet" href="../screens/contractDetails.php">Contract Details</a></DIV>
                 <DIV class="onglet_n onglet"><a id="hrefMaiLines" href="../screens/maintenance_lines.html">Maintenance Lines</a></DIV>
             </DIV>
             <DIV class="contenu">
-                <H1 id="titlePage"></H1>
-                <form id="contractDetailsForm" autocomplete="on"> <!--  name="../contractDetailsIndex.php" method="POST"  -->
-                    <INPUT id="id" name="id" type="hidden">
+                <H1 id="contractDetails"></H1>
+                <form id="contractDetailsForm" autocomplete="on">
+                    <INPUT id="id" name="id" type="hidden"> <!-- not used ? --> 
                     <TABLE><TBODY id="body">
                         <TR>
                             <TD>Contract Name</TD>
@@ -114,6 +118,8 @@
 
          var argSec;
          var flOpt=true;
+         var contract;
+         var supplier;
 
     
             function changeVal(event) {
@@ -127,8 +133,6 @@
                     //alert("go");
                     //alert(args.item.id);
                     argSec=location.search.substring(1, location.search.length).split('&');
-                    $("#hrefMaiLines").attr("href",$("#hrefMaiLines").attr("href")+"?"+argSec[0]);
-                    //alert($("#hrefMaiLines").attr("href"));
                     getContractById(argSec[0]);
                   });
 
@@ -156,6 +160,7 @@
                             };
                             $('#id').val(idNr); //Set input element 
                             $('#nameContract').val(data["name_contract"]); //Set input element 
+                            contract=data["name_contract"];
                             $('#reference').val(data["reference"]); //Set input element
                             $('#purchaseDate').val(data["purchase_date"]); //Set input element
                             $('#totalAmount').val(data["total_amount"]); //Set input element
@@ -183,6 +188,10 @@
                             appendPaidBy(dataSel,data["paid_by_id"]);
                             
                             flOpt=false;
+
+                            $("#hrefMaiLines").attr("href",$("#hrefMaiLines").attr("href")+"?"+argSec[0]+"&contract="+contract+"&supplier="+supplier);
+                            //alert($("#hrefMaiLines").attr("href"));
+
                           }) // end DONE contractDetailsIndex
                           .fail(function(){ // start FAIL contractDetailsIndex
                              alert("contract fail"); 
@@ -217,9 +226,10 @@
                           if (row["id"]==id) {
                               id=id+"|"+row["cofor"];
                               cofor=row["cofor"];
+                              supplier=row["nom_usuel"]
                           }
                           if (flOpt) {
-							$("#supplierId").append('<OPTION value="'+row["id"]+'|'+row["cofor"]+'">'+row["nom_usuel"])
+							$("#supplierId").append('<OPTION value="'+row["id"]+'|'+row["cofor"]+'">'+row["nom_usuel"]);
                           }
                           
                       }
@@ -230,7 +240,7 @@
             function appendPurchaseType (dataSel,id) {
                       for (let row of dataSel) {
                           if (flOpt) {
-								$("#purchaseTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"])
+								$("#purchaseTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"]);
                           }
                       }
                       $("#purchaseTypeId").val(id);
@@ -239,7 +249,7 @@
             function appendPurchaseFamily (dataSel,id) {
                       for (let row of dataSel) {
                     	  if (flOpt) {
-                    		  $("#purchaseFamilyId").append('<OPTION value="'+row["id"]+'">'+row["code"]+" - "+row["designation"])
+                    		  $("#purchaseFamilyId").append('<OPTION value="'+row["id"]+'">'+row["code"]+" - "+row["designation"]);
                     	  }
                       }
                       $("#purchaseFamilyId").val(id);
@@ -248,7 +258,7 @@
             function appendMaintenanceTypes (dataSel,id) {
                       for (let row of dataSel) {
                     	  if (flOpt) {
-                    		  $("#maintenanceTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"])
+                    		  $("#maintenanceTypeId").append('<OPTION value="'+row["id"]+'">'+row["type"]);
                     	  }
                       }
                       $("#maintenanceTypeId").val(id);
@@ -257,7 +267,7 @@
             function appendBU (dataSel,id) {
                       for (let row of dataSel) {
                     	  if (flOpt) {
-                    		  $("#BusinessUnitId").append('<OPTION value="'+row["id"]+'">'+row["acronym"])
+                    		  $("#BusinessUnitId").append('<OPTION value="'+row["id"]+'">'+row["acronym"]);
                     	  }
                       }
                       $("#BusinessUnitId").val(id);
@@ -266,7 +276,7 @@
             function appendPaidBy (dataSel,id) {
                       for (let row of dataSel) {
                     	  if (flOpt) {
-                    		  $("#paidById").append('<OPTION value="'+row["id"]+'">'+row["paidByEntity"])
+                    		  $("#paidById").append('<OPTION value="'+row["id"]+'">'+row["paidByEntity"]);
                     	  }
                       }
                       $("#paidById").val(id);
