@@ -1,6 +1,6 @@
 <?php
 
-class MaintenanceLinesPeriods {
+class MaintenanceLinesPeriodsGrid {
     public $id;
     public $description;
     public $begin;

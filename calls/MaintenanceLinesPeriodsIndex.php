@@ -1,12 +1,13 @@
 <?php
 
 include "../actions/MaintenanceLinesPeriodsActions.php";
+include "../actions/BudgetYearsActions.php";
 
 $config = include("../db/config.php");
 $option=array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
 $db = new PDO($config["db"], $config["username"], $config["password"],$option );
 $maintenanceLinesPeriods= new MaintenanceLinesPeriodsActions($db);
-$_SERVER["REQUEST_METHOD"]="GET";
+//$_SERVER["REQUEST_METHOD"]="POST";
 
 switch($_SERVER["REQUEST_METHOD"]) {
 
@@ -31,19 +32,89 @@ switch($_SERVER["REQUEST_METHOD"]) {
     	break;
     	
     case "POST":
+    	/*
+    	 * $_POST["addLineBegin"]="2018-05-01";
+    	$_POST["addLineEnd"]="2019-04-30";
+    	$_POST["contractId"]="4";
+    	$_POST["description"]="achat 2017";
+    	$_POST["amount"]="10000";
+    	$_POST["budget_years"]="yes";
+    	*/
+    	
+    	$dateBegin=$_POST["addLineBegin"];
+    	if ($_POST["addLineEnd"]=="") {
+    		//$tmp="$dateBegin+".$_POST["nb_unity"]." ".$_POST["time_unity"]."-1 days";
+    		$dateEnd=date('Y-m-d',strtotime("$dateBegin+".$_POST["nb_unity"]." ".$_POST["time_unity"]."-1 days"));
+    	} else {
+    		$dateEnd=$_POST["addLineEnd"];
+    	}
+    	if ($_POST["budget_years"]=="yes") {
+    		$yrb=date("Y",strtotime($dateBegin));
+    		$yre=date("Y",strtotime($dateEnd));
+    		$budget_years=($yre-$yrb)+1;
+    	} else {
+    		$budget_years=1;
+    	}
+
+    	$daysByYear=array();
+    	$year=date('Y',strtotime($dateBegin));
+    	$yearEnd=date('Y',strtotime($dateEnd));
+    	$dateTimeBegin=new DateTime($dateBegin);
+    	$dateTimeEnd=new DateTime($dateEnd);
+    	$totalDays=0;
+    	$first3112=new DateTime(date('Y-m-d',strtotime($year."-12-31")));
+    	$daysByYear[$year][0]=$first3112->diff($dateTimeBegin)->format("%a")+1;
+    	$total_days=$daysByYear[$year][0];
+    	$year=$year+1;
+    	while ($year<$yearEnd) {
+	    	$days=0;
+	    	if (date("L", mktime(0, 0, 0, 1, 1, $year)) == 1) {
+	    		$days=366;
+	    	} else {
+	    		$days=365;
+	    	}
+	    	$daysByYear[$year][0]=$days;
+	    	$total_days=$total_days+$days;
+	    	$year=$years+1;
+    	}
+    	//$tmp=date('Y-m-d',strtotime($year."-01-01"));
+    	$last0101=new DateTime(date('Y-m-d',strtotime($year."-01-01")));
+    	$daysByYear[$year][0]=$dateTimeEnd->diff($last0101)->format("%a")+1;
+    	$total_days=$total_days+$daysByYear[$year][0];
+    	
+    	$amoutByDay=$_POST["amount"]/$total_days;
+    	
+    	$year=date('Y',strtotime($dateBegin));
+    	
+    	$ctlTotalAmount=0;
+    	
+    	while ($year<=$yearEnd) {
+    	
+    		$daysByYear[$year][1]=round($amoutByDay*$daysByYear[$year][0],2);
+    		$ctlTotalAmount=$ctlTotalAmount+$daysByYear[$year][1];
+    		$year=$year+1;
+    	}
+    	
+    	if ($ctlTotalAmount!=$_POST["amount"]) {
+    		// to implement
+    	}
+    	
     	$result = $maintenanceLinesPeriods->insert(array(
-        "name_contract" => $_POST["name_contract"],
-        "reference" => $_POST["reference"],
-        "supplier_id" => $_POST["supplier_id"],
-        "purchase_type_id" => $_POST["purchase_type_id"],
-        "maintenance_type_id" => $_POST["maintenance_type_id"],
-        "purchase_date" => "000-00-00",
-        "renewal_date" => $_POST["renewal_date"],
-        "total_amount" => $_POST["total_amount"],
-        "business_unit_id" => $_POST["business_unit_id"],
-        "paid_by_id" => $_POST["paid_by_id"],
-        "comments" => "",
+        "contract_id" => $_POST["contractId"],
+        "description" => $_POST["description"],
+    	"begin" => $dateBegin,
+    	"end" => $dateEnd,
+        "total_amount" => $_POST["amount"],
+     	"multi_years" => $budget_years,
+    			
     	));
+    	
+    	If ($result->id != "") {
+    		$budgetYears= new BudgetYearsActions($db);
+    		$result2=$budgetYears->insert($result->id,$daysByYear);
+    		
+    	}
+    	
         break;
         
     case "PUT":
@@ -99,8 +170,8 @@ switch (json_last_error()) {
 		echo ' - Unknown error';
 		break;
 }
-echo PHP_EOL;
-*/
+echo PHP_EOL;*/
+
 
 ?>
 

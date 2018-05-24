@@ -56,7 +56,7 @@ $(document).ready(function() {
             loadMessage: "Please, wait...",
             loadShading: true,
             fields: [
-                { name: "acronym", title: "Acronym", type: "text",width: 150},
+                { name: "acronym", title: "Acronym", type: "text",width: 70},
                 { name: "nameBU", title: "Business Unit", type: "text", width: 200 },
                 { type: "control" }
             ]

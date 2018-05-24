@@ -56,7 +56,7 @@ $(function() {
             loadMessage: "Please, wait...",
             loadShading: true,
             fields: [
-                { name: "paidByEntity", title: "Paid By Entity", type: "text",width: 150},
+                { name: "paidByEntity", title: "Paid By Entity", type: "text",width: 70},
                 { name: "longName", title: "Long Name", type: "text", width: 200 },
                 { type: "control" }
             ]

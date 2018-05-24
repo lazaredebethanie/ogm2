@@ -58,7 +58,7 @@ $(function() {
             loadShading: true,
             fields: [
                 { name: "nom_usuel", title: "Nom de l'entreprise", type: "text", width: 150 },
-                { name: "cofor", title: "Code fournisseur", type: "text", width: 200 },
+                { name: "cofor", title: "Code fournisseur", type: "text", width: 50 },
                 { name: "groupe_id", title: "Groupe fournisseur", type: "select", width: 100, items: groupesFournisseurs, valueField: "id", textField: "groupe" },
                 /*{ name: "groupe_id", title: "Groupe ID", type: "text", width: 20 },*/
                 { type: "control" }

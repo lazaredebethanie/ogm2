@@ -24,9 +24,7 @@ $.ajax({
                 return $.ajax({
                     type : "GET",
                     url : "../calls/MaintenanceLinesPeriodsIndex.php",
-                    data : argSec[0] + "&" + filter // <<<<<<<<<<<<<<<<<<<<<<<<<
-                                                    // A MODIFIER
-                                                    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                    data : contractId + "&" + filter 
                 });
             },
         /*
@@ -38,6 +36,12 @@ $.ajax({
          * "../calls/fournisseursIndex.php", data: item }); }
          */
         },
+
+        rowClick: function (args) {
+            displaySelLine(args);
+  
+        },
+
         pageSize : 10,
         pageButtonCount : 5,
         pageIndex : 1,
@@ -81,10 +85,10 @@ $.ajax({
             valueField: "id", 
             textField: "state" 
         }, {
-            name : "comments",
+            name : "short_comments",
             title : "Comments",
             type : "textarea",
-            width : 60
+            width : 100
         } /*
              * , { type: "control" }
              */

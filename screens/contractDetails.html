@@ -7,8 +7,8 @@
     <link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/ogm.css" />
     <link type="text/css" rel="stylesheet" media="all" title="CSS" href="../css/onglets2.css" />
     <link href="../css/style.css" rel="stylesheet" />
-    <link href="../jsgrid/css/jsgrid.min.css" rel="stylesheet" />
-    <link href="../jsgrid/css/jsgrid-theme.min.css" rel="stylesheet" />
+    <link href="../_ressources/jsgrid/css/jsgrid.min.css" rel="stylesheet" />
+    <link href="../_ressources/jsgrid/css/jsgrid-theme.min.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -112,7 +112,8 @@
 
     <!-- ************************* DEBUT PARTIE JS *****************************  -->
 
-    <script src="../jsgrid/jquery-3.2.1.min.js"></script>
+    <script src="../_ressources/jquery-3.3.1.min.js"></script>
+    <script src="../common/common.js"></script>
 
     <script >
 
@@ -198,26 +199,7 @@
                           }); // end FAIL contractDetailsIndex and call AJAX  contractDetailsIndex
         		  }
 
-			function ajaxSelect(urlCalled) {
-        		      var result;
-                      $.ajax
-                      ({
-                      url: urlCalled,
-                      async: false,
-                      method:"GET",
-                      dataType: "json"
-                      })
-                      .done(function(data2) {
-                          //alert("DONE call "+urlCalled);
-                          console.log("call ajaxSelect : success for "+urlCalled);
-                          result=data2;
-                      })
-                      .fail(function(){
-                          alert("FAIL call "+urlCalled);
-                          result="";
-                      }); 
-                      return result;
-                  }; // end of function ajaxSelect
+			/*Move function ajaxSelect in common.js*/
                   
             function appendSuppliers (dataSel,id) {
                       var cofor;
@@ -226,13 +208,13 @@
                           if (row["id"]==id) {
                               id=id+"|"+row["cofor"];
                               cofor=row["cofor"];
-                              supplier=row["nom_usuel"]
-                          }
+                              supplier=row["nom_usuel"];
+                          };
                           if (flOpt) {
 							$("#supplierId").append('<OPTION value="'+row["id"]+'|'+row["cofor"]+'">'+row["nom_usuel"]);
-                          }
+                          };
                           
-                      }
+                      };
                       $("#supplierId").val(id);
                       $("#supplierCode").val(cofor);
                   }; // end of appendSuppliers

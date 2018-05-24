@@ -78,8 +78,8 @@ $(function() {
 
                             rowClick: function (args) {
                                 //window.location = "/Reservations/Edit/" + args.item.id + args.item.acronym;
-                                var w=1000;
-                                var h=600;
+                                var w=1110;
+                                var h=800;
                                 var urlDet="contractDetails.html?id="+args.item.id
                                 var title="Contract Details";
                                 var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;

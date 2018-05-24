@@ -1,6 +1,6 @@
 <?php
 
-include "../objets/MaintenanceLinesPeriods.php";
+include "../objets/MaintenanceLinesPeriodsGrid.php";
 
 class FournisseursRepo {
 
